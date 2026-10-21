@@ -1,0 +1,7 @@
+{
+  "name": "alias-neurofluent",
+  "private": true,
+  "type": "module",
+  "description": "Neuro-Fluent Alias game with a built-in Lifeline helper for elementary players",
+  "engines": { "node": ">=18" }
+}
