@@ -1,5 +1,6 @@
 // Vercel serverless function: the AI side of the Lifeline.
 // Needs one environment variable in Vercel: ANTHROPIC_API_KEY
+import { hasStore, getRoom } from "../lib/store.js";
 // Optional: LIFELINE_CODE (a password students type once), MODEL (override the model id)
 
 const MODELS = [process.env.MODEL, "claude-haiku-5-5", "claude-haiku-4-5"].filter(Boolean);
@@ -68,8 +69,14 @@ export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) return res.status(500).json({ error: "no_key", message: "ANTHROPIC_API_KEY is not set in Vercel." });
+  // Players inside a live game room are allowed automatically; otherwise the optional LIFELINE_CODE applies.
   const code = process.env.LIFELINE_CODE;
-  if (code && req.headers["x-lifeline-code"] !== code) return res.status(401).json({ error: "bad_code" });
+  let allowed = !code || req.headers["x-lifeline-code"] === code;
+  const roomCode = String(req.headers["x-room"] || "").toUpperCase();
+  if (!allowed && roomCode && hasStore()) {
+    try { const room = await getRoom(roomCode); allowed = !!(room && room.players && room.players.some((p) => p.id === req.headers["x-pid"])); } catch {}
+  }
+  if (!allowed) return res.status(401).json({ error: "bad_code" });
 
   const { mode, input, turns, variant } = req.body || {};
   try {

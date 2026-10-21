@@ -8,10 +8,17 @@ An Alias word game with 1,014 everyday English words, Russian hints, and a helpe
 - **"Фразы" tab.** Frame phrases for explaining any word ("It's a thing… You use it for…"). Works offline.
 - After each turn, tap a skipped word to see how you could have explained it.
 
+## Online games (game codes)
+The teacher opens the site, chooses **🌐 Online**, types a name and clicks **Create game**. That gives a 4-letter code and a link.
+Players open the link (or the site), enter the code and their name, and join. Each device shows its own screen. Only the describer sees the word, the clues and the word help. The timer, scores and turns stay in sync for everyone.
+This needs the free **Upstash Redis** database connected in Vercel (Storage → Create → Upstash for Redis → connect to this project).
+Players inside a game can use the AI help without the `LIFELINE_CODE`.
+
 ## Files
 - `index.html`: the game
 - `deck1.js`, `deck2.js`, `deck3.js`: the words. Format: `english=russian=clue 1|clue 2`
 - `api/help.js`: the AI helper (a Vercel serverless function)
+- `api/room.js`, `lib/store.js`, `online.js`: online game rooms
 
 ## Put it online (GitHub + Vercel)
 1. **GitHub.** Go to github.com/new, name the repo `alias-neurofluent`, and click Create. On the next page, click "uploading an existing file", drag in all the files and the `api` folder, then click Commit.

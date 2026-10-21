@@ -182,6 +182,28 @@ button{font-family:inherit}
 .toggle.on .sw{background:var(--mint-ink)}
 .toggle.on .sw::after{left:21px}
 .tglist{display:flex;flex-direction:column;gap:12px}
+/* online rooms */
+.join-card{border:1.5px solid var(--lav-line)}
+.joinrow{display:flex;gap:8px;flex-wrap:wrap}
+.joinrow input{font-family:var(--body);font-size:17px;font-weight:600;padding:12px 14px;border-radius:var(--r-md);border:1.5px solid var(--line2);background:var(--soft);color:var(--ink);outline:none;min-width:0}
+.joinrow input:focus{border-color:var(--lav-ink);background:var(--card)}
+.joinrow .jcode{width:7.5em;flex:0 0 auto;font-family:var(--display);font-weight:800;letter-spacing:.18em;text-transform:uppercase;text-align:center}
+.joinrow #jName{flex:1 1 160px}
+.joinrow .btn{flex:0 0 auto}
+.jerr{color:var(--pink-ink);font-weight:600;font-size:14px;margin-top:8px;min-height:1px}
+.mini-link{background:none;border:none;color:var(--lav-ink);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:10px;font-family:inherit}
+.teacher>summary{list-style:none;cursor:pointer;font-family:var(--display);font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+.teacher>summary::-webkit-details-marker{display:none}
+.teacher>summary::after{content:"+";font-size:20px;color:var(--muted)}
+.teacher[open]>summary::after{content:"–"}
+.teacher[open]>summary{margin-bottom:18px}
+.hostname{font-family:var(--body);font-size:16px;font-weight:600;padding:10px 14px;border-radius:var(--r-md);border:1px solid var(--line2);background:var(--soft);color:var(--ink);width:100%;max-width:320px;outline:none}
+.lobby-code{text-align:center;margin-bottom:22px}
+.bigcode{font-family:var(--display);font-weight:800;font-size:clamp(52px,14vw,84px);letter-spacing:.12em;color:var(--lav-ink);line-height:1.05}
+.sharelink{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:14px;color:var(--ink2);word-break:break-all}
+.plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.plist .pfield b{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.tag{font-size:11px;font-weight:700;color:var(--lav-ink);background:var(--lav);border-radius:var(--pill);padding:1px 8px}
 
 #app>.card:first-child{margin-top:20px}
 footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
@@ -282,6 +304,7 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
 <script src="deck1.js"></script>
 <script src="deck2.js"></script>
 <script src="deck3.js"></script>
+<script src="online.js"></script>
 <script>
 /* ===== DECK (from deck*.js: english=russian=clue|clue) ===== */
 const ORDER=["tech","kitchen","bathroom","cleaning","office","tools","packaging","home","bedroom","food","drinks","clothes","beauty","health","city","transport","shopping","leisure","kids","garden","travel","people","actions"].filter(k=>window.RAW&&RAW[k]);
@@ -293,13 +316,13 @@ const catColor=k=>PAL[ORDER.indexOf(k)%PAL.length];
 
 /* ===== STATE ===== */
 const LS='nf_alias_v2';
-let S={mode:'screen',players:['Player 1','Player 2','Player 3'],me:0,scores:[0,0,0],secs:60,cats:ORDER.slice(),hint:true,clues:true,pauseHelp:true};
+let S={mode:'online',hostName:'',players:['Player 1','Player 2','Player 3'],me:0,scores:[0,0,0],secs:60,cats:ORDER.slice(),hint:true,clues:true,pauseHelp:true};
 try{const j=JSON.parse(localStorage.getItem(LS));if(j)S=Object.assign(S,j);}catch(e){}
 if(!Array.isArray(S.players)||S.players.length<2)S.players=['Player 1','Player 2','Player 3'];
 if(!Array.isArray(S.scores)||S.scores.length!==S.players.length)S.scores=S.players.map(()=>0);
 S.cats=(S.cats||[]).filter(k=>ORDER.includes(k));if(!S.cats.length)S.cats=ORDER.slice();
 if(S.me>=S.players.length)S.me=0;
-if(typeof S.clues!=='boolean')S.clues=true;if(typeof S.pauseHelp!=='boolean')S.pauseHelp=true;
+if(S.mode==='own')S.mode='online';if(typeof S.clues!=='boolean')S.clues=true;if(typeof S.pauseHelp!=='boolean')S.pauseHelp=true;
 function save(){try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}}
 const PCOL=['#cbbfff','#a8e0c9','#ffc4a8','#b3d4f7','#ffbcd4','#f5dd85'];
 const N=()=>S.players.length;
@@ -333,7 +356,7 @@ function render(){
   app.innerHTML={setup:setupHTML,intro:introHTML,play:playHTML,wait:waitHTML,end:endHTML,stand:standHTML}[phase]();
   wire[phase]&&wire[phase]();
   renderScores();
-  document.getElementById('modeTag').textContent=S.mode==='own'?('💻 You are '+nm(S.me)):'🗣️ Alias · one screen';
+  document.getElementById('modeTag').textContent=phase==='setup'?'🗣️ Alias':'🗣️ Alias · one screen';
   window.scrollTo(0,0);
 }
 const tog=(id,on,label)=>`<div class="toggle${on?' on':''}" id="${id}" role="switch" aria-checked="${on}" tabindex="0"><span class="sw"></span>${label}</div>`;
@@ -343,12 +366,12 @@ function setupHTML(){
   return `<div class="hero"><div class="kicker">🇷🇺 Russian hints · ${ALL.length} words · 🛟 Lifeline</div>
     <h1><span class="a">A</span><span class="b">l</span><span class="c">i</span><span class="d">a</span><span class="e">s</span></h1>
     <p>Describe the word in English — never say it. Stuck? Tap <b>🛟 Lifeline</b> for ready-made clues with Russian translations.</p></div>
-  <div class="card">
+  ${window.ONLINE?ONLINE.joinCardHTML():''}
+  <details class="card teacher" id="teacherBox"${new URLSearchParams(location.search).get('code')?'':' open'}><summary>🎓 Teacher · set up a game</summary>
     <div class="row"><div class="lbl">1 · How are you playing?</div>
-      <div class="seg" id="modeSeg"><button data-m="screen" class="${S.mode==='screen'?'on':''}">📺 One screen</button><button data-m="own" class="${S.mode==='own'?'on':''}">💻 Each on own device</button></div></div>
-    <div class="row"><div class="lbl">2 · Players</div>
-      <div class="pgrid" id="pgrid">${S.players.map((p,i)=>`<div class="pfield"><span class="dot" style="background:${PCOL[i%PCOL.length]}"></span><input value="${esc(p)}" data-i="${i}" maxlength="14">${N()>2?`<button class="x" data-x="${i}" aria-label="remove">✕</button>`:''}</div>`).join('')}${N()<6?'<button class="addp" id="addp">+ Add player</button>':''}</div></div>
-    ${S.mode==='own'?`<div class="row"><div class="lbl">On THIS device, I am…</div><div class="chips" id="meChips">${S.players.map((p,i)=>`<div class="chip${i===S.me?' on':''}" data-me="${i}">${esc(nm(i))}</div>`).join('')}</div></div>`:''}
+      <div class="seg" id="modeSeg"><button data-m="online" class="${S.mode==='online'?'on':''}">🌐 Online — players join with a code</button><button data-m="screen" class="${S.mode==='screen'?'on':''}">📺 One screen</button></div></div>
+    ${S.mode==='online'?`<div class="row"><div class="lbl">2 · Your name</div><input class="hostname" id="hostName" maxlength="16" placeholder="Artyom" value="${esc(S.hostName||'')}"></div>`:`<div class="row"><div class="lbl">2 · Players</div>
+      <div class="pgrid" id="pgrid">${S.players.map((p,i)=>`<div class="pfield"><span class="dot" style="background:${PCOL[i%PCOL.length]}"></span><input value="${esc(p)}" data-i="${i}" maxlength="14">${N()>2?`<button class="x" data-x="${i}" aria-label="remove">✕</button>`:''}</div>`).join('')}${N()<6?'<button class="addp" id="addp">+ Add player</button>':''}</div></div>`}
     <div class="row"><div class="lbl">3 · Round length</div><div class="chips" id="timeChips">${[30,60,90,120].map(s=>`<div class="chip time${s===S.secs?' on':''}" data-s="${s}">${s}s</div>`).join('')}</div></div>
     <div class="row"><div class="lbl">4 · Categories <button class="mini" id="catAll">all</button><button class="mini" id="catNone">none</button></div>
       <div class="chips" id="catChips">${ORDER.map(k=>`<div class="chip${S.cats.includes(k)?' on':''}" data-c="${k}">${CATS[k].label}<span class="n">${CATS[k].w.length}</span></div>`).join('')}</div>
@@ -357,9 +380,10 @@ function setupHTML(){
       ${tog('hintTog',S.hint,'Show Russian hint under the word')}
       ${tog('cluesTog',S.clues,'Show 2 easy clues under the word')}
       ${tog('pauseTog',S.pauseHelp,'🛟 Lifeline pauses the timer')}</div></div>
-    <button class="btn btn-main btn-block" id="go">Start — ${esc(nm(0))} describes first ▶</button>
-    <div class="note"><b>How it works:</b> one player describes, everyone else guesses. ✓ = guessed, ⏭ = skip. Points go to the describer. Describer rotates every turn.${S.mode==='own'?' On own devices, only the describer’s screen shows the word.':''} <b>🛟 Lifeline</b> is always in the corner: clues, Russian explanations, pronunciation and a helper chat.</div>
-  </div><footer>Neuro-Fluent · Alias · ${ALL.length} everyday words</footer>`;
+    <button class="btn btn-main btn-block" id="go">${S.mode==='online'?'Create game — get a code ▶':`Start — ${esc(nm(0))} describes first ▶`}</button>
+    <div class="jerr" id="goErr"></div>
+    <div class="note"><b>How it works:</b> one player describes, everyone else guesses. ✓ = guessed, ⏭ = skip. Points go to the describer. Describer rotates every turn.${S.mode==='online'?' <b>Online:</b> you get a 4-letter code; players open this site on their own phone or laptop, type the code and their name. Only the describer sees the word.':''} <b>🛟 Lifeline</b> is always in the corner: clues, Russian explanations, pronunciation and a helper chat.</div>
+  </details><footer>Neuro-Fluent · Alias · ${ALL.length} everyday words</footer>`;
 }
 function guessers(){return S.players.map((_,i)=>i).filter(i=>i!==dIdx).map(nm).join(' & ');}
 function introHTML(){
@@ -444,8 +468,10 @@ function wireTog(id,key,after){const el=$(id);const f=()=>{S[key]=!S[key];save()
 const wire={
   setup(){
     $('modeSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{S.mode=b.dataset.m;save();render();});
-    $('pgrid').querySelectorAll('input').forEach(inp=>inp.oninput=()=>{const i=+inp.dataset.i;S.players[i]=inp.value;save();$('go').textContent=`Start — ${nm(0)} describes first ▶`;const mc=$('meChips');if(mc)mc.children[i].textContent=nm(i);});
-    $('pgrid').querySelectorAll('.x').forEach(x=>x.onclick=()=>{const i=+x.dataset.x;S.players.splice(i,1);S.scores.splice(i,1);if(S.me>=N())S.me=0;save();render();});
+    if(window.ONLINE)ONLINE.wireJoin();
+    const hn=$('hostName');if(hn)hn.oninput=()=>{S.hostName=hn.value;save();};
+    if($('pgrid')){$('pgrid').querySelectorAll('input').forEach(inp=>inp.oninput=()=>{const i=+inp.dataset.i;S.players[i]=inp.value;save();if(S.mode!=='online')$('go').textContent=`Start — ${nm(0)} describes first ▶`;const mc=$('meChips');if(mc)mc.children[i].textContent=nm(i);});
+    $('pgrid').querySelectorAll('.x').forEach(x=>x.onclick=()=>{const i=+x.dataset.x;S.players.splice(i,1);S.scores.splice(i,1);if(S.me>=N())S.me=0;save();render();});}
     const ap=$('addp');if(ap)ap.onclick=()=>{S.players.push('Player '+(N()+1));S.scores.push(0);save();render();};
     const mc=$('meChips');if(mc)mc.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{S.me=+c.dataset.me;save();render();});
     $('timeChips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{S.secs=+c.dataset.s;save();$('timeChips').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));});
@@ -454,7 +480,8 @@ const wire={
     $('catAll').onclick=()=>{S.cats=ORDER.slice();upd();};
     $('catNone').onclick=()=>{S.cats=[];upd();};
     wireTog('hintTog','hint');wireTog('cluesTog','clues');wireTog('pauseTog','pauseHelp');
-    $('go').onclick=()=>{if(!pool().length)return;S.players=S.players.map((p,i)=>p.trim()||('Player '+(i+1)));save();dIdx=0;pass=1;turn=0;refill();setPhase('intro');};
+    $('go').onclick=()=>{if(!pool().length)return;
+      if(S.mode==='online'){const n=(S.hostName||'').trim()||'Teacher';ONLINE.create(n,$('go'),$('goErr'));return;}S.players=S.players.map((p,i)=>p.trim()||('Player '+(i+1)));save();dIdx=0;pass=1;turn=0;refill();setPhase('intro');};
   },
   intro(){
     const st=$('startTurn');if(st)st.onclick=()=>{got=[];skipped=[];hidden=false;setPhase('play');};
@@ -482,7 +509,7 @@ const wire={
     $('back').onclick=toSetup;
   }
 };
-function toSetup(){stopTimer();closeLife();setPhase('setup');}
+function toSetup(){if(window.ONLINE&&ONLINE.active)return;stopTimer();closeLife();setPhase('setup');}
 document.addEventListener('keydown',e=>{
   if(lifeOpen){if(e.key==='Escape')closeLife();return;}
   if(phase!=='play'||e.target.tagName==='INPUT')return;
@@ -514,6 +541,7 @@ function openLife(word){
   const allowWord=word&&(phase!=='play'||amDescriber());
   lifeOpen=true;drawer.classList.add('open');scrim.classList.add('open');drawer.setAttribute('aria-hidden','false');
   if(phase==='play'&&S.pauseHelp)setPaused(true);
+  if(window.ONLINE&&ONLINE.active)ONLINE.onLife(true);
   setTab('word',true);
   if(allowWord){dQ.value=word.en;lookup(word.en,false,word);}
   else{renderWordHome();setTimeout(()=>dQ.focus(),250);}
@@ -521,9 +549,10 @@ function openLife(word){
 function closeLife(){
   if(!lifeOpen)return;lifeOpen=false;drawer.classList.remove('open');scrim.classList.remove('open');drawer.setAttribute('aria-hidden','true');
   if(phase==='play')setPaused(false);
+  if(window.ONLINE&&ONLINE.active)ONLINE.onLife(false);
   try{speechSynthesis.cancel();}catch(e){}
 }
-$('fab').onclick=()=>lifeOpen?closeLife():openLife(phase==='play'?current:null);
+$('fab').onclick=()=>lifeOpen?closeLife():openLife(window.ONLINE&&ONLINE.active?ONLINE.myWord():(phase==='play'?current:null));
 $('dClose').onclick=closeLife;scrim.onclick=closeLife;
 $('dTabs').querySelectorAll('button').forEach(b=>b.onclick=()=>setTab(b.dataset.t));
 function setTab(t,silent){
@@ -539,7 +568,7 @@ $('dForm').addEventListener('submit',e=>{e.preventDefault();if(lifeBusy)return;c
   if(lifeTab==='word')lookup(v,false);else sendChat(v);});
 
 async function api(payload){
-  const r=await fetch('/api/help',{method:'POST',headers:{'content-type':'application/json','x-lifeline-code':getCode()},body:JSON.stringify(payload)});
+  const r=await fetch('/api/help',{method:'POST',headers:Object.assign({'content-type':'application/json','x-lifeline-code':getCode()},window.ONLINE?ONLINE.headers():{}),body:JSON.stringify(payload)});
   let j={};try{j=await r.json();}catch(e){}
   if(!r.ok){const err=new Error(j.message||j.error||('HTTP '+r.status));err.code=j.error||('http_'+r.status);err.status=r.status;throw err;}
   return j;
