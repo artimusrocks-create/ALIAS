@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tinder Swindler</title>
+<meta name="description" content="Part 3 of Kolya and Rustam&#x27;s A2 series: a review of the 20 Part 1 + 2 verbs, then 10 new phrasal verbs through the Tinder Swindler story (with his 2025 arrest in Batumi) and Anna Delvey, with a verb hunt, drag-and-drop, cards, practice, a gap text, debate and homework.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💔</text></svg>">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Unbounded:wght@600;800&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@1,800;1,900&display=swap">
+<style>
+/* Layout: tabloid front page on newsprint — red masthead, pink kiss-cam jumbotron, hard black rules */
+:root{color-scheme:light;
+ --bg:#f2efe6;--surface:#fbfaf6;--surface2:#ebe7db;--ink:#0a0a0a;--muted:#55513f;--ru:#6b6656;--edge:#0a0a0a;--edge2:#a39f90;--shadow:#0a0a0a;
+ --a1:#F5C043;--a2:#26F0D4;--a3:#E8173B;--on-a:#0a0a0a;--on-a3:#ffffff;--hl:#F5C043;--pink:#FF2E88;
+ --ok:#0f6b36;--ok-bg:#c9f2d6;--bad:#b0102b;--bad-bg:#ffd7dd;
+ --navbg:#0a0a0a;--navfg:#f2efe6;--navedge:#3a3a3a;
+ --paper:#fbfaf6;--paper-ink:#0a0a0a;--paper-muted:#6b6656;
+ --screen:#0d0d12;--screen-glow:#3b0d24;--screen-line:#2a2a33;--screen-text:#e9e6dc;--rec:#ff4d4d;
+ --grain-op:.13;--grain-blend:multiply;
+ --f-disp:'Bebas Neue',Impact,'Arial Narrow',sans-serif;--f-head:'Unbounded','Onest',system-ui,sans-serif;--f-body:'Onest',system-ui,sans-serif;
+ --f-read:'PT Serif',Georgia,serif;--f-serif:'Playfair Display',Georgia,serif;--f-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--f-mark:'Permanent Marker','Comic Sans MS',cursive}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navbg)}
+body::after{content:"";position:fixed;inset:0;z-index:999;pointer-events:none;opacity:var(--grain-op);mix-blend-mode:var(--grain-blend);
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E")}
+body.noru .ru{display:none!important}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--a3);outline-offset:2px}
+
+/* ---------- top bar ---------- */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--navbg);color:var(--navfg);display:flex;align-items:center;gap:8px;
+ padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:3px solid var(--a1)}
+.brand{font:400 22px/1 var(--f-disp);letter-spacing:.05em;color:var(--a1);white-space:nowrap}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;padding:2px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font:700 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--navfg);text-decoration:none;white-space:nowrap;padding:7px 9px;border:1.5px solid var(--navedge);display:flex;gap:6px;align-items:center}
+.tab .tn{opacity:.5}
+.tab:hover{border-color:var(--a1)}
+.tab.on{background:var(--a1);color:var(--on-a);border-color:var(--a1)}
+.tab.on .tn{opacity:.75}
+.xp{font:700 11px/1 var(--f-mono);padding:7px 9px;background:var(--a2);color:var(--on-a);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ru-btn{font:700 11px/1 var(--f-mono);background:var(--a3);color:var(--on-a3);border:0;padding:7px 10px;cursor:pointer;white-space:nowrap}
+@media(max-width:600px){.brand,.xp{display:none}}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1000px;margin:0 auto;overflow-x:clip;padding-block:26px 120px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.panel{display:none}
+.panel.on{display:block;animation:slin .38s cubic-bezier(.2,.8,.2,1)}
+.panel.on.back{animation-name:slback}
+@keyframes slin{from{opacity:.4;transform:translateX(44px)}to{opacity:1;transform:none}}
+@keyframes slback{from{opacity:.4;transform:translateX(-44px)}to{opacity:1;transform:none}}
+.stack{display:grid;gap:26px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin-top:26px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.box{background:var(--surface);border:2px solid var(--edge);box-shadow:6px 6px 0 var(--shadow);padding:24px clamp(16px,3vw,28px);min-width:0}
+
+.sh{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:4px 0 8px}
+.sh .num{font:400 38px/1 var(--f-disp);background:var(--ink);color:var(--bg);padding:6px 12px 2px;transform:rotate(-2deg)}
+.st{font:800 clamp(18px,2.6vw,26px)/1.15 var(--f-head);text-transform:uppercase;margin:0;flex:1;min-width:0;text-wrap:balance;letter-spacing:.01em}
+.mins{font:700 11.5px/1 var(--f-mono);background:var(--a2);color:var(--on-a);border:2px solid var(--edge);padding:6px 9px;white-space:nowrap}
+.instr{font-size:15.5px;color:var(--muted);margin:8px 0 18px;max-width:72ch}
+.instr .ru{display:block;margin-top:2px}
+.ru{color:var(--ru);font-size:.9em}
+.h3{font:400 30px/1.05 var(--f-disp);letter-spacing:.03em;margin:0 0 10px;display:flex;align-items:center;gap:10px;text-wrap:balance}
+.tagx{font:700 13px/1 var(--f-mono);background:var(--a1);color:var(--on-a);border:2px solid var(--edge);padding:5px 8px}
+
+.btn{font:700 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border:2.5px solid var(--edge);background:var(--a1);color:var(--on-a);padding:11px 15px;box-shadow:4px 4px 0 var(--shadow);transition:transform .08s,box-shadow .08s,background .15s}
+.btn:hover{background:var(--a2);color:var(--on-a)}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--shadow)}
+.btn.ghost{background:var(--surface2);color:var(--ink)}
+.btn.ghost:hover{background:var(--a2);color:var(--on-a)}
+.btn.sm{padding:8px 11px;font-size:11px;box-shadow:3px 3px 0 var(--shadow)}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px}
+.score{font:700 12.5px/1 var(--f-mono);padding:9px 12px;background:var(--ink);color:var(--bg);font-variant-numeric:tabular-nums}
+.score:empty{display:none}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:44px;padding-top:22px;border-top:3px dashed var(--edge2)}
+.spk{display:inline-grid;place-items:center;width:30px;height:30px;border:2px solid var(--edge);background:var(--surface);color:var(--ink);border-radius:50%;cursor:pointer;vertical-align:middle;padding:0;flex:none}
+.spk:hover{background:var(--a2);color:var(--on-a)}
+.spk.inl{width:26px;height:26px;margin-left:4px}
+.spk.big{width:42px;height:42px;background:var(--a1);color:var(--on-a);border-color:var(--a1)}
+
+/* ---------- start ---------- */
+.plan{width:100%;border-collapse:collapse;font-size:15px}
+.plan td{padding:7px 6px;border-bottom:1px dashed var(--edge2);vertical-align:top}
+.pn{font:700 12px/1.7 var(--f-mono);color:var(--a3);width:40px}
+.pm{font:700 12.5px/1.7 var(--f-mono);text-align:right;white-space:nowrap}
+.pr{font:500 12px/1.7 var(--f-mono);color:var(--muted);text-align:right;white-space:nowrap;width:64px}
+.loot{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.lt{display:flex;gap:8px;align-items:center;border:2px dashed var(--edge2);padding:8px 10px;font:700 13px/1.2 var(--f-mono);color:var(--muted);min-width:0}
+.lt i{font-style:normal;opacity:.6}
+.lt.on{border-style:solid;border-color:var(--edge);background:var(--hl);color:var(--on-a)}
+.howto{font-size:14.5px;color:var(--muted)}
+.howto p{margin:0 0 6px}
+
+/* ---------- talk ---------- */
+.qs{margin:0;padding:0;list-style:none;counter-reset:q;display:grid}
+.qs>li{counter-increment:q;display:grid;grid-template-columns:38px minmax(0,1fr);column-gap:10px;padding:12px 0;border-bottom:1px dashed var(--edge2)}
+.qs>li:last-child{border-bottom:0}
+.qs>li::before{content:counter(q,decimal-leading-zero);font:700 13px/1.9 var(--f-mono);color:var(--a3);grid-row:span 2}
+.qs .q{margin:0;font-size:18px;font-weight:500;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.qs p{margin:0}
+.qs .ru{margin-top:2px}
+.qs.small .q,.qs.small p{font-size:16px}
+.tot{display:grid;gap:10px}
+.tot-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center}
+.tot-o{border:2px solid var(--edge);background:var(--surface2);padding:12px 14px;font:600 15.5px/1.3 var(--f-body);cursor:pointer;text-align:center;min-width:0;transition:transform .12s,background .12s}
+.tot-o:hover{border-color:var(--a3)}
+.tot-o.pick{background:var(--a3);color:var(--on-a3);transform:rotate(-1deg)}
+.or{font:700 11px/1 var(--f-mono);text-transform:uppercase;color:var(--muted)}
+.phr{display:flex;flex-wrap:wrap;gap:8px}
+.ph{border:2px solid var(--edge);padding:8px 12px;background:var(--surface2);display:grid;min-width:0}
+.ph b{font-weight:600}
+
+/* ---------- read ---------- */
+.huntbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:20;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;background:var(--a1);color:var(--on-a);border:2px solid var(--edge);padding:10px 14px;margin-bottom:18px;box-shadow:4px 4px 0 var(--shadow)}
+.hb-c{font:700 13px/1 var(--f-mono);text-transform:uppercase;white-space:nowrap}
+.hb-c b{font-size:21px;font-variant-numeric:tabular-nums}
+.hb-tip{font-size:13.5px;flex:1;min-width:180px;line-height:1.4}
+.hb-tip .ru{color:inherit;opacity:.75;display:block}
+.huntbar .btn.ghost{background:var(--surface);color:var(--ink)}
+.article{background:var(--paper);color:var(--paper-ink);border:2px solid var(--edge);box-shadow:8px 8px 0 var(--shadow);padding:28px clamp(18px,4.5vw,52px) 24px;font-family:var(--f-read);font-size:18.5px;line-height:1.85;margin-bottom:28px;min-width:0}
+.article p{margin:0 0 14px;max-width:68ch}
+.dl{font:700 11.5px/1.3 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--a3);margin-bottom:8px}
+.hed{font:400 clamp(38px,6.5vw,64px)/.92 var(--f-disp);letter-spacing:.01em;margin:0 0 6px;text-wrap:balance}
+.deck{font-family:var(--f-head);font-weight:600;font-size:15px!important;line-height:1.4!important;color:var(--paper-muted);margin-bottom:20px!important}
+.src{font:500 12px/1.55 var(--f-mono)!important;color:var(--paper-muted);border-top:1px dashed var(--edge2);padding-top:10px;margin-top:18px!important}
+.pv{cursor:pointer;border-radius:2px}
+.pv.found{background:var(--hl);color:var(--on-a);box-shadow:0 0 0 3px var(--hl);font-weight:700}
+.pv.found::after{content:attr(data-n);font:700 10px/1 var(--f-mono);vertical-align:super;margin-left:3px}
+.gl{border-bottom:2px dotted var(--a3);cursor:help}
+.gl:hover{background:var(--surface2)}
+#pop{position:absolute;z-index:300;background:var(--ink);color:var(--bg);font:600 14px/1.35 var(--f-body);padding:7px 11px;max-width:260px;box-shadow:3px 3px 0 var(--a3);pointer-events:none}
+.tf{margin:0;padding:0;list-style:none;counter-reset:t;display:grid;gap:4px}
+.tf>li{counter-increment:t;display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:8px;padding:10px 0;border-bottom:1px dashed var(--edge2)}
+.tf>li::before{content:counter(t);font:700 13px/1.8 var(--f-mono);color:var(--a3);grid-row:span 3}
+.tf p{margin:0 0 8px}
+.tf-b{display:flex;gap:10px}
+.tf-why{font-size:14.5px;margin:8px 0 0!important}
+.tf-why:empty{display:none}
+.tf li.ok .tf-why{color:var(--ok)}
+.tf li.bad .tf-why{color:var(--bad)}
+
+/* ---------- guess / drag ---------- */
+.ctx{margin-bottom:22px}
+.ctx summary{cursor:pointer;list-style:none}
+.ctx summary::-webkit-details-marker{display:none}
+.ctx summary::after{content:"+";margin-left:auto;font-family:var(--f-mono)}
+.ctx[open] summary::after{content:"–"}
+.ctxl{margin:6px 0 0;padding-left:22px;display:grid;gap:6px;font-size:16px}
+.ctxl b{background:var(--hl);color:var(--on-a);padding:0 3px}
+.dm{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:20px;align-items:start}
+.pool{position:sticky;top:calc(env(safe-area-inset-top,0px) + 60px);z-index:15;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;padding:14px;border:2.5px dashed var(--edge);background:var(--surface2);min-height:90px}
+.pool:empty::before{content:"All placed → CHECK";font:700 12px/1.4 var(--f-mono);color:var(--muted)}
+.chip{font:700 14.5px/1.1 var(--f-mono);padding:9px 11px;background:var(--a1);color:var(--on-a);border:2px solid var(--edge);box-shadow:3px 3px 0 var(--shadow);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;white-space:nowrap}
+.chip.sel{background:var(--a3);color:var(--on-a3)}
+.chip.lift{opacity:.25}
+.drag-ghost{position:fixed;z-index:1000;pointer-events:none;transform:rotate(-4deg) scale(1.06);box-shadow:6px 8px 0 var(--shadow);margin:0}
+.slots{display:grid;gap:10px;min-width:0}
+.slot{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,200px);gap:12px;align-items:center;border:2px solid var(--edge);background:var(--surface);padding:10px 12px;transition:background .15s,border-color .15s}
+.def{font-size:15.5px;line-height:1.4;display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;min-width:0}
+.dn{font:700 12px/1 var(--f-mono);background:var(--ink);color:var(--bg);padding:4px 6px}
+.ru.after{display:none;flex-basis:100%;padding-left:32px}
+.slot.checked .ru.after{display:block}
+.drop{min-height:46px;border:2px dashed var(--edge2);display:flex;align-items:center;justify-content:center;padding:4px}
+.slot.hover{border-color:var(--a3)}
+.slot.hover .drop{background:var(--surface2);border-color:var(--a3)}
+.slot.ok{border-color:var(--ok);background:var(--ok-bg)}
+.slot.bad{border-color:var(--bad);background:var(--bad-bg)}
+@media(max-width:720px){.dm{grid-template-columns:1fr}.pool{top:calc(env(safe-area-inset-top,0px) + 52px);box-shadow:0 8px 0 var(--bg)}}
+@media(max-width:480px){.slot{grid-template-columns:1fr}}
+
+/* ---------- cards ---------- */
+.rule{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:2px solid var(--edge);background:var(--surface2);padding:12px 16px;margin-bottom:18px;font-size:15px}
+.rule b{color:var(--a3)}
+.vstrip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.vbtn{font:700 12.5px/1 var(--f-mono);border:2px solid var(--edge);border-bottom:4px solid var(--rar);background:var(--surface);color:var(--ink);padding:8px 10px;cursor:pointer;display:flex;gap:6px;align-items:center}
+.vbtn i{font-style:normal;opacity:.55}
+.vbtn.on{background:var(--rar);color:var(--on-a)}
+.vcard{border:2px solid var(--edge);background:var(--surface);box-shadow:8px 8px 0 var(--shadow)}
+.vc-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 18px;padding:26px clamp(16px,3vw,28px) 18px;background:var(--navbg);color:var(--navfg);border-bottom:6px solid var(--rar);position:relative}
+.vc-idx{font:700 12px/1 var(--f-mono);color:var(--rar);position:absolute;top:12px;right:16px}
+.vc-main{flex:1;min-width:0}
+.vc-verb{font:400 clamp(46px,9vw,84px)/.9 var(--f-disp);letter-spacing:.01em;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.vc-forms{font:500 13px/1.5 var(--f-mono);opacity:.82;margin-top:8px}
+.vc-tag{font:700 11.5px/1 var(--f-mono);letter-spacing:.12em;background:var(--rar);color:var(--on-a);padding:7px 10px;text-transform:uppercase}
+.vc-core{padding:18px clamp(16px,3vw,28px) 4px;display:grid;gap:4px}
+.core-en{font:700 clamp(17px,2.3vw,21px)/1.3 var(--f-head);margin:0}
+.core-ru{margin:0;font-size:16px}
+.stress{font:600 13px/1.4 var(--f-mono);margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+.stress span{border:1.5px solid var(--edge);padding:5px 8px;background:var(--surface2)}
+.stress b{color:var(--a3)}
+.vc-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:16px clamp(16px,3vw,28px) 26px}
+.blk{border:2px solid var(--edge);padding:14px 16px;background:var(--surface2);min-width:0;font-size:15.5px;line-height:1.55}
+.blk.full{grid-column:1/-1}
+.blk h4{font:700 11.5px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:var(--a3)}
+.blk p{margin:0 0 8px}
+.blk p:last-child{margin-bottom:0}
+.means{margin:0;padding:0;list-style:none;counter-reset:m;display:grid}
+.means li{counter-increment:m;display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:8px;padding:9px 0;border-bottom:1px dashed var(--edge2)}
+.means li:last-child{border-bottom:0}
+.means li::before{content:counter(m);grid-row:span 3;font:400 26px/1 var(--f-disp);color:var(--a3)}
+.m-lab{font-weight:700}
+.m-ex{font-style:italic;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.m-ru{font-size:14.5px}
+.blk.mirror{background:var(--a2);color:var(--on-a)}
+.blk.mirror h4{color:var(--on-a)}
+.blk.mirror .ru{color:inherit;opacity:.8}
+.trap p{margin:0 0 10px}
+.trap .x{color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
+.trap .y{color:var(--ok);font-weight:700}
+.tnote{display:block;font-size:13.5px;margin-top:2px;color:var(--muted)}
+.coll{width:100%;border-collapse:collapse;font-size:15px}
+.coll td{padding:6px 4px;border-bottom:1px dashed var(--edge2);vertical-align:top}
+.coll tr:last-child td{border-bottom:0}
+.coll td:first-child{font-weight:600;padding-right:12px}
+.fam{margin:0;padding-left:18px;display:grid;gap:6px}
+.blk.ety{background:var(--navbg);color:var(--navfg);border-color:var(--rar)}
+.blk.ety h4{color:var(--rar)}
+.blk.ety p{max-width:82ch}
+.vnav{justify-content:space-between}
+@media(max-width:720px){.vc-body{grid-template-columns:1fr}}
+
+/* ---------- practice ---------- */
+.wb{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:12px;border:2px dashed var(--edge2);background:var(--surface2)}
+.wbw{font:700 13px/1 var(--f-mono);padding:7px 9px;border:1.5px solid var(--edge);background:var(--surface);color:var(--ink);cursor:pointer}
+.wbw.used{text-decoration:line-through;opacity:.4}
+.ex{margin:0;padding:0;list-style:none;counter-reset:e}
+.ex>li{counter-increment:e;display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:8px;padding:12px 0;border-bottom:1px dashed var(--edge2);font-size:17px;align-items:baseline}
+.ex>li:last-child{border-bottom:0}
+.ex>li::before{content:counter(e);font:700 13px/1 var(--f-mono);color:var(--a3)}
+.exs{min-width:0;line-height:2}
+.exh{grid-column:2;font-size:14px}
+.inp{font:600 16px/1.3 var(--f-mono);color:var(--ink);background:var(--surface2);border:0;border-bottom:2.5px solid var(--ink);padding:4px 8px;min-width:0;max-width:100%;border-radius:0}
+.inp.fill{width:min(230px,100%)}
+.inp:focus,.gap:focus{outline:none;border-bottom-color:var(--a3);background:var(--surface)}
+.inp.ok,.gap.ok{border-bottom-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+.inp.bad,.gap.bad{border-bottom-color:var(--bad);background:var(--bad-bg);color:var(--bad)}
+.inp.shown,.gap.shown{border-bottom-style:dashed}
+.fx{min-width:0}
+.fx-s{margin:0;line-height:2}
+.tk{display:inline-block;cursor:pointer;padding:0 2px;border-radius:2px}
+.tk:hover{background:var(--surface2);box-shadow:inset 0 -2px 0 var(--a3)}
+.tk.miss{background:var(--bad-bg);animation:shake .35s}
+.tk.hit{background:var(--bad-bg);color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.fix-ans{display:none;margin-top:6px;font-size:15.5px}
+li.solved .fix-ans{display:block}
+.fix-ans .y{color:var(--ok);font-weight:700}
+.fix-ans .why{color:var(--muted);display:block;font-size:14px;margin-top:2px}
+.rwb{display:grid;gap:8px;min-width:0}
+.orig{margin:0;font-weight:500}
+.rwin{width:100%}
+.rwm{margin:0;color:var(--ok);font-weight:600}
+.hint summary{cursor:pointer;font:700 11px/1.6 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.hint{font-size:14.5px}
+
+/* ---------- text 2 ---------- */
+.a2 p{line-height:2.3}
+.gapw{display:inline-flex;align-items:baseline;gap:3px;white-space:nowrap;max-width:100%}
+.gnum{font:700 10px/1 var(--f-mono);background:var(--ink);color:var(--bg);padding:3px 4px;align-self:center}
+.gap{font:600 15.5px/1.2 var(--f-mono);color:var(--paper-ink);background:var(--surface2);border:0;border-bottom:2.5px solid var(--paper-ink);padding:2px 4px;max-width:58vw;border-radius:0}
+.gh{font-size:12px;font-family:var(--f-body)}
+
+/* ---------- speak + hw ---------- */
+.spin-card{font:700 clamp(19px,2.8vw,26px)/1.35 var(--f-head);padding:28px 22px;border:3px solid var(--edge);background:var(--a1);color:var(--on-a);text-align:center;min-height:130px;display:grid;place-items:center;transform:rotate(-.6deg);text-wrap:balance}
+.spin-card .ru{display:block;color:inherit;opacity:.7;font:500 15px/1.4 var(--f-body);margin-top:6px}
+.spin-card.go{animation:popin .4s}
+@keyframes popin{0%{transform:scale(.92) rotate(2deg)}100%{transform:rotate(-.6deg)}}
+.links{margin:0;padding-left:20px;display:grid;gap:8px}
+.links a{font-weight:700;color:var(--ink);text-decoration-color:var(--a3);text-decoration-thickness:2px;text-underline-offset:3px}
+.task{font-weight:600;border-left:4px solid var(--a3);padding-left:12px;margin:14px 0 0}
+.help{margin:0 0 14px;padding-left:20px;display:grid;gap:4px;font-size:15.5px}
+.hwta{width:100%;font:500 16px/1.6 var(--f-body);color:var(--ink);background:var(--surface2);border:2px solid var(--edge);padding:12px 14px;resize:vertical;border-radius:0}
+.hwmeta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:10px 0;font:700 12px/1 var(--f-mono)}
+.vchk{display:flex;flex-wrap:wrap;gap:6px}
+.vc{font:700 12px/1 var(--f-mono);padding:6px 8px;border:1.5px dashed var(--edge2);color:var(--muted)}
+.vc.on{border-style:solid;border-color:var(--edge);background:var(--a2);color:var(--on-a)}
+
+#toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--a3);color:var(--on-a3);font:700 13px/1 var(--f-mono);padding:10px 14px;border:2px solid var(--edge);box-shadow:4px 4px 0 var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:400;white-space:nowrap}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---------- review quiz ---------- */
+.blank{display:inline-block;min-width:84px;border-bottom:2.5px solid var(--ink);text-align:center;font:600 15px/1.4 var(--f-mono);color:var(--muted);padding:0 6px}
+.blank.filled{color:var(--ok);border-bottom-color:var(--ok)}
+.mcq-opts{grid-column:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.mcq-o{font:700 13px/1 var(--f-mono);border:2px solid var(--edge);background:var(--surface2);color:var(--ink);padding:8px 11px;cursor:pointer}
+.mcq-o:hover{border-color:var(--a3)}
+.mcq-o.ok{background:var(--ok-bg);color:var(--ok);border-color:var(--ok)}
+.mcq-o.bad{background:var(--bad-bg);color:var(--bad);text-decoration:line-through}
+li.done .mcq-o:not(.ok){opacity:.45}
+button.vc{cursor:pointer;background:transparent}
+
+.mast{background:var(--surface);border:3px solid var(--edge);box-shadow:8px 8px 0 var(--shadow);overflow:hidden}
+.flag{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;background:var(--a3);color:var(--on-a3);padding:14px clamp(16px,3vw,30px) 11px;border-bottom:3px solid var(--edge)}
+.flag .nm{font:italic 900 clamp(24px,4.2vw,40px)/1 var(--f-serif);letter-spacing:-.01em}
+.flag .flmeta{font:700 11px/1.4 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.mbody{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;padding:26px clamp(16px,3vw,30px) 30px;align-items:center}
+.excl{display:inline-block;font:400 18px/1 var(--f-disp);letter-spacing:.12em;background:var(--ink);color:var(--a1);padding:7px 12px 4px;transform:rotate(-2deg);margin-bottom:14px;text-transform:uppercase}
+.mast h1{font:400 clamp(56px,10vw,118px)/.84 var(--f-disp);margin:0;text-transform:uppercase;color:var(--ink)}
+.mast h1 .kc{display:block;color:var(--pink)}
+.mdeck{font:italic 800 clamp(18px,2.3vw,24px)/1.25 var(--f-serif);margin:16px 0 0}
+.mast .sub{font-size:15px;color:var(--muted);margin:12px 0 0;max-width:52ch}
+.mast .sub .ru{display:block;margin-top:4px}
+.jumbo{border:3px solid var(--ink);background:var(--screen);padding:10px 10px 12px;box-shadow:6px 6px 0 var(--pink);transform:rotate(1.5deg);min-width:0}
+.jt{font:700 12px/1 var(--f-mono);letter-spacing:.3em;color:var(--pink);text-align:center;padding:4px 0 9px}
+.scr{position:relative;aspect-ratio:16/10;max-width:100%;background:radial-gradient(circle at 50% 55%,var(--screen-glow),var(--screen) 70%);display:grid;place-items:center;overflow:hidden;border:1px solid var(--screen-line)}
+.scr::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 2px,transparent 2px 4px);pointer-events:none}
+.scr .h{font-size:clamp(64px,10vw,120px);line-height:1;color:var(--pink);animation:beat 1.2s ease-in-out infinite;text-shadow:0 0 24px rgba(255,46,136,.6)}
+.scr .rec{position:absolute;top:8px;left:10px;font:700 10px/1 var(--f-mono);color:var(--rec);letter-spacing:.1em;animation:blink 1s steps(2) infinite}
+.quote{font:italic 400 13.5px/1.45 var(--f-read);color:var(--screen-text);margin:10px 4px 0;text-align:center}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.16)}28%{transform:scale(.98)}42%{transform:scale(1.08)}}
+@keyframes blink{50%{opacity:.2}}
+@media(max-width:760px){.mbody{grid-template-columns:1fr}.jumbo{max-width:420px}}
+
+
+/* Part 3 masthead: a dating-app profile card stamped SCAM */
+.tprof{position:relative;justify-self:center;width:100%;max-width:340px;min-width:0;background:var(--surface);border:3px solid var(--ink);border-radius:22px;padding:12px 12px 16px;box-shadow:6px 6px 0 var(--pink);transform:rotate(1.5deg);overflow:hidden}
+.tp-top{display:flex;justify-content:space-between;gap:8px;font:700 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:2px 4px 10px}
+.tp-app{color:var(--pink)}
+.tp-photo{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:14px;border:2px solid var(--ink);background:linear-gradient(160deg,#ffd1e3 0%,#ff7aa8 45%,#2b1030 100%);display:grid;place-items:center;overflow:hidden}
+.tp-jet{position:absolute;left:16px;top:10px;font-size:clamp(44px,7vw,60px);line-height:1;color:#fff;transform:rotate(-18deg);text-shadow:0 6px 18px rgba(0,0,0,.3)}
+.tp-gem{position:absolute;right:14px;bottom:10px;font-size:26px;color:#bdf4ff;text-shadow:0 0 12px rgba(189,244,255,.9)}
+.tp-name{font:400 34px/1 var(--f-disp);margin-top:12px;letter-spacing:.02em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.tp-name i{font:italic 800 15px/1 var(--f-serif);color:var(--a3)}
+.tp-bio{font:600 13px/1.4 var(--f-body);color:var(--muted);margin-top:4px}
+.tp-acts{display:flex;justify-content:center;gap:22px;margin-top:12px}
+.tp-acts span{width:50px;height:50px;border-radius:50%;border:2.5px solid var(--ink);display:grid;place-items:center;font:700 22px/1 var(--f-body);background:var(--surface)}
+.tp-h{color:var(--pink);animation:beat 1.4s ease-in-out infinite}
+.tp-x{color:var(--muted)}
+.stamp{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%) rotate(-14deg);font:400 58px/1 var(--f-disp);letter-spacing:.14em;color:var(--a3);border:5px solid var(--a3);padding:8px 18px 2px;text-transform:uppercase;background:rgba(251,250,246,.78);pointer-events:none}
+.instr a{color:var(--a3);font-weight:700;text-decoration-thickness:2px;text-underline-offset:3px}
+@media(max-width:760px){.tprof{max-width:320px}}
+</style>
+</head>
+<body>
+<nav class="top" id="top" aria-label="Lesson sections"></nav>
+<main class="wrap" id="main"></main>
+<div id="pop" hidden></div><div id="toast" role="status" aria-live="polite"></div>
+<script>window.LESSON={"id": "kr-part3", "ui": {"brand": "NEURO-FLUENT", "scoreLabel": "SCORE", "scoreUnit": "pts", "pts": {"find": 10, "tf": 5, "match": 10, "fill": 10, "fix": 10, "rew": 15, "gap": 10}, "found": "Found", "showAll": "Show all", "check": "Check", "reset": "Reset", "show": "Show answers", "allFound": "All 10 found! Scam detector!", "perfect": "Perfect score!", "allMeanings": "All meanings · все значения", "grammar": "Grammar · грамматика", "mirror": "Russian mirror · русское зеркало", "nuance": "Nuance · как это звучит", "trap": "Trap · ловушка", "coll": "Collocations · сочетания", "family": "Word family · семья слов", "ety": "Deep dive · откуда слово", "prevCard": "Prev", "nextCard": "Next verb", "hint": "Hint", "rwPh": "Type the new sentence…", "copy": "Copy my text", "copied": "Copied! Send it to Artyom", "copyFallback": "Text selected: press Ctrl+C", "words": "words", "verbsUsed": "new verbs used", "noTTS": "No English voice in this browser"}, "order": [["start", "Start"], ["review", "Review"], ["talk", "Talk"], ["read", "Read"], ["guess", "Guess"], ["cards", "Cards"], ["practice", "Practice"], ["text2", "Text 2"], ["speak", "Verdict"], ["hw", "Homework"]], "plan": [["00", "Start: plan + 10 mystery verbs", "2", "0–2"], ["01", "Review: 20 verbs from Part 1 + 2", "12", "2–14"], ["02", "Warm-up: dating apps and money", "6", "14–20"], ["03", "Read the Tinder Swindler story + hunt", "12", "20–32"], ["04", "Guess: drag the verbs", "6", "32–38"], ["05", "Deep dive: 10 new verbs", "17", "38–55"], ["06", "Practice: fill · fix · rewrite", "12", "55–67"], ["07", "Text 2: Anna Delvey", "9", "67–76"], ["08", "The verdict + error correction", "14", "76–90"], ["09", "Homework", "", "after"]], "start": {"planTitle": "Today · 90 min", "lootTitle": "10 new mystery verbs", "lootInstr": ["They unlock when you find them in the Tinder story. The 20 old verbs are in the Review tab.", "Откроются, когда найдёте их в истории. 20 старых глаголов — во вкладке Review."], "howto": "<p><b>← →<\/b> keys or the tabs switch sections.<\/p><p>Pink-underlined words: click for Russian.<\/p><p class=\"ru\">RU ON/OFF (вверху справа) прячет всю русскую помощь.<\/p>"}, "review": {"title": "Review: Part 1 + Part 2", "mins": 12, "instr": ["20 old verbs, three quick rounds: the stories, quick fire, then Alias.", "20 старых глаголов, три быстрых раунда: истории, блиц и Alias."], "oldVerbs": ["show up", "freak out", "blow up", "find out", "cheat on", "look into", "step down", "get away with", "split up", "move on", "set off", "turn back", "go on", "end up", "pick up", "get through", "leave behind", "look for", "turn out", "come forward"], "recapTitle": "Remember the stories?", "recapInstr": ["Fill the gaps with the old verbs in the right form.", "Заполните пропуски старыми глаголами в правильной форме."], "recap": {"dateline": "Part 1 + Part 2 · recap", "headline": "Two stories in 90 seconds", "paras": ["Part 1. At a Coldplay concert in July 2025, a CEO and the head of HR ((showed up|появились)) on the kiss cam. They ((freaked out|запаниковали)) and hid. The video ((blew up|залетело)), the internet soon ((found out|узнал)) who they were, and a few days later the CEO ((stepped down|ушёл с поста)).", "Part 2. In January 2025, Thomas and Kerstin ((set off|отправились)) to climb the Grossglockner. Other climbers ((turned back|повернули назад)), but they ((went on|пошли дальше)). The police called Thomas, but he didn't ((pick up|брать трубку)). Later it ((turned out|оказалось)) that Kerstin was climbing in soft snowboard boots."]}, "quizTitle": "Quick fire", "quizInstr": ["The other 10 old verbs, new situations. Click the right one, then say the sentence out loud.", "Другие 10 старых глаголов в новых ситуациях. Кликните правильный и скажите фразу вслух."], "quiz": [["We planned a quiet evening, but we ___ in a karaoke bar until 3 a.m.", ["ended up", "looked for", "came forward"], 0, "в итоге оказались"], ["I called the airline for two hours, but I couldn't ___.", ["split up", "get through", "move on"], 1, "дозвониться"], ["He went on holiday and ___ with the neighbours.", ["got through to his dog", "looked for his dog", "left his dog behind"], 2, "оставил собаку"], ["Excuse me, I'm ___ my glasses. Have you seen them?", ["looking for", "looking into", "getting away with"], 0, "ищу"], ["After the accident, two witnesses ___ and talked to the police.", ["cheated on", "split up", "came forward"], 2, "откликнулись"], ["My brother ___ his girlfriend, and she found out on Instagram.", ["moved on", "cheated on", "ended up"], 1, "изменил"], ["Thanks for your email. The bank will ___ your problem.", ["look into", "look for", "leave behind"], 0, "разберётся"], ["He didn't buy a train ticket for a year, and he ___ it!", ["ended up", "came forward", "got away with"], 2, "ему сошло с рук"], ["Masha and Dima ___ last month. Now they don't talk.", ["got through", "split up", "looked into"], 1, "расстались"], ["Your ex is married now. It's time to ___.", ["go on", "move on", "end up"], 1, "отпустить и жить дальше"]], "retellTitle": "Alias: 5 minutes", "retellInstr": ["Open the <a href=\"https://neurofluent-alias.vercel.app/phrasal-verbs/\" target=\"_blank\" rel=\"noopener\">Alias game with the 20 old verbs ↗<\/a>. Take turns: one explains a verb, the other guesses. Tap a verb below every time someone uses it in a sentence.", "Один объясняет глагол, другой угадывает. Нажимайте на глагол, когда кто-то использует его в предложении."]}, "talk": {"title": "Warm-up: dating apps and money", "mins": 6, "instr": ["Talk in pairs. Short answers are OK, but give a reason.", "Говорите в парах. Можно коротко, но с причиной."], "qs": [["Have you or your friends ever used a dating app? Good or bad experience?", "Вы или ваши друзья пользовались приложениями для знакомств? Как впечатления?"], ["What is a red flag on a first date?", "Что такое «красный флаг» на первом свидании?"], ["Would you lend money to a partner you met two months ago? How much?", "Дали бы денег в долг партнёру, с которым знакомы два месяца? Сколько?"], ["Why do people show their money on Instagram?", "Зачем люди показывают свои деньги в Instagram?"], ["Have you ever got a scam call or message? What did they want?", "Вам когда-нибудь звонили или писали мошенники? Что им было нужно?"]], "game": {"title": "Would you rather…?", "instr": ["Pick one, then explain: “I'd rather… because…”", "Выберите одно и объясните."], "items": [["pay for everything on the first date", "split the bill 50/50"], ["date a rich liar", "date a poor but honest person"], ["meet a partner on an app", "meet a partner at work"], ["lend a friend $1,000", "never lend money to friends"], ["check your date's Instagram before you meet", "know nothing before you meet"]]}, "phrasesTitle": "Useful phrases", "phrases": [["I'd rather… because…", "Я бы скорее…, потому что…"], ["That's a red flag.", "Это красный флаг."], ["No way!", "Ни за что!"], ["It depends.", "Смотря как."], ["To be honest…", "Если честно…"]]}, "read": {"title": "Read + hunt", "mins": 12, "instr": ["Read the true story. 10 phrasal verbs are hiding in it. Three of them are split by a word in the middle, and one verb appears twice with two different meanings! Find and click them. Pink-underlined words: click for Russian.", "Прочитайте реальную историю. В ней 10 фразовых глаголов: три разорваны словом посередине, а один встречается дважды с разными значениями! Найдите и кликните. Слова с розовым подчёркиванием — перевод по клику."], "tip": ["Look for: off · for · up · into · out · back · down", "Ищите маленькие слова после глагола"], "dateline": "London → Munich → Batumi · 2018–2025", "headline": "The Tinder Swindler", "deck": "A fake prince, a private jet, and the women who paid for it", "paras": ["In 2018, Cecilie Fjellhøy, a young woman from Norway, was living in London. One day on Tinder she got a new {{match|совпадение (в приложении)}}: Simon Leviev. In his photos he was on private jets and in five-star hotels. He said he was the son of a diamond {{billionaire|миллиардер}}, and he loved to [[showoff|show off]]: expensive watches, {{bodyguards|телохранители}}, champagne.", "On their first date, they [[hititoff|hit it off]]. Soon he was flying her around Europe on his private jet. He sent her messages and voice notes every day, and Cecilie [[fallfor|fell for]] him. “This is the man of my dreams,” she thought.", "Then one day he sent her a photo of his bodyguard with blood on his face. “My {{enemies|враги}} attacked us,” he said. “I can't use my credit card now. They can find me. Can you help me, babe?” The women say it was all a lie: he [[makeup|made up]] the enemies and the danger.", "He was very good with words, and he [[talkinto|talked]] Cecilie [[talkinto|into]] helping him. She [[takeout|took out]] loans from ten banks and sent him the money: more than $250,000 in the end. Cecilie [[fallfor|fell for]] his story too. He promised to [[payback|pay]] her [[payback|back]], and he even sent her a document from a bank. It was {{fake|фальшивый}}.", "Where did the money go? Her bank statements showed that some of it paid for flights for another woman. The women say he [[ripoff|ripped off]] one woman to impress the next one. A woman from the Netherlands, Ayleen Charlotte, gave him $140,000.", "Cecilie went to the police and to VG, a Norwegian newspaper. Its journalists worked on the case for six months and finally [[trackdown|tracked down]] Simon in a luxury hotel in Munich. In February 2019, VG published the story. Ayleen read it on a plane. She {{pretended|притворилась}} to still love him, sold his designer clothes online and called the police. In June 2019, he was arrested at Athens airport.", "He was sent to Israel, where a court gave him 15 months in prison for old {{crimes|преступления}} of fraud and theft. But he was [[lockup|locked up]] for only five months. In 2022, Netflix made a documentary about him, <i>The Tinder Swindler<\/i>, and Tinder banned him.", "Then the story came to Georgia. In a video from Dubai, he said: “You will never see me in prison. No more.” But on 15 September 2025, police arrested him at Batumi airport. Germany wanted him: a woman in Berlin said that he [[ripoff|ripped]] her [[ripoff|off]] for up to €50,000. He spent two months in prison in Kutaisi. Then Germany {{dropped|прекратила}} the case, and he walked out free."], "source": "Adapted for A2 from: VG (Feb 2019), Rolling Stone (Feb 2022), Khaleej Times (Sept 2025), AFP via the Jamaica Observer (Nov 2025) and Netflix's “The Tinder Swindler” (2022). Leviev denies wrongdoing, and he has not been charged for the crimes the women describe.", "tfTitle": "True or false?", "tf": [["Simon said he was the son of a diamond billionaire.", true, "“He said he was the son of a diamond billionaire.”"], ["Cecilie and Simon didn't like each other on the first date.", false, "They hit it off on the first date."], ["Cecilie took out loans from ten banks.", true, "“She took out loans from ten banks.”"], ["Simon paid the money back with a real bank transfer.", false, "He sent her a document from a bank, but it was fake."], ["In 2025, he went to prison in Georgia for many years.", false, "Two months in Kutaisi, then Germany dropped the case."]]}, "guess": {"title": "Guess the meaning", "mins": 6, "instr": ["No dictionary! Read the sentences, then drag each verb onto its meaning. Phone: tap the verb, then tap the meaning.", "Без словаря! Перетащите глагол на значение. На телефоне: нажмите глагол, потом значение."], "ctxTitle": "The verbs in the story"}, "cards": {"title": "Deep dive: 10 new verbs", "mins": 17, "instr": ["One verb at a time. Listen and repeat, translate the examples, read the trap. The “Russian mirror” box is the secret trick.", "По одному. Слушаем, повторяем, переводим примеры, читаем ловушку. «Русское зеркало» — главный трюк."], "rule": "<span><b>Big idea.<\/b> <b>fall for<\/b> has two meanings: fall for <b>someone<\/b> = влюбиться, fall for <b>a story<\/b> = повестись. The swindler made the women do both.<\/span><span>A scam in 4 steps: <b>show off<\/b> → <b>hit it off<\/b> → <b>fall for<\/b> → <b>talk into<\/b>.<\/span><span class=\"ru\">Влюбиться и повестись — в английском это один глагол.<\/span>"}, "practice": {"title": "Practice", "mins": 12, "instr": ["Three rounds: fill, fix, rewrite.", "Три раунда: вставить, исправить, переписать."], "fill": {"title": "Fill the gap", "instr": ["Write the phrasal verb in the right form (showing off, took out, paid…).", "Впишите глагол в правильной форме."], "items": [["Stop ___! Nobody cares about your new car.", "showing off", "выпендриваться"], ["We met at a party and ___ immediately.", "hit it off", "сразу понравились друг другу"], ["It's a scam. Don't ___ it!", "fall for", "не ведись"], ["He had no real excuse, so he ___ a story about his sick grandmother.", "made up", "выдумал"], ["My friend ___ buying a motorbike. Now I'm sorry!", "talked me into", "уговорил меня"], ["They ___ a loan to buy a flat.", "took out", "взяли кредит"], ["$15 for a beer? We got ___!", "ripped off", "нас развели"], ["Can you lend me $50? I'll ___ on Friday.", "pay you back/pay back/pay it back", "верну тебе"], ["The police finally ___ the thief in Spain.", "tracked down", "выследили"], ["He stole a car and was ___ for two years.", "locked up", "сидел в тюрьме"]]}, "fix": {"title": "Find the mistake", "instr": ["Every sentence has ONE mistake. Click the wrong word(s), then say the correct sentence out loud.", "В каждом предложении одна ошибка. Кликните на неё и скажите правильно вслух."], "items": [{"s": "He *showed up* his new Rolex on Instagram.", "fix": "He showed off his new Rolex on Instagram.", "why": "show up = появиться (Part 1). Хвастаться = show off."}, {"s": "We *hit off* on the first date.", "fix": "We hit it off on the first date.", "why": "Без it не работает: hit it off."}, {"s": "She *fell in him* in one week.", "fix": "She fell for him in one week.", "why": "Влюбиться в кого-то = fall for someone (или fall in love with)."}, {"s": "He *invented up* a story about his enemies.", "fix": "He made up a story about his enemies.", "why": "Выдумать = make up. Invent — без up."}, {"s": "He *talked her to help* him.", "fix": "He talked her into helping him.", "why": "talk someone into + -ing."}, {"s": "She *took a credit* from the bank.", "fix": "She took out a loan from the bank.", "why": "Кредит в банке = a loan. Взять = take out."}, {"s": "The taxi driver *ripped off us*.", "fix": "The taxi driver ripped us off.", "why": "Местоимение — в середину."}, {"s": "He never *payed* her back.", "fix": "He never paid her back.", "why": "pay — paid (не payed)."}, {"s": "The police *tracked down him* in Greece.", "fix": "The police tracked him down in Greece.", "why": "Местоимение — в середину."}, {"s": "He was *closed* in prison for five months.", "fix": "He was locked up for five months.", "why": "Посадить = lock up. Close — про двери и магазины."}]}, "rew": {"title": "Rewrite it", "instr": ["Say the same thing with a phrasal verb from today. Type the new sentence.", "Скажите то же самое с фразовым глаголом. Напечатайте новое предложение."], "items": [{"s": "He always shows people his expensive things.", "re": "\\bshow(s|ed|ing)?\\s+(\\w+\\s+){0,3}off", "model": "He always shows off his expensive things.", "hint": "выпендривается"}, {"s": "We liked each other immediately.", "re": "\\bhit\\s+it\\s+off", "model": "We hit it off immediately.", "hint": "сразу поладили"}, {"s": "She believed his lie.", "re": "\\bfell\\s+for", "model": "She fell for his lie.", "hint": "повелась"}, {"s": "That story isn't true. He invented it.", "re": "\\bmade\\s+(\\w+\\s+){0,2}up", "model": "He made it up.", "hint": "выдумал"}, {"s": "My wife persuaded me to buy a dog.", "re": "\\btalked\\s+(\\w+\\s+){0,2}into", "model": "My wife talked me into buying a dog.", "hint": "уговорила"}, {"s": "They got a loan from the bank.", "re": "\\btook\\s+(\\w+\\s+){0,2}out", "model": "They took out a loan.", "hint": "взяли кредит"}, {"s": "The hotel asked us for far too much money.", "re": "\\bripped\\s+(\\w+\\s+){0,2}off", "model": "The hotel ripped us off.", "hint": "ободрали"}, {"s": "When will you return my money?", "re": "\\bpay\\s+(\\w+\\s+){0,2}back", "model": "When will you pay me back?", "hint": "вернёшь"}, {"s": "After a long search, the journalists found him.", "re": "\\btracked\\s+(\\w+\\s+){0,2}down", "model": "After a long search, the journalists tracked him down.", "hint": "выследили"}, {"s": "He went to prison for 15 months.", "re": "\\blocked\\s+(\\w+\\s+){0,2}up", "model": "He was locked up for 15 months.", "hint": "посадили"}]}}, "text2": {"title": "Text 2 · the fake heiress", "mins": 9, "instr": ["Another fake rich person, another city. Same 10 verbs: write them in the right form. One verb needs two gaps. Stronger student: turn RU OFF.", "Ещё одна фальшивая богачка, другой город. Те же 10 глаголов в правильной форме. Одному глаголу нужно два пропуска. Сильный студент: выключите RU."], "dateline": "New York · 2013 → 2024", "headline": "The fake heiress", "deck": "She had no money, but New York believed she had $67 million", "paras": ["Anna Sorokin was born near Moscow in 1991 and grew up in Germany. In 2013, she moved to New York with a new name, Anna Delvey, and a new story that she ((made up|выдумала)): she was a rich German {{heiress|наследница}} with a fortune of about $67 million.", "She lived in expensive hotels and ((showed off|выпендривалась)) on Instagram: designer clothes, private dinners, big tips. Rich New Yorkers ((fell for|повелись на)) her story.", "She ((hit it off|сразу подружилась)) with Rachel, a photo editor at <i>Vanity Fair<\/i> magazine, and soon they were best friends.", "Anna wanted to open a private art club. She tried to ((take out|взять)) a $22 million loan. That didn't work, but she ((talked|уговорила)) one bank ((into|на)) lending her $100,000. She never returned that money.", "In 2017, Anna invited Rachel on a luxury trip to Morocco. At the hotel, Anna's cards didn't work, so Rachel paid: about $62,000. Anna promised to ((pay her back|вернуть ей деньги)). Rachel says she never got the money.", "Anna also ((ripped off|обманула)) hotels and restaurants: she ate, slept and didn't pay. With Rachel's help, the police ((tracked her down|выследили её)) in Los Angeles in October 2017.", "In 2019, a court in New York found her guilty, and she was ((locked up|сидела)) until February 2021. In 2022, Netflix made a series about her, <i>Inventing Anna<\/i>, and in 2024 she was on the TV show <i>Dancing with the Stars<\/i>."], "source": "Adapted for A2 from: NBC News (Apr 2019), A&E (2024) and wide coverage of the case. In court, Anna was found not guilty of the Morocco charge; Rachel told her side of the story in her own book."}, "speak": {"title": "The verdict", "mins": 14, "instr": ["Talk in pairs. Use at least 5 new verbs and 2 old ones from Part 1 or 2. Artyom turns off his camera and writes down mistakes. Error correction at the end.", "Говорите в парах: минимум 5 новых глаголов и 2 старых. Артём выключает камеру и записывает ошибки. В конце разбор."], "blocks": [{"title": "Debate", "instr": ["Agree or disagree? Why?", "Согласны или нет? Почему?"], "items": [["The women are victims. It can happen to anyone.", "Женщины — жертвы. Такое может случиться с каждым."], ["Dating apps should check every user's passport.", "Приложения для знакомств должны проверять паспорт каждого."], ["Who should be locked up longer, Simon or Anna? Why?", "Кого надо посадить на дольше, Саймона или Анну? Почему?"], ["Ayleen was right to sell his clothes. Payback is OK.", "Эйлин правильно сделала, что продала его одежду. Месть — это нормально."], ["Why do people fall for people who show off money?", "Почему люди ведутся на тех, кто светит деньгами?"], ["Anna got money for the rights to her life story. Should criminals make money from their stories?", "Анна получила деньги за права на свою историю. Должны ли преступники зарабатывать на своих историях?"]]}, {"title": "Role-play (pick one)", "instr": ["2 minutes each. Use 5 new verbs.", "По 2 минуты, 5 новых глаголов."], "items": [["First date: one of you is the swindler, the other asks questions and looks for red flags.", "Первое свидание: один — аферист, другой задаёт вопросы и ищет красные флаги."], ["A phone call: the swindler tries to talk his girlfriend into taking out a loan. She says no.", "Звонок: аферист уговаривает девушку взять кредит. Она отказывается."], ["Police interview: a detective asks Ayleen how she helped to track him down.", "Допрос: детектив спрашивает Эйлин, как она помогла его выследить."]]}], "spin": {"title": "Your story", "instr": ["Spin, then tell a story for 1 minute: true or invented!", "Крутите и расскажите историю на минуту, правдивую или выдуманную!"], "start": "Click SPIN →", "btn": "Spin", "items": [["Someone you know who loves to <b>show off<\/b>.", "Знакомый, который любит выпендриваться."], ["A person you <b>hit it off<\/b> with right away.", "Человек, с которым вы сразу нашли общий язык."], ["A time you <b>fell for<\/b> a trick or a scam.", "Когда вы повелись на трюк или развод."], ["An excuse you <b>made up<\/b> at school or at work.", "Отговорка, которую вы выдумали в школе или на работе."], ["A time a friend <b>talked<\/b> you <b>into<\/b> something crazy.", "Когда друг уговорил вас на что-то безумное."], ["Would you <b>take out<\/b> a loan for a dream? Which dream?", "Взяли бы кредит ради мечты? Какой?"], ["A place where tourists get <b>ripped off<\/b>.", "Место, где обдирают туристов."], ["Someone who never <b>paid<\/b> you <b>back<\/b>.", "Человек, который так и не вернул вам долг."], ["Something you <b>tracked down<\/b> after a long search.", "Что вы разыскали после долгих поисков."], ["A film or series about someone who was <b>locked up<\/b>.", "Фильм или сериал про того, кто сидел в тюрьме."]]}}, "hw": {"title": "Homework", "instr": ["Three tasks. Send them to Artyom before the next lesson.", "Три задания. Пришлите Артёму до следующего урока."], "listen": {"title": "Listen", "instr": ["Watch 2 short videos in English with English subtitles. Write down 3 phrasal verbs you hear.", "Посмотрите 2 коротких видео с английскими субтитрами. Выпишите 3 фразовых глагола."], "links": [["Netflix trailer: “The Tinder Swindler”", "https://www.youtube.com/results?search_query=the+tinder+swindler+netflix+trailer", "трейлер Netflix"], ["News: the Tinder Swindler arrested in Batumi (2025)", "https://www.youtube.com/results?search_query=tinder+swindler+arrested+georgia+batumi", "арест в Батуми"], ["Netflix trailer: “Inventing Anna”", "https://www.youtube.com/results?search_query=inventing+anna+netflix+trailer", "сериал про Анну Делви"]], "task": "Bonus: in the Tinder Swindler trailer, what does he ask the women for? One sentence."}, "write": {"title": "Write", "instr": ["8–10 sentences. Choose one. A: Who is worse, Simon or Anna? Why? B: You are a detective. Write tips: how not to fall for a dating scam. Use at least 6 new verbs. Bonus: use 2 verbs from Part 1 or 2. The boxes light up for the new verbs.", "8–10 предложений. A: Кто хуже, Саймон или Анна? Почему? B: Вы детектив: советы, как не попасться на развод в приложении знакомств. Минимум 6 новых глаголов, бонус: 2 глагола из Part 1 или 2."], "help": [["In my opinion, … is worse because…", "По-моему, … хуже, потому что…"], ["Never… / Always…", "Никогда не… / Всегда…"], ["If someone shows off a lot, it's a red flag.", "Если человек сильно выпендривается, это красный флаг."]], "ph": "In my opinion, … is worse because…"}, "voice": {"title": "Voice message", "instr": ["Record a 1–2 minute voice message for Artyom in Telegram.", "Запишите голосовое на 1–2 минуты Артёму в Telegram."], "steps": [["You are a true-crime podcast host. Tell the Tinder Swindler story in your own words.", "Вы ведущий тру-крайм подкаста: расскажите историю своими словами."], ["Use 6 new phrasal verbs.", "Используйте 6 новых фразовых глаголов."], ["End with your tip: how not to fall for a scam.", "В конце ваш совет: как не попасться на развод."], ["Artyom will reply with a voice message.", "Артём ответит голосовым."]]}}, "pvs": [{"k": "showoff", "v": "show off", "ctx": "…and he loved to <b>show off<\/b>: expensive watches, bodyguards, champagne.", "def": "to try to impress people with your money, your things or your skills", "ru": "выпендриваться, хвастаться", "re": "\\bshow(s|ed|ing|n)?\\s+(\\w+\\s+){0,2}off\\b", "card": {"tag": "INFORMAL", "tagVar": "--pink", "forms": "show off · showed off · shown off · showing off", "stress": [["verb", "show <b>OFF<\/b>"], ["noun", "a <b>SHOW<\/b>-off"]], "core": ["To try to make people admire you: your money, your things, your body, your skills.", "Выпендриваться, хвастаться, красоваться."], "means": [["impress with money or things", "He loved to show off: private jets, watches, champagne.", "Он любил выпендриваться: частные самолёты, часы, шампанское.", "выпендриваться"], ["show off something", "She showed off her new car to everyone.", "Она всем хвасталась новой машиной.", "хвастаться чем-то"], ["show off a skill", "Stop showing off your English!", "Хватит красоваться своим английским!", "красоваться"], ["a show-off (noun)", "Don't be such a show-off.", "Не будь таким понторезом.", "выпендрёжник"]], "gram": "<p>No object: <b>He loves to show off.<\/b><\/p><p>With an object: <b>show off<\/b> your car / <b>show<\/b> your car <b>off<\/b> / <b>show it off<\/b> (местоимение в середину).<\/p>", "mirror": "<p><b>вы-пендриваться<\/b>, «понты», «показуха». Картинка <b>off<\/b>: выставить от себя напоказ, чтобы все видели.<\/p>", "nuance": "<p>Почти всегда с осуждением: <i>He's just showing off.<\/i> — Он просто выпендривается.<\/p><p>Instagram — главная сцена для <b>show off<\/b>. Мошенники это знают: богатая картинка = доверие.<\/p>", "trap": [["He showed up his new watch.", "He showed off his new watch.", "show up = появиться (Part 1)!"], ["She shows off herself.", "She shows off.", "Без herself."]], "coll": [["show off on Instagram", "выпендриваться в Instagram"], ["show off your money", "светить деньгами"], ["show off a new phone", "хвастаться новым телефоном"], ["a total show-off", "жуткий понторез"], ["stop showing off!", "хватит выпендриваться!"]], "fam": [["a show-off (n)", "выпендрёжник"], ["showy (adj)", "броский, показной"], ["a show (n)", "шоу, спектакль"]], "ety": "<p>Помните из Part 1: <b>show<\/b> в древнеанглийском значило «смотреть». <b>Show off<\/b> = «заставить всех смотреть на меня». Понты старше Instagram: слову <b>show-off<\/b> больше 200 лет.<\/p>"}}, {"k": "hititoff", "v": "hit it off", "ctx": "On their first date, they <b>hit it off<\/b>.", "def": "to like each other immediately when you first meet", "ru": "сразу понравиться друг другу, найти общий язык", "re": "\\bhit(s|ting)?\\s+it\\s+off\\b", "card": {"tag": "DATING", "tagVar": "--pink", "forms": "hit it off · hit it off · hitting it off <i>(hit — hit — hit)<\/i>", "stress": [["verb", "hit it <b>OFF<\/b>"]], "core": ["When two people meet and like each other immediately.", "Сразу понравиться друг другу, сразу «зайти»."], "means": [["like each other at once", "On their first date, they hit it off.", "На первом свидании они сразу понравились друг другу.", "сразу понравиться"], ["make friends quickly", "I hit it off with my new boss.", "Я сразу нашёл общий язык с новым боссом.", "найти общий язык"], ["hit it off with someone", "She hit it off with everyone at the party.", "Она со всеми на вечеринке сразу поладила.", "поладить с кем-то"]], "gram": "<p>Always <b>it<\/b>: hit <b>it<\/b> off. Never <s>hit off<\/s>.<\/p><p><b>They<\/b> hit it off. / <b>I<\/b> hit it off <b>with<\/b> him.<\/p><p>Past = hit (hit — hit — hit).<\/p>", "mirror": "<p>«Сразу <b>зашло<\/b>», «<b>искра<\/b>», «<b>спелись<\/b>». Одного глагола в русском нет — говорят «нашли общий язык».<\/p>", "nuance": "<p>Позитивное, разговорное. Часто с <i>right away<\/i>: <i>We hit it off right away.<\/i><\/p><p>Противоположность: <i>We didn't click.<\/i> — Не зашло.<\/p>", "trap": [["We hit off on the first date.", "We hit it off on the first date.", "Без it не работает."], ["I hit it off him.", "I hit it off with him.", "Нужен with."]], "coll": [["hit it off right away", "сразу поладить"], ["hit it off on the first date", "понравиться друг другу на первом свидании"], ["really hit it off", "прямо сразу «зашло»"], ["didn't hit it off", "не сложилось"]], "fam": [["a hit (n)", "хит, успех: <i>The party was a hit.<\/i>"], ["click (v)", "«зайти» друг другу: <i>We clicked.<\/i>"], ["chemistry (n)", "химия между людьми"]], "ety": "<p>Старое значение <b>hit<\/b> — «попасть в цель, совпасть». Двое людей «попали» друг в друга. А <b>it<\/b> здесь пустое, как в <i>It's raining<\/i>: ничего не значит, но без него никак.<\/p>"}}, {"k": "fallfor", "v": "fall for", "ctx": "Cecilie <b>fell for<\/b> him. … Cecilie <b>fell for<\/b> his story too.", "def": "1) to fall in love with someone; 2) to believe a trick or a lie", "ru": "влюбиться; повестись, купиться (на обман)", "re": "\\b(fall|falls|fell|fallen|falling)\\s+for\\b", "card": {"tag": "BIG IDEA", "tagVar": "--a3", "forms": "fall for · fell for · fallen for · falling for", "stress": [["verb", "<b>FALL<\/b> for"]], "core": ["Two meanings: 1) to fall in love with someone; 2) to believe a lie or a trick.", "Два значения: 1) влюбиться; 2) повестись на обман, купиться."], "means": [["fall in love", "Cecilie fell for him.", "Сесилия в него влюбилась.", "влюбиться"], ["believe a trick", "She fell for his story too.", "Она повелась и на его историю.", "повестись"], ["don't fall for it!", "It's a scam. Don't fall for it!", "Это развод. Не ведись!", "не ведись"], ["the oldest trick in the book", "I fell for the oldest trick in the book.", "Я повёлся на самый старый трюк.", "купиться"]], "gram": "<p><b>fall for<\/b> + someone = влюбиться в кого-то.<\/p><p><b>fall for<\/b> + a story / a trick / a lie / a scam = повестись.<\/p><p>Irregular: fall — <b>fell<\/b> — <b>fallen<\/b>.<\/p>", "mirror": "<p>Главный инсайт урока: аферист заставил женщин <b>fall for<\/b> дважды — сначала <b>влюбиться<\/b>, потом <b>повестись<\/b>. В английском это один глагол!<\/p><p>По-русски тоже «падают»: <b>по-пасться<\/b> на крючок, влюбиться «по уши».<\/p>", "nuance": "<p>С человеком — романтика: <i>I'm falling for you.<\/i> — Я в тебя влюбляюсь.<\/p><p>С обманом — досада: <i>I can't believe I fell for that!<\/i> — Не верю, что я на это купился!<\/p>", "trap": [["She fell in him.", "She fell for him. / She fell in love with him.", "fall in love WITH."], ["Don't fall on it!", "Don't fall for it!", "fall on = упасть на что-то."]], "coll": [["fall for someone", "влюбиться в кого-то"], ["fall for a scam", "попасться на развод"], ["fall for a lie / a trick", "купиться на ложь / трюк"], ["fall for it", "повестись"], ["fall for each other", "влюбиться друг в друга"]], "fam": [["fall in love", "влюбиться"], ["a downfall (n)", "падение, крах"], ["a fall (n)", "падение; осень (US)"]], "ety": "<p>Падать — самая старая метафора любви: <b>fall in love<\/b>, «потерять голову». А <b>fall for a trick<\/b> — как упасть в яму, которую кто-то вырыл. Любовь и обман в английском — одно движение: вниз.<\/p>"}}, {"k": "makeup", "v": "make up", "ctx": "The women say it was all a lie: he <b>made up<\/b> the enemies and the danger.", "def": "to invent a story or an excuse that is not true", "ru": "выдумать, сочинить", "re": "\\b(make|makes|made|making)\\s+(\\w+\\s+){0,2}up\\b", "card": {"tag": "EVERYDAY", "tagVar": "--a2", "forms": "make up · made up · making up", "stress": [["verb", "make <b>UP<\/b>"], ["noun", "<b>MAKE<\/b>up"]], "core": ["To invent a story, a name or an excuse that is not true.", "Выдумать, сочинить (историю, имя, отговорку)."], "means": [["invent a story", "He made up the enemies and the danger.", "Он выдумал врагов и опасность.", "выдумать"], ["invent an excuse", "Don't make up excuses!", "Не придумывай отговорки!", "придумать"], ["make up (with someone): stop a fight", "They had a fight, but then they made up.", "Они поругались, но потом помирились.", "помириться"], ["makeup (noun)", "She put on her makeup.", "Она накрасилась.", "косметика"]], "gram": "<p><b>make up<\/b> a story / <b>make<\/b> a story <b>up<\/b> / <b>make it up<\/b> (местоимение в середину).<\/p><p>Irregular: make — <b>made<\/b> — made.<\/p><p><b>made-up<\/b> (adj): <i>a made-up name<\/i> — выдуманное имя.<\/p>", "mirror": "<p><b>вы-думать<\/b>, <b>со-чинить<\/b>. <b>up<\/b> здесь = «собрать из ничего», сложить историю из кусочков.<\/p>", "nuance": "<p><i>You're making it up!<\/i> — Ты это выдумываешь! Классика спора.<\/p><p>Fun: <b>make up<\/b> = и «выдумать», и «помириться», а <b>makeup<\/b> = косметика. Всё про то, чтобы выглядеть лучше, чем есть 😏<\/p>", "trap": [["He invented up a story.", "He made up a story.", "invent — без up."], ["You're making it out!", "You're making it up!", "make out = разобрать; целоваться."]], "coll": [["make up a story", "сочинить историю"], ["make up an excuse", "придумать отговорку"], ["a made-up name", "выдуманное имя"], ["you're making it up!", "ты это выдумываешь!"], ["kiss and make up", "помириться"]], "fam": [["makeup (n)", "косметика"], ["made-up (adj)", "выдуманный"], ["a make-up exam (n)", "пересдача"]], "ety": "<p>Сначала <b>make up<\/b> значило «собрать, составить»: <i>make up a team<\/i>. Из «собрать историю» → «выдумать». А <b>makeup<\/b> — то, из чего «собрано» лицо: слово пришло из театра XIX века. Аферист собирает себе и лицо, и историю.<\/p>"}}, {"k": "talkinto", "v": "talk into", "ctx": "…he <b>talked<\/b> Cecilie <b>into<\/b> helping him.", "def": "to persuade someone to do something", "ru": "уговорить (кого-то сделать что-то)", "re": "\\btalk(s|ed|ing)?\\s+(\\w+\\s+){0,2}into\\b", "card": {"tag": "PERSUASION", "tagVar": "--a1", "forms": "talk into · talked into · talking into", "stress": [["verb", "<b>TALK<\/b> someone into"]], "core": ["To persuade someone to do something, often something they didn't want to do.", "Уговорить кого-то сделать что-то (часто то, чего он не хотел)."], "means": [["talk someone into + -ing", "He talked Cecilie into helping him.", "Он уговорил Сесилию помочь ему.", "уговорить"], ["talk someone into something", "My friend talked me into a tattoo.", "Друг уговорил меня на тату.", "уговорить на что-то"], ["talk someone out of: the opposite", "She talked me out of quitting my job.", "Она отговорила меня увольняться.", "отговорить"]], "gram": "<p><b>talk<\/b> + person + <b>into<\/b> + <b>-ing<\/b>: <i>talked her into lending money<\/i>.<\/p><p>Человек — всегда в середине: <s>talked into her<\/s> → <b>talked her into<\/b>.<\/p><p>Opposite: <b>talk<\/b> someone <b>out of<\/b> + -ing.<\/p>", "mirror": "<p><b>у-говорить<\/b> = talk <b>into<\/b>, <b>от-говорить<\/b> = talk <b>out of<\/b>. Русская приставка = английская частица!<\/p>", "nuance": "<p>Часто про то, о чём потом жалеют: <i>He talked me into it.<\/i> — Он меня уговорил (и зря).<\/p><p>Мошенники — мастера <b>talk into<\/b>: давление + срочность + «только ты можешь помочь».<\/p>", "trap": [["He talked her to help him.", "He talked her into helping him.", "into + -ing, не to."], ["He talked into her.", "He talked her into it.", "Человек — в середину."]], "coll": [["talk someone into a loan", "уговорить взять кредит"], ["talk someone into buying", "уговорить купить"], ["let yourself be talked into it", "дать себя уговорить"], ["talk someone out of it", "отговорить"]], "fam": [["a talk (n)", "разговор, лекция"], ["talkative (adj)", "болтливый"], ["sweet-talk (v)", "обаять, умаслить словами"]], "ety": "<p><b>Into<\/b> = «в, внутрь». Talk someone <b>into<\/b> = буквально «заговорить человека внутрь» решения. Родственник — <b>sweet-talk<\/b>: умаслить словами. Аферисты не взламывают банки, они взламывают людей словами.<\/p>"}}, {"k": "takeout", "v": "take out", "ctx": "She <b>took out<\/b> loans from ten banks and sent him the money.", "def": "to get a loan, a mortgage or insurance from a bank or a company", "ru": "взять (кредит, ипотеку, страховку)", "re": "\\b(take|takes|took|taken|taking)\\s+(\\w+\\s+){0,2}out\\b", "card": {"tag": "MONEY", "tagVar": "--a2", "forms": "take out · took out · taken out · taking out", "stress": [["verb", "take <b>OUT<\/b>"], ["noun", "<b>TAKE<\/b>out"]], "core": ["To get a loan, a mortgage or insurance from a bank or a company.", "Взять кредит, ипотеку или страховку."], "means": [["get a loan", "She took out loans from ten banks.", "Она взяла кредиты в десяти банках.", "взять кредит"], ["get cash", "I took out $200 from the ATM.", "Я снял 200 долларов в банкомате.", "снять деньги"], ["take someone out: invite", "He took her out to dinner.", "Он сводил её на ужин.", "сводить куда-то"], ["takeout (noun, US)", "Let's get takeout tonight.", "Давай сегодня возьмём еду навынос.", "еда навынос"]], "gram": "<p><b>take out<\/b> a loan / <b>take<\/b> a loan <b>out<\/b> / <b>take it out<\/b>.<\/p><p>Irregular: take — <b>took<\/b> — <b>taken<\/b>.<\/p>", "mirror": "<p>По-русски кредит «<b>берут<\/b>», по-английски его «<b>вынимают<\/b>»: <b>take out<\/b> — деньги выходят из банка к тебе. И никакого <s>take a credit<\/s>!<\/p>", "nuance": "<p>Нейтральное, деловое: <i>take out a mortgage / insurance / a loan<\/i>.<\/p><p>Помните: английское <b>credit<\/b> ≠ русский «кредит». Кредит в банке = <b>a loan<\/b>.<\/p>", "trap": [["She took a credit.", "She took out a loan.", "Кредит = a loan."], ["I took off money from the ATM.", "I took out money from the ATM.", "take off = взлететь; снять одежду."]], "coll": [["take out a loan", "взять кредит"], ["take out a mortgage", "взять ипотеку"], ["take out insurance", "оформить страховку"], ["take out cash", "снять наличные"], ["take someone out to dinner", "сводить на ужин"]], "fam": [["takeout (n, US)", "еда навынос"], ["a takeaway (n, UK)", "еда навынос"], ["a loan (n)", "кредит, заём"]], "ety": "<p><b>Take<\/b> пришло в английский от викингов: древнескандинавское <i>taka<\/i>. И <b>loan<\/b> (кредит) — тоже скандинавское слово, <i>lán<\/i>. А вот <b>credit<\/b> — от латинского <i>credere<\/i> «верить». Аферисты крадут именно credit — доверие.<\/p>"}}, {"k": "ripoff", "v": "rip off", "ctx": "The women say he <b>ripped off<\/b> one woman to impress the next one.", "def": "to cheat someone, especially by taking their money", "ru": "обобрать, кинуть, развести (на деньги)", "re": "\\brip(s|ped|ping)?\\s+(\\w+\\s+){0,2}off\\b", "card": {"tag": "SLANG", "tagVar": "--pink", "forms": "rip off · ripped off · ripping off", "stress": [["verb", "rip <b>OFF<\/b>"], ["noun", "a <b>RIP<\/b>-off"]], "core": ["To cheat someone, especially by taking their money or asking far too much.", "Обобрать, кинуть, развести на деньги."], "means": [["cheat someone of money", "He ripped off one woman to impress the next one.", "Он обирал одну женщину, чтобы впечатлить следующую.", "кинуть"], ["charge too much", "That taxi driver ripped us off.", "Таксист нас ободрал.", "ободрать"], ["a rip-off (noun)", "$10 for a coffee? What a rip-off!", "10 долларов за кофе? Грабёж!", "грабёж, развод"], ["copy someone's idea", "This app is a rip-off of Tinder.", "Это приложение содрано с Tinder.", "содрать"]], "gram": "<p><b>rip off<\/b> someone / <b>rip<\/b> someone <b>off<\/b> / <b>rip him off<\/b>.<\/p><p>Passive: <i>I got ripped off.<\/i> — Меня кинули.<\/p><p>Double p: rip → ri<b>pp<\/b>ed.<\/p>", "mirror": "<p><b>о-бобрать<\/b>, <b>о-бодрать<\/b>, <b>с-драть<\/b> — по-русски тоже «сдирают»! <b>rip<\/b> = рвать, <b>off<\/b> = «с тебя».<\/p>", "nuance": "<p>Разговорное, эмоциональное. В новостях скажут <i>defraud<\/i>, а в жизни — <i>rip off<\/i>.<\/p><p>Туристы знают: <i>a tourist rip-off<\/i> — цены «для лохов».<\/p>", "trap": [["He ripped off me.", "He ripped me off.", "Местоимение — в середину."], ["It's a rip.", "It's a rip-off.", "Существительное целиком."]], "coll": [["rip off tourists", "обдирать туристов"], ["get ripped off", "быть обманутым"], ["a total rip-off", "полный грабёж"], ["rip off an idea", "украсть идею"]], "fam": [["a rip-off (n)", "грабёж, развод; подделка"], ["a ripper (n)", "потрошитель: <i>Jack the Ripper<\/i>"], ["rip (v)", "рвать: <i>rip a shirt<\/i>"]], "ety": "<p><b>Rip<\/b> = рвать. Сначала <b>rip off<\/b> значило буквально «сорвать», а в американском сленге XX века — «украсть». Тот же корень у <b>Jack the Ripper<\/b> — Джек-Потрошитель.<\/p>"}}, {"k": "payback", "v": "pay back", "ctx": "He promised to <b>pay<\/b> her <b>back<\/b>…", "def": "to return money that you borrowed", "ru": "вернуть (долг, деньги)", "re": "\\bpa(y|ys|id|ying)\\s+(\\w+\\s+){0,2}back\\b", "card": {"tag": "MONEY", "tagVar": "--a2", "forms": "pay back · paid back · paying back", "stress": [["verb", "pay <b>BACK<\/b>"], ["noun", "<b>PAY<\/b>back"]], "core": ["To return the money that you borrowed.", "Вернуть деньги, отдать долг."], "means": [["return borrowed money", "He promised to pay her back.", "Он обещал вернуть ей деньги.", "вернуть долг"], ["pay back a loan", "It took her years to pay back the loans.", "Ей понадобились годы, чтобы выплатить кредиты.", "выплатить кредит"], ["pay someone back: revenge", "I'll pay him back for this!", "Я ему это припомню!", "отомстить"], ["payback (noun)", "Selling his clothes was her payback.", "Продать его одежду — это была её расплата.", "расплата, месть"]], "gram": "<p><b>pay<\/b> someone <b>back<\/b>: <i>pay her back<\/i>.<\/p><p><b>pay back<\/b> the money / a loan.<\/p><p>Spelling: pay — <b>paid<\/b> (не <s>payed<\/s>!).<\/p>", "mirror": "<p><b>от-дать<\/b>, <b>вер-нуть<\/b>. <b>back<\/b> = назад: деньги идут обратно. Как <b>call back<\/b> (перезвонить), <b>give back<\/b> (вернуть вещь).<\/p>", "nuance": "<p>Второе значение — месть: <b>payback<\/b> = расплата. Эйлин продала его дизайнерскую одежду — это её <b>payback<\/b>.<\/p>", "trap": [["He never payed her back.", "He never paid her back.", "paid, не payed."], ["Pay back me!", "Pay me back!", "Местоимение — в середину."]], "coll": [["pay someone back", "вернуть кому-то деньги"], ["pay back a loan", "выплатить кредит"], ["pay it back next month", "вернуть в следующем месяце"], ["never paid me back", "так и не вернул"], ["it's payback time", "время расплаты"]], "fam": [["payback (n)", "расплата, месть"], ["a payment (n)", "платёж"], ["repay (v, formal)", "погасить долг"]], "ety": "<p><b>Pay<\/b> — от латинского <i>pacare<\/i> «успокоить, умиротворить». Родственник — <b>peace<\/b>, мир! Заплатить = «успокоить» того, кому должен. Не платишь — мира не будет: будет <b>payback<\/b>.<\/p>"}}, {"k": "trackdown", "v": "track down", "ctx": "Its journalists worked on the case for six months and finally <b>tracked down<\/b> Simon in a luxury hotel in Munich.", "def": "to find someone or something after a long search", "ru": "выследить, разыскать", "re": "\\btrack(s|ed|ing)?\\s+(\\w+\\s+){0,2}down\\b", "card": {"tag": "POLICE", "tagVar": "--a3", "forms": "track down · tracked down · tracking down", "stress": [["verb", "track <b>DOWN<\/b>"]], "core": ["To find someone or something after a long, difficult search.", "Выследить, разыскать (после долгих поисков)."], "means": [["find a person after a long search", "Journalists tracked him down in Munich.", "Журналисты выследили его в Мюнхене.", "выследить"], ["find a thing", "I finally tracked down that old song.", "Я наконец разыскал ту старую песню.", "раздобыть"], ["find the cause of a problem", "We tracked down the bug in the code.", "Мы нашли баг в коде.", "найти причину"]], "gram": "<p><b>track down<\/b> someone / <b>track<\/b> someone <b>down<\/b> / <b>track him down<\/b>.<\/p><p>vs <b>look for<\/b> (Part 2): look for = процесс (ищу), track down = результат после долгого поиска (нашёл!).<\/p>", "mirror": "<p><b>вы-следить<\/b>, <b>раз-ыскать<\/b>. <b>track<\/b> = след, <b>down<\/b> = до конца. Как охотник идёт по следам до самого зверя.<\/p>", "nuance": "<p>Звучит как детектив: <i>The police tracked down the killer.<\/i> Но и в быту: <i>I tracked down a cheap flight.<\/i><\/p><p>Для айтишников: <i>track down a bug<\/i> — найти баг.<\/p>", "trap": [["They tracked down him.", "They tracked him down.", "Местоимение — в середину."], ["I tracked my keys.", "I found my keys.", "Для мелочей — find. Track down — после долгих поисков."]], "coll": [["track down a criminal", "выследить преступника"], ["track down a missing person", "разыскать пропавшего"], ["track down a bug", "найти баг"], ["finally tracked him down", "наконец нашли его"]], "fam": [["a track (n)", "след; трек; колея"], ["a tracker (n)", "трекер"], ["on track", "идём по плану"]], "ety": "<p><b>Track<\/b> = след, тропа. <b>Tracker<\/b> сначала значило «охотник-следопыт», теперь — приложение в телефоне. <b>Track down<\/b> — идти по следу до самого конца, пока не найдёшь.<\/p>"}}, {"k": "lockup", "v": "lock up", "ctx": "But he was <b>locked up<\/b> for only five months.", "def": "to put someone in prison", "ru": "посадить (в тюрьму), запереть", "re": "\\block(s|ed|ing)?\\s+(\\w+\\s+){0,2}up\\b", "card": {"tag": "POLICE", "tagVar": "--a3", "forms": "lock up · locked up · locking up", "stress": [["verb", "lock <b>UP<\/b>"], ["noun", "a <b>LOCK<\/b>up"]], "core": ["To put someone in prison; to lock a door or a building.", "Посадить в тюрьму; запереть (дверь, дом)."], "means": [["put in prison", "He was locked up for only five months.", "Он отсидел всего пять месяцев.", "посадить"], ["lock a building", "Don't forget to lock up when you leave.", "Не забудь всё запереть, когда уйдёшь.", "запереть"], ["lock up valuables", "Lock up your money in the safe.", "Запри деньги в сейфе.", "спрятать под замок"], ["they should lock him up!", "He ripped off ten women. They should lock him up!", "Он обобрал десять женщин. Его надо посадить!", "посадить его"]], "gram": "<p>Passive is common: <i>He <b>was locked up<\/b>.<\/i> — Его посадили.<\/p><p><b>lock<\/b> someone <b>up<\/b> / <b>lock him up<\/b>.<\/p><p>Formal: <i>he was sent to prison / jailed<\/i>.<\/p>", "mirror": "<p><b>за-переть<\/b>, <b>по-садить<\/b>, «закрыть». <b>up<\/b> = полностью, наглухо, как русское <b>за-<\/b>.<\/p>", "nuance": "<p>Разговорное. В новостях: <i>sentenced to 15 months<\/i>. В жизни: <i>they locked him up<\/i>.<\/p><p>Деталь истории: его посадили не за Тиндер, а за старые преступления в Израиле.<\/p>", "trap": [["They locked up him.", "They locked him up.", "Местоимение — в середину."], ["He was closed in prison.", "He was locked up.", "close ≠ посадить."]], "coll": [["lock someone up", "посадить кого-то"], ["be locked up for 5 months", "отсидеть 5 месяцев"], ["lock up the house", "запереть дом"], ["lock up your bike", "пристегнуть велосипед"]], "fam": [["a lock (n)", "замок"], ["a locker (n)", "шкафчик с замком"], ["a lockdown (n)", "локдаун"]], "ety": "<p><b>Lock<\/b> — очень старое слово, древнеанглийское <i>loc<\/i>. Его родственник — <b>lockdown<\/b>: так сначала называли режим в американских тюрьмах, когда всех запирают по камерам. В 2020 году это слово узнал весь мир.<\/p>"}}], "mast": "<header class=\"mast\">\n <div class=\"flag\"><span class=\"nm\">The Neuro-Fluent Gossip<\/span><span class=\"flmeta\">Part 3 · Love + money · A2 · 90 min · Kolya + Rustam<\/span><\/div>\n <div class=\"mbody\">\n  <div class=\"mtext\">\n   <span class=\"excl\">Part 3 · scam story<\/span>\n   <h1>Tinder <span class=\"kc\">swindler<\/span><\/h1>\n   <p class=\"mdeck\">A fake prince, ten bank loans and an arrest in Batumi.<\/p>\n   <p class=\"sub\">First: a review of all 20 verbs from Part 1 and Part 2. Then: 10 new phrasal verbs for dating, money and lies.<span class=\"ru\">Сначала повторим 20 глаголов из первых двух частей. Потом 10 новых: свидания, деньги и ложь.<\/span><\/p>\n  <\/div>\n  <div class=\"tprof\" aria-hidden=\"true\">\n   <div class=\"tp-top\"><span class=\"tp-app\">♥ It's a match<\/span><span>2 km away<\/span><\/div>\n   <div class=\"tp-photo\"><span class=\"tp-jet\">✈<\/span><span class=\"tp-gem\">◆<\/span><\/div>\n   <div class=\"tp-name\">Simon <i>“diamond heir”<\/i><\/div>\n   <div class=\"tp-bio\">Private jets · bodyguards · champagne<\/div>\n   <div class=\"tp-acts\"><span class=\"tp-x\">✕<\/span><span class=\"tp-h\">♥<\/span><\/div>\n   <div class=\"stamp\">Scam<\/div>\n  <\/div>\n <\/div>\n<\/header>"};</script>
+<script>(function(){
+"use strict";
+var L=window.LESSON;
+var KEY='nf_'+L.id+'_';
+function $(s,r){return (r||document).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+var store={get:function(k,d){try{var v=localStorage.getItem(KEY+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+           set:function(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}};
+function att(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function strip(s){return String(s).replace(/<[^>]+>/g,'')}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function norm(s){return String(s).toLowerCase().replace(/[’‘`´]/g,"'").replace(/[.!?,;:"“”()…—–]/g,' ').replace(/\s+/g,' ').trim()}
+function pad(n){return String(n).padStart(2,'0')}
+var U=L.ui, PVI={};
+L.pvs.forEach(function(p,i){PVI[p.k]=i});
+
+/* ---------- speech ---------- */
+var SPK='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.6 6a8 8 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
+function spk(t,cls){return '<button class="spk '+(cls||'')+'" type="button" data-say="'+att(strip(t))+'" aria-label="Listen">'+SPK+'</button>'}
+var voice=null;
+function pickVoice(){try{var vs=speechSynthesis.getVoices();voice=vs.filter(function(v){return /en-US/i.test(v.lang)&&/Google|Samantha|Aria|Jenny|Natural|Ava/i.test(v.name)})[0]||vs.filter(function(v){return /en-US/i.test(v.lang)})[0]||vs.filter(function(v){return /^en/i.test(v.lang)})[0]||null}catch(e){}}
+if('speechSynthesis' in window){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice}catch(e){}}
+function say(t){if(!('speechSynthesis' in window))return toast(U.noTTS);try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='en-US';if(voice)u.voice=voice;u.rate=.9;speechSynthesis.speak(u)}catch(e){}}
+
+/* ---------- score + toast ---------- */
+var score=0, got={};
+function award(id,pts){if(got[id])return;got[id]=1;score+=pts;$('#xp').textContent=U.scoreLabel+' '+score;toast('+'+pts+' '+U.scoreUnit)}
+function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove('on')},1500)}
+
+/* ---------- markup ---------- */
+function plain(s){return s.replace(/\[\[[^|\]]+\|([^\]]+)\]\]/g,'$1').replace(/\{\{([^|}]+)\|[^}]+\}\}/g,'$1')}
+function md(s){return s.replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g,function(m,k,t){return '<span class="pv" data-k="'+k+'">'+t+'</span>'})
+  .replace(/\{\{([^|}]+)\|([^}]+)\}\}/g,function(m,w,g){return '<span class="gl" tabindex="0" role="button" data-g="'+att(g)+'">'+w+'</span>'})}
+var gapN=0;
+function gaps(s,pre){pre=pre||'gap';return md(s).replace(/\(\(([^|)]+)\|([^)]+)\)\)/g,function(m,a,h){gapN++;var w=Math.max.apply(null,a.split('/').map(function(x){return x.length}))+3;
+  return '<span class="gapw"><span class="gnum">'+gapN+'</span><input class="gap" id="'+pre+'-'+gapN+'" data-a="'+att(a)+'" style="width:'+w+'ch" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Gap '+gapN+'"><span class="gh ru">'+h+'</span></span>'})}
+function head(id,n,title,mins){return '<div class="sh"><span class="num">'+n+'</span><h2 class="st" id="h-'+id+'">'+title+'</h2>'+(mins?'<span class="mins">'+mins+' min</span>':'')+'</div>'}
+function instr(a){return a?'<p class="instr">'+a[0]+(a[1]?' <span class="ru">'+a[1]+'</span>':'')+'</p>':''}
+
+/* ---------- renderers ---------- */
+function rStart(){var S=L.start;
+ return L.mast+'<div class="grid2"><div class="box"><h3 class="h3">'+S.planTitle+'</h3><table class="plan">'+
+ L.plan.map(function(r){return '<tr><td class="pn">'+r[0]+'</td><td>'+r[1]+'</td><td class="pm">'+r[2]+'′</td><td class="pr">'+r[3]+'</td></tr>'}).join('')+
+ '</table></div><div class="box"><h3 class="h3">'+S.lootTitle+'</h3>'+instr(S.lootInstr)+'<div class="loot" id="loot">'+
+ L.pvs.map(function(p,i){return '<span class="lt" data-k="'+p.k+'"><i>'+pad(i+1)+'</i><b>? ? ?</b></span>'}).join('')+
+ '</div><div class="howto">'+S.howto+'</div></div></div>'}
+
+function rTalk(n){var T=L.talk;
+ return head('talk',n,T.title,T.mins)+instr(T.instr)+'<div class="stack"><div class="box"><ol class="qs">'+
+ T.qs.map(function(q){return '<li><p class="q">'+q[0]+' '+spk(q[0])+'</p><p class="ru">'+q[1]+'</p></li>'}).join('')+'</ol></div>'+
+ '<div class="box"><h3 class="h3">'+T.game.title+'</h3>'+instr(T.game.instr)+'<div class="tot">'+
+ T.game.items.map(function(r){return '<div class="tot-row"><button class="tot-o" type="button">'+r[0]+'</button><span class="or">or</span><button class="tot-o" type="button">'+r[1]+'</button></div>'}).join('')+
+ '</div></div><div class="box"><h3 class="h3">'+T.phrasesTitle+'</h3><div class="phr">'+
+ T.phrases.map(function(p){return '<span class="ph"><b>'+p[0]+'</b><span class="ru">'+p[1]+'</span></span>'}).join('')+'</div></div></div>'}
+
+function rRead(n){var R=L.read;
+ return head('read',n,R.title,R.mins)+instr(R.instr)+
+ '<div class="huntbar"><span class="hb-c">'+U.found+' <b id="foundN">0</b>/'+L.pvs.length+'</span><span class="hb-tip">'+R.tip[0]+'<span class="ru">'+R.tip[1]+'</span></span><button class="btn ghost sm" type="button" id="showAll">'+U.showAll+'</button></div>'+
+ '<article class="article"><div class="dl">'+R.dateline+'</div><h3 class="hed">'+R.headline+'</h3>'+(R.deck?'<p class="deck">'+R.deck+'</p>':'')+
+ R.paras.map(function(p){return '<p>'+md(p)+' '+spk(plain(p),'inl')+'</p>'}).join('')+'<p class="src">'+R.source+'</p></article>'+
+ '<div class="box"><h3 class="h3">'+R.tfTitle+'</h3><ol class="tf" id="tf">'+
+ R.tf.map(function(t,i){return '<li data-i="'+i+'"><p>'+t[0]+'</p><div class="tf-b"><button class="btn sm tfb" data-v="1" type="button">True</button><button class="btn sm ghost tfb" data-v="0" type="button">False</button></div><p class="tf-why"></p></li>'}).join('')+'</ol></div>'}
+
+function rGuess(n){var G=L.guess, chips=shuffle(L.pvs), defs=shuffle(L.pvs);
+ return head('guess',n,G.title,G.mins)+instr(G.instr)+
+ '<details class="box ctx" open><summary class="h3">'+G.ctxTitle+'</summary><ol class="ctxl">'+L.pvs.map(function(p){return '<li>'+p.ctx+'</li>'}).join('')+'</ol></details>'+
+ '<div class="dm" id="dm"><div class="pool" id="pool">'+chips.map(function(p){return '<button class="chip" type="button" data-k="'+p.k+'">'+p.v+'</button>'}).join('')+'</div>'+
+ '<div class="slots">'+defs.map(function(p,i){return '<div class="slot" data-ans="'+p.k+'"><div class="def"><span class="dn">'+String.fromCharCode(65+i)+'</span><span>'+p.def+'</span><span class="ru after">'+p.ru+'</span></div><div class="drop" tabindex="0" aria-label="Drop zone '+String.fromCharCode(65+i)+'"></div></div>'}).join('')+'</div></div>'+
+ '<div class="btnrow"><button class="btn" type="button" id="dmCheck">'+U.check+'</button><button class="btn ghost" type="button" id="dmReset">'+U.reset+'</button><button class="btn ghost" type="button" id="dmShow">'+U.show+'</button><span class="score" id="dmScore"></span></div>'}
+
+function card(p,i){var c=p.card;
+ return '<article class="vcard" style="--rar:var('+c.tagVar+')"><div class="vc-head"><div class="vc-idx">'+pad(i+1)+' / '+L.pvs.length+'</div>'+
+ '<div class="vc-main"><div class="vc-verb">'+p.v+' '+spk(p.v,'big')+'</div><div class="vc-forms">'+c.forms+'</div></div><div class="vc-tag">'+c.tag+'</div></div>'+
+ '<div class="vc-core"><p class="core-en">'+c.core[0]+'</p><p class="core-ru ru">'+c.core[1]+'</p>'+
+ (c.stress&&c.stress.length?'<div class="stress">'+c.stress.map(function(s){return '<span>'+s[0]+': '+s[1]+'</span>'}).join('')+'</div>':'')+'</div>'+
+ '<div class="vc-body"><div class="blk full"><h4>'+U.allMeanings+'</h4><ol class="means">'+
+ c.means.map(function(m){return '<li><div class="m-lab">'+m[0]+(m[3]?' <span class="ru">— '+m[3]+'</span>':'')+'</div><div class="m-ex">'+m[1]+' '+spk(m[1])+'</div><div class="m-ru ru">'+m[2]+'</div></li>'}).join('')+'</ol></div>'+
+ '<div class="blk"><h4>'+U.grammar+'</h4>'+c.gram+'</div>'+
+ '<div class="blk mirror"><h4>'+U.mirror+'</h4>'+c.mirror+'</div>'+
+ '<div class="blk"><h4>'+U.nuance+'</h4>'+c.nuance+'</div>'+
+ '<div class="blk trap"><h4>'+U.trap+'</h4>'+c.trap.map(function(t){return '<p><span class="x">'+t[0]+'</span> → <span class="y">'+t[1]+'</span>'+(t[2]?'<span class="tnote">'+t[2]+'</span>':'')+'</p>'}).join('')+'</div>'+
+ '<div class="blk"><h4>'+U.coll+'</h4><table class="coll">'+c.coll.map(function(x){return '<tr><td>'+x[0]+'</td><td class="ru">'+x[1]+'</td></tr>'}).join('')+'</table></div>'+
+ '<div class="blk"><h4>'+U.family+'</h4><ul class="fam">'+c.fam.map(function(f){return '<li><b>'+f[0]+'</b> — '+f[1]+'</li>'}).join('')+'</ul></div>'+
+ '<div class="blk full ety"><h4>'+U.ety+'</h4>'+c.ety+'</div></div></article>'}
+
+function rCards(n){var C=L.cards;
+ return head('cards',n,C.title,C.mins)+instr(C.instr)+'<div class="rule">'+C.rule+'</div><div class="vstrip" id="vstrip">'+
+ L.pvs.map(function(p,i){return '<button class="vbtn" type="button" data-i="'+i+'" style="--rar:var('+p.card.tagVar+')"><i>'+pad(i+1)+'</i>'+p.v+'</button>'}).join('')+
+ '</div><div id="vcard"></div><div class="btnrow vnav"><button class="btn ghost" type="button" id="vPrev">← '+U.prevCard+'</button><button class="btn" type="button" id="vNext">'+U.nextCard+' →</button></div>'}
+
+function fixLine(it,i){var html='';
+ it.s.split(/(\*[^*]+\*)/).filter(Boolean).forEach(function(pt){
+  if(pt.charAt(0)==='*'&&pt.length>2)html+='<span class="tk" data-bad="1">'+pt.slice(1,-1)+'</span>';
+  else html+=pt.split(/(\s+)/).map(function(w){return (!w||/^\s+$/.test(w))?w:'<span class="tk">'+w+'</span>'}).join('')});
+ return '<li data-i="'+i+'"><div class="fx"><p class="fx-s">'+html+'</p><div class="fix-ans"><span class="y">✓ '+it.fix+'</span><span class="why">'+it.why+'</span></div></div></li>'}
+
+function rPractice(n){var P=L.practice;
+ var bank=shuffle(L.pvs).map(function(p){return '<button class="wbw" type="button">'+p.v+'</button>'}).join('');
+ return head('practice',n,P.title,P.mins)+instr(P.instr)+'<div class="stack">'+
+ '<div class="box" id="pA"><h3 class="h3"><span class="tagx">A</span>'+P.fill.title+'</h3>'+instr(P.fill.instr)+'<div class="wb">'+bank+'</div><ol class="ex">'+
+ P.fill.items.map(function(it,i){return '<li><span class="exs">'+it[0].replace('___','<input class="inp fill" id="fill-'+i+'" data-a="'+att(it[1])+'" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Answer '+(i+1)+'">')+'</span>'+(it[2]?'<span class="ru exh">'+it[2]+'</span>':'')+'</li>'}).join('')+
+ '</ol><div class="btnrow"><button class="btn" type="button" id="aCheck">'+U.check+'</button><button class="btn ghost" type="button" id="aShow">'+U.show+'</button><span class="score" id="scA"></span></div></div>'+
+ '<div class="box" id="pB"><h3 class="h3"><span class="tagx">B</span>'+P.fix.title+'</h3>'+instr(P.fix.instr)+'<ol class="ex">'+P.fix.items.map(fixLine).join('')+
+ '</ol><div class="btnrow"><button class="btn ghost" type="button" id="bShow">'+U.show+'</button><span class="score" id="scB"></span></div></div>'+
+ '<div class="box" id="pC"><h3 class="h3"><span class="tagx">C</span>'+P.rew.title+'</h3>'+instr(P.rew.instr)+'<ol class="ex">'+
+ P.rew.items.map(function(it,i){return '<li><div class="rwb"><p class="orig">'+it.s+'</p><input class="inp rwin" id="rw-'+i+'" data-re="'+att(it.re)+'" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Rewrite '+(i+1)+'" placeholder="'+att(U.rwPh)+'"><p class="rwm" hidden>✓ '+it.model+'</p>'+(it.hint?'<details class="hint"><summary>'+U.hint+'</summary>'+it.hint+'</details>':'')+'</div></li>'}).join('')+
+ '</ol><div class="btnrow"><button class="btn" type="button" id="cCheck">'+U.check+'</button><button class="btn ghost" type="button" id="cShow">'+U.show+'</button><span class="score" id="scC"></span></div></div></div>'}
+
+function rText2(n){var T=L.text2;gapN=0;var body=T.paras.map(function(p){return '<p>'+gaps(p)+'</p>'}).join('');
+ return head('text2',n,T.title,T.mins)+instr(T.instr)+'<div class="wb" id="wb2">'+shuffle(L.pvs).map(function(p){return '<button class="wbw" type="button">'+p.v+'</button>'}).join('')+'</div>'+
+ '<article class="article a2"><div class="dl">'+T.dateline+'</div><h3 class="hed">'+T.headline+'</h3>'+(T.deck?'<p class="deck">'+T.deck+'</p>':'')+body+(T.source?'<p class="src">'+T.source+'</p>':'')+'</article>'+
+ '<div class="btnrow"><button class="btn" type="button" id="t2Check">'+U.check+'</button><button class="btn ghost" type="button" id="t2Show">'+U.show+'</button><span class="score" id="t2Score"></span></div>'}
+
+function rReview(n){var V=L.review;gapN=0;var body=V.recap.paras.map(function(p){return '<p>'+gaps(p,'rv')+'</p>'}).join('');
+ return head('review',n,V.title,V.mins)+instr(V.instr)+'<div class="stack">'+
+ '<div class="box" id="rvA"><h3 class="h3"><span class="tagx">A</span>'+V.recapTitle+'</h3>'+instr(V.recapInstr)+'<div class="wb">'+shuffle(V.oldVerbs).map(function(v){return '<button class="wbw" type="button">'+v+'</button>'}).join('')+'</div>'+
+ '<article class="article a2"><div class="dl">'+V.recap.dateline+'</div><h3 class="hed">'+V.recap.headline+'</h3>'+body+'</article>'+
+ '<div class="btnrow"><button class="btn" type="button" id="rvCheck">'+U.check+'</button><button class="btn ghost" type="button" id="rvShow">'+U.show+'</button><span class="score" id="rvScore"></span></div></div>'+
+ '<div class="box" id="rvB"><h3 class="h3"><span class="tagx">B</span>'+V.quizTitle+'</h3>'+instr(V.quizInstr)+'<ol class="ex mcq">'+
+ V.quiz.map(function(q,i){return '<li data-i="'+i+'"><span class="exs">'+q[0].replace('___','<span class="blank">?</span>')+'</span><div class="mcq-opts">'+q[1].map(function(o,j){return '<button class="mcq-o" type="button" data-j="'+j+'">'+o+'</button>'}).join('')+'</div>'+(q[3]?'<span class="ru exh">'+q[3]+'</span>':'')+'</li>'}).join('')+
+ '</ol><div class="btnrow"><span class="score" id="mcqScore"></span></div></div>'+
+ '<div class="box" id="rvC"><h3 class="h3"><span class="tagx">C</span>'+V.retellTitle+'</h3>'+instr(V.retellInstr)+'<div class="vchk">'+V.oldVerbs.map(function(v){return '<button class="vc rvc" type="button">'+v+'</button>'}).join('')+'</div></div></div>'}
+function rSpeak(n){var S=L.speak;
+ return head('speak',n,S.title,S.mins)+instr(S.instr)+'<div class="stack">'+
+ S.blocks.map(function(b){return '<div class="box"><h3 class="h3">'+b.title+'</h3>'+instr(b.instr)+'<ol class="qs">'+b.items.map(function(q){return '<li><p class="q">'+q[0]+'</p>'+(q[1]?'<p class="ru">'+q[1]+'</p>':'')+'</li>'}).join('')+'</ol></div>'}).join('')+
+ '<div class="box"><h3 class="h3">'+S.spin.title+'</h3>'+instr(S.spin.instr)+'<div class="spin-card" id="spinCard">'+S.spin.start+'</div><div class="btnrow"><button class="btn" type="button" id="spinBtn">'+S.spin.btn+'</button></div></div></div>'}
+
+function rHW(n){var H=L.hw;
+ return head('hw',n,H.title,'')+instr(H.instr)+'<div class="stack">'+
+ '<div class="box"><h3 class="h3"><span class="tagx">1</span>'+H.listen.title+'</h3>'+instr(H.listen.instr)+'<ul class="links">'+
+ H.listen.links.map(function(l){return '<li><a href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+' ↗</a>'+(l[2]?' <span class="ru">'+l[2]+'</span>':'')+'</li>'}).join('')+'</ul>'+(H.listen.task?'<p class="task">'+H.listen.task+'</p>':'')+'</div>'+
+ '<div class="box"><h3 class="h3"><span class="tagx">2</span>'+H.write.title+'</h3>'+instr(H.write.instr)+
+ (H.write.help?'<ul class="help">'+H.write.help.map(function(h){return '<li>'+h[0]+' <span class="ru">'+h[1]+'</span></li>'}).join('')+'</ul>':'')+
+ '<textarea id="hwText" class="hwta" rows="9" placeholder="'+att(H.write.ph)+'"></textarea><div class="hwmeta"><span id="hwWords">0 words</span><span id="hwUsed">0 / '+L.pvs.length+'</span><button class="btn sm" type="button" id="hwCopy">'+U.copy+'</button></div>'+
+ '<div class="vchk" id="vchk">'+L.pvs.map(function(p){return '<span class="vc" data-k="'+p.k+'">'+p.v+'</span>'}).join('')+'</div></div>'+
+ '<div class="box"><h3 class="h3"><span class="tagx">3</span>'+H.voice.title+'</h3>'+instr(H.voice.instr)+'<ol class="qs small">'+
+ H.voice.steps.map(function(s){return '<li><p class="q">'+s[0]+'</p>'+(s[1]?'<p class="ru">'+s[1]+'</p>':'')+'</li>'}).join('')+'</ol></div></div>'}
+
+var R={start:rStart,review:rReview,talk:rTalk,read:rRead,guess:rGuess,cards:rCards,practice:rPractice,text2:rText2,speak:rSpeak,hw:rHW};
+var ORDER=L.order, current=null;
+
+function pager(i){var p=ORDER[i-1],x=ORDER[i+1];
+ return '<div class="pager">'+(p?'<button class="btn ghost" type="button" data-go="'+p[0]+'">← '+p[1]+'</button>':'<span></span>')+(x?'<button class="btn" type="button" data-go="'+x[0]+'">'+x[1]+' →</button>':'<span></span>')+'</div>'}
+
+$('#top').innerHTML='<span class="brand">'+U.brand+'</span><div class="tabs" id="tabs">'+ORDER.map(function(o,i){return '<a class="tab" href="#'+o[0]+'" data-go="'+o[0]+'"><span class="tn">'+pad(i)+'</span>'+o[1]+'</a>'}).join('')+
+ '</div><span class="xp" id="xp">'+U.scoreLabel+' 0</span><button class="ru-btn" id="ruBtn" type="button">RU ON</button>';
+$('#main').innerHTML=ORDER.map(function(o,i){return '<section class="panel" id="p-'+o[0]+'" aria-labelledby="h-'+o[0]+'">'+R[o[0]](pad(i))+pager(i)+'</section>'}).join('');
+
+function show(id){if(!R[id]||!$('#p-'+id))id=ORDER[0][0];if(id===current)return;
+ var ci=-1,ni=0;ORDER.forEach(function(o,i){if(o[0]===current)ci=i;if(o[0]===id)ni=i});
+ $$('.panel').forEach(function(p){p.classList.remove('on','back')});
+ var p=$('#p-'+id);p.classList.add('on');if(ni<ci)p.classList.add('back');
+ $$('.tab').forEach(function(t){t.classList.toggle('on',t.dataset.go===id)});
+ var tabs=$('#tabs'),tab=$('.tab[data-go="'+id+'"]');if(tab)tabs.scrollLeft=tab.offsetLeft-tabs.clientWidth/2+tab.clientWidth/2;
+ current=id;window.scrollTo(0,0);if(location.hash.slice(1)!==id){try{location.hash=id}catch(e){}}}
+function step(d){var i=0;ORDER.forEach(function(o,k){if(o[0]===current)i=k});var o=ORDER[i+d];if(o)show(o[0])}
+window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
+
+/* RU toggle */
+function setRu(on){document.body.classList.toggle('noru',!on);$('#ruBtn').textContent=on?'RU ON':'RU OFF';store.set('ru',on)}
+setRu(store.get('ru',true));
+$('#ruBtn').addEventListener('click',function(){setRu(document.body.classList.contains('noru'))});
+
+/* gloss popover */
+var pop=$('#pop');
+function showPop(el){pop.textContent=el.dataset.g;pop.hidden=false;var r=el.getBoundingClientRect();
+ var left=r.left+window.scrollX;pop.style.left=left+'px';pop.style.top=(r.bottom+window.scrollY+6)+'px';
+ var maxL=window.scrollX+document.documentElement.clientWidth-pop.offsetWidth-10;if(left>maxL)pop.style.left=Math.max(window.scrollX+8,maxL)+'px'}
+
+/* hunt */
+var found={},foundN=0;
+function findPv(k){if(found[k])return;found[k]=1;foundN++;
+ $$('.pv[data-k="'+k+'"]').forEach(function(e){e.classList.add('found');e.dataset.n=PVI[k]+1});
+ $('#foundN').textContent=foundN;var lt=$('.lt[data-k="'+k+'"]');if(lt){lt.classList.add('on');$('b',lt).textContent=L.pvs[PVI[k]].v}
+ award('pv-'+k,U.pts.find);if(foundN===L.pvs.length)setTimeout(function(){toast(U.allFound)},700)}
+$('#showAll').addEventListener('click',function(){L.pvs.forEach(function(p){if(!found[p.k]){found[p.k]=1;foundN++;$$('.pv[data-k="'+p.k+'"]').forEach(function(e){e.classList.add('found');e.dataset.n=PVI[p.k]+1});var lt=$('.lt[data-k="'+p.k+'"]');if(lt){lt.classList.add('on');$('b',lt).textContent=p.v}}});$('#foundN').textContent=foundN});
+
+/* global clicks */
+document.addEventListener('click',function(e){
+ if(!e.target.closest('.gl'))pop.hidden=true;
+ var g=e.target.closest('[data-go]');if(g){e.preventDefault();show(g.dataset.go);return}
+ var s=e.target.closest('.spk');if(s){say(s.dataset.say);return}
+ var gl=e.target.closest('.gl');if(gl){showPop(gl);return}
+ var pv=e.target.closest('.pv');if(pv){findPv(pv.dataset.k);return}
+ var to=e.target.closest('.tot-o');if(to){$$('.tot-o',to.parentNode).forEach(function(b){b.classList.toggle('pick',b===to)});return}
+ var w=e.target.closest('.wbw');if(w){w.classList.toggle('used');return}
+});
+document.addEventListener('keydown',function(e){
+ var t=e.target, typing=t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA');
+ if((e.key==='Enter'||e.key===' ')&&t&&t.classList&&t.classList.contains('gl')){e.preventDefault();showPop(t);return}
+ if(typing)return;
+ if(e.key==='ArrowRight'&&!e.altKey&&!e.metaKey){step(1)}else if(e.key==='ArrowLeft'&&!e.altKey&&!e.metaKey){step(-1)}else if(e.key==='Escape'){pop.hidden=true}
+});
+
+/* true / false */
+$('#tf').addEventListener('click',function(e){var b=e.target.closest('.tfb');if(!b)return;var li=b.closest('li'),i=+li.dataset.i,t=L.read.tf[i];
+ var ok=(b.dataset.v==='1')===t[1];li.classList.remove('ok','bad');li.classList.add(ok?'ok':'bad');
+ $('.tf-why',li).textContent=(ok?'✓ ':'✗ ')+(t[1]?'True. ':'False. ')+t[2];if(ok)award('tf-'+i,U.pts.tf)});
+
+/* drag + drop matching */
+(function(){var dm=$('#dm'),pool=$('#pool'),sel=null,drag=null;
+ function clearMarks(){$$('.slot',dm).forEach(function(s){s.classList.remove('ok','bad','checked')});$('#dmScore').textContent=''}
+ function setSel(c){if(sel)sel.classList.remove('sel');sel=c;if(c)c.classList.add('sel')}
+ function place(chip,drop){if(!drop){pool.appendChild(chip)}else{var ex=$('.chip',drop);if(ex&&ex!==chip)pool.appendChild(ex);drop.appendChild(chip)}clearMarks()}
+ dm.addEventListener('pointerdown',function(e){var c=e.target.closest('.chip');if(!c||(e.button&&e.button>0))return;drag={c:c,x:e.clientX,y:e.clientY,moved:false,g:null}});
+ window.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+  if(!drag.moved){if(Math.abs(dx)+Math.abs(dy)<7)return;drag.moved=true;var r=drag.c.getBoundingClientRect();var g=drag.c.cloneNode(true);g.classList.add('drag-ghost');g.classList.remove('sel');g.style.width=r.width+'px';document.body.appendChild(g);drag.g=g;drag.ox=e.clientX-r.left;drag.oy=e.clientY-r.top;drag.c.classList.add('lift');setSel(null)}
+  e.preventDefault();drag.g.style.left=(e.clientX-drag.ox)+'px';drag.g.style.top=(e.clientY-drag.oy)+'px';
+  $$('.slot.hover',dm).forEach(function(s){s.classList.remove('hover')});var el=document.elementFromPoint(e.clientX,e.clientY),sl=el&&el.closest('.slot');if(sl&&dm.contains(sl))sl.classList.add('hover');
+  if(Math.abs(e.clientY-drag.y)>40){if(e.clientY<64)window.scrollBy(0,-14);else if(e.clientY>window.innerHeight-60)window.scrollBy(0,14)}},{passive:false});
+ function end(e,cancel){if(!drag)return;var d=drag;drag=null;
+  if(!d.moved){if(cancel)return;if(d.c.parentNode.classList.contains('drop')){pool.appendChild(d.c);clearMarks();setSel(null)}else setSel(sel===d.c?null:d.c);return}
+  d.g.remove();d.c.classList.remove('lift');$$('.slot.hover',dm).forEach(function(s){s.classList.remove('hover')});if(cancel)return;
+  var el=document.elementFromPoint(e.clientX,e.clientY),sl=el&&el.closest('.slot');
+  if(sl&&dm.contains(sl))place(d.c,$('.drop',sl));else if(el&&el.closest('#pool'))place(d.c,null)}
+ window.addEventListener('pointerup',function(e){end(e,false)});
+ window.addEventListener('pointercancel',function(e){end(e,true)});
+ dm.addEventListener('click',function(e){var c=e.target.closest('.chip');
+  if(c){if(e.detail===0){if(c.parentNode.classList.contains('drop')){pool.appendChild(c);clearMarks()}else setSel(sel===c?null:c)}return}
+  var sl=e.target.closest('.slot');if(sl&&sel){place(sel,$('.drop',sl));setSel(null)}});
+ dm.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('drop')&&sel){e.preventDefault();place(sel,e.target);setSel(null)}});
+ $('#dmCheck').addEventListener('click',function(){var ok=0;$$('.slot',dm).forEach(function(s){var c=$('.chip',s);s.classList.remove('ok','bad');if(!c)return;s.classList.add('checked');
+  if(c.dataset.k===s.dataset.ans){s.classList.add('ok');ok++;award('dm-'+s.dataset.ans,U.pts.match)}else s.classList.add('bad')});
+  $('#dmScore').textContent=ok+' / '+L.pvs.length;if(ok===L.pvs.length)toast(U.perfect)});
+ $('#dmReset').addEventListener('click',function(){shuffle($$('.chip',dm)).forEach(function(c){pool.appendChild(c)});clearMarks();setSel(null)});
+ $('#dmShow').addEventListener('click',function(){$$('.slot',dm).forEach(function(s){var c=$('.chip[data-k="'+s.dataset.ans+'"]',dm);$('.drop',s).appendChild(c);s.classList.remove('bad');s.classList.add('ok','checked')});setSel(null)});
+})();
+
+/* cards */
+var vi=0;
+function showCard(i,scroll){vi=(i+L.pvs.length)%L.pvs.length;$('#vcard').innerHTML=card(L.pvs[vi],vi);
+ $$('.vbtn').forEach(function(b){b.classList.toggle('on',+b.dataset.i===vi)});
+ if(scroll){var y=$('#vstrip').getBoundingClientRect().top+window.scrollY-70;if(window.scrollY>y)window.scrollTo(0,y)}}
+showCard(0);
+$('#vstrip').addEventListener('click',function(e){var b=e.target.closest('.vbtn');if(b)showCard(+b.dataset.i,true)});
+$('#vPrev').addEventListener('click',function(){showCard(vi-1,true)});
+$('#vNext').addEventListener('click',function(){showCard(vi+1,true)});
+
+/* practice A */
+function checkInputs(sel,pts,prefix){var ok=0;$$(sel).forEach(function(inp,i){var v=norm(inp.value),as=inp.dataset.a.split('/').map(norm);inp.classList.remove('ok','bad');if(!v)return;
+ if(as.indexOf(v)>-1){inp.classList.add('ok');ok++;award(prefix+i,pts)}else inp.classList.add('bad')});return ok}
+function reveal(sel){$$(sel).forEach(function(inp){var as=inp.dataset.a.split('/');if(as.map(norm).indexOf(norm(inp.value))>-1){inp.classList.add('ok');return}inp.value=as[0];inp.classList.remove('bad');inp.classList.add('shown')})}
+$('#aCheck').addEventListener('click',function(){$('#scA').textContent=checkInputs('#pA .fill',U.pts.fill,'a')+' / '+L.practice.fill.items.length});
+$('#aShow').addEventListener('click',function(){reveal('#pA .fill')});
+/* practice B */
+function upB(){$('#scB').textContent=$$('#pB li.solved').length+' / '+L.practice.fix.items.length}
+$('#pB').addEventListener('click',function(e){var t=e.target.closest('.tk');if(!t)return;var li=t.closest('li');if(li.classList.contains('solved'))return;
+ if(t.dataset.bad){$$('.tk[data-bad]',li).forEach(function(x){x.classList.add('hit')});li.classList.add('solved');award('b'+li.dataset.i,U.pts.fix);upB()}
+ else{t.classList.remove('miss');void t.offsetWidth;t.classList.add('miss');setTimeout(function(){t.classList.remove('miss')},450)}});
+$('#bShow').addEventListener('click',function(){$$('#pB li').forEach(function(li){li.classList.add('solved');$$('.tk[data-bad]',li).forEach(function(x){x.classList.add('hit')})});upB()});
+/* practice C */
+$('#cCheck').addEventListener('click',function(){var ok=0;$$('#pC .rwin').forEach(function(inp,i){var v=norm(inp.value);inp.classList.remove('ok','bad');var m=$('.rwm',inp.parentNode);if(!v)return;
+ var re;try{re=new RegExp(inp.dataset.re,'i')}catch(err){re=/$^/}
+ if(re.test(v)){inp.classList.add('ok');ok++;m.hidden=false;award('c'+i,U.pts.rew)}else inp.classList.add('bad')});
+ $('#scC').textContent=ok+' / '+L.practice.rew.items.length});
+$('#cShow').addEventListener('click',function(){$$('#pC .rwm').forEach(function(m){m.hidden=false})});
+
+/* text 2 */
+$('#t2Check').addEventListener('click',function(){var n=checkInputs('#p-text2 .gap',U.pts.gap,'g');$('#t2Score').textContent=n+' / '+$$('#p-text2 .gap').length;if(n===$$('#p-text2 .gap').length)toast(U.perfect)});
+$('#t2Show').addEventListener('click',function(){reveal('#p-text2 .gap')});
+
+/* review (optional section) */
+if(L.review){
+ $('#rvCheck').addEventListener('click',function(){var n=checkInputs('#p-review .gap',U.pts.gap,'rv');$('#rvScore').textContent=n+' / '+$$('#p-review .gap').length;if(n===$$('#p-review .gap').length)toast(U.perfect)});
+ $('#rvShow').addEventListener('click',function(){reveal('#p-review .gap')});
+ var mcqOk=0;
+ $('#rvB').addEventListener('click',function(e){var b=e.target.closest('.mcq-o');if(!b)return;var li=b.closest('li');if(li.classList.contains('done'))return;var q=L.review.quiz[+li.dataset.i];
+  if(+b.dataset.j===q[2]){b.classList.add('ok');li.classList.add('done');var bl=$('.blank',li);bl.textContent=q[1][q[2]];bl.classList.add('filled');mcqOk++;award('mcq'+li.dataset.i,U.pts.fill);$('#mcqScore').textContent=mcqOk+' / '+L.review.quiz.length}
+  else{b.classList.add('bad')}});
+ $('#rvC').addEventListener('click',function(e){var c=e.target.closest('.rvc');if(c)c.classList.toggle('on')});
+}
+/* spin */
+var lastSpin=-1;
+$('#spinBtn').addEventListener('click',function(){var it=L.speak.spin.items,i;do{i=Math.floor(Math.random()*it.length)}while(it.length>1&&i===lastSpin);lastSpin=i;
+ var c=$('#spinCard');c.innerHTML=it[i][0]+(it[i][1]?'<span class="ru">'+it[i][1]+'</span>':'');c.classList.remove('go');void c.offsetWidth;c.classList.add('go')});
+
+/* homework writer */
+var ta=$('#hwText'),RX=L.pvs.map(function(p){return new RegExp(p.re,'i')});
+function upHW(){var v=ta.value,w=(v.trim().match(/\S+/g)||[]).length,used=0;
+ L.pvs.forEach(function(p,i){var on=RX[i].test(v);if(on)used++;$('.vc[data-k="'+p.k+'"]').classList.toggle('on',on)});
+ $('#hwWords').textContent=w+' '+U.words;$('#hwUsed').textContent=used+' / '+L.pvs.length+' '+U.verbsUsed;store.set('hw',v)}
+ta.value=store.get('hw','');upHW();ta.addEventListener('input',upHW);
+$('#hwCopy').addEventListener('click',function(){var v=ta.value;function fb(){ta.focus();ta.select();toast(U.copyFallback)}
+ try{navigator.clipboard.writeText(v).then(function(){toast(U.copied)},fb)}catch(e){fb()}});
+
+show(location.hash.slice(1)||ORDER[0][0]);
+})();
+</script>
+</body>
+</html>
