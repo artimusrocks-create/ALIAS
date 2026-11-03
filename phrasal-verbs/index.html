@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+<title>Phrasal Verb Alias</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Learning version of the Neuro-Fluent Alias game: only the 20 phrasal verbs from the kiss-cam and Left Behind lessons.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: the Neuro-Fluent Alias pastel system (one centred 760px column, soft pill controls); kiss-cam verbs on pink, mountain verbs on sky */
+:root{
+  --bg:#fdf8f3; --card:#ffffff; --soft:#f8f4fb; --glass:rgba(255,255,255,.72);
+  --ink:#2d2a3e; --ink2:#6b6780; --muted:#8f8aa3; --line:#eee7f3; --line2:#e0d7ea;
+  --on-ink:#ffffff; --ink-hover:#433f5a; --knob:#ffffff; --topbg:rgba(253,248,243,.86);
+  --mint:#d3f2e6;  --mint-ink:#2f7d63;  --mint-line:#a8e0c9;
+  --peach:#ffe1d3; --peach-ink:#b5532e; --peach-line:#ffc4a8;
+  --lav:#e8e2ff;   --lav-ink:#5b4bb7;   --lav-line:#cbbfff;
+  --butter:#fff3c4;--butter-ink:#8a6a00;--butter-line:#f5dd85;
+  --sky:#dcedff;   --sky-ink:#2c6aa6;   --sky-line:#b3d4f7;
+  --pink:#ffe0ec;  --pink-ink:#b03a6a;  --pink-line:#ffbcd4;
+  --shadow:0 10px 30px rgba(91,75,183,.08),0 2px 6px rgba(91,75,183,.05);
+  --scrim:rgba(45,42,62,.28);
+  --display:'Unbounded',system-ui,-apple-system,'Segoe UI',sans-serif; --body:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r-sm:10px; --r-md:14px; --r-lg:22px; --pill:999px; --tb:58px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#18161f; --card:#221f2c; --soft:#2a2636; --glass:rgba(10,8,18,.32);
+  --ink:#f1eef8; --ink2:#bdb7d0; --muted:#8e88a4; --line:#332f42; --line2:#443e57;
+  --on-ink:#18161f; --ink-hover:#d9d3ea; --knob:#f1eef8; --topbg:rgba(24,22,31,.86);
+  --mint:#1c3a31;  --mint-ink:#8fe0bf;  --mint-line:#2f6151;
+  --peach:#40271d; --peach-ink:#ffb08f; --peach-line:#6e402d;
+  --lav:#2b2550;   --lav-ink:#c4b8ff;   --lav-line:#4a4082;
+  --butter:#3a3116;--butter-ink:#f2d36b;--butter-line:#62532a;
+  --sky:#1c2d45;   --sky-ink:#9ccaf7;   --sky-line:#304d74;
+  --pink:#42202d;  --pink-ink:#ffa2c6;  --pink-line:#6d3349;
+  --shadow:0 10px 30px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.25);
+  --scrim:rgba(0,0,0,.5);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#18161f; --card:#221f2c; --soft:#2a2636; --glass:rgba(10,8,18,.32);
+  --ink:#f1eef8; --ink2:#bdb7d0; --muted:#8e88a4; --line:#332f42; --line2:#443e57;
+  --on-ink:#18161f; --ink-hover:#d9d3ea; --knob:#f1eef8; --topbg:rgba(24,22,31,.86);
+  --mint:#1c3a31;  --mint-ink:#8fe0bf;  --mint-line:#2f6151;
+  --peach:#40271d; --peach-ink:#ffb08f; --peach-line:#6e402d;
+  --lav:#2b2550;   --lav-ink:#c4b8ff;   --lav-line:#4a4082;
+  --butter:#3a3116;--butter-ink:#f2d36b;--butter-line:#62532a;
+  --sky:#1c2d45;   --sky-ink:#9ccaf7;   --sky-line:#304d74;
+  --pink:#42202d;  --pink-ink:#ffa2c6;  --pink-line:#6d3349;
+  --shadow:0 10px 30px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.25);
+  --scrim:rgba(0,0,0,.5);
+  color-scheme:dark}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55;min-height:100vh;
+  background-image:radial-gradient(circle at 8% 0%,var(--lav) 0,transparent 32%),radial-gradient(circle at 100% 30%,var(--mint) 0,transparent 30%),radial-gradient(circle at 20% 100%,var(--peach) 0,transparent 30%);
+  background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--lav-ink);outline-offset:2px}
+.wrap{max-width:760px;margin:0 auto;padding-block:0 110px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--topbg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.topbar .in{max-width:760px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.brand{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;cursor:pointer;background:none;border:none;padding:0;white-space:nowrap}
+.brand span{color:var(--lav-ink)}
+.nav button{padding:7px 13px;font-size:13px}
+.nav button:disabled{opacity:.45;cursor:not-allowed}
+
+/* scoreboard */
+.scorebar{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--tb));z-index:40;background:var(--topbg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.scorebar .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sc{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:var(--pill);padding:4px 5px 4px 11px}
+.sc.active{border-color:var(--lav-ink);box-shadow:0 0 0 2px var(--lav)}
+.sc .nm{font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;border:1px solid var(--line2)}
+.sc .val{font-family:var(--display);font-weight:800;font-size:15px;min-width:18px;text-align:center;color:var(--lav-ink);font-variant-numeric:tabular-nums}
+.sc .pm{display:flex;gap:3px}
+.sc .pm button{width:24px;height:24px;border-radius:8px;border:1px solid var(--line);background:var(--soft);color:var(--ink2);cursor:pointer;font-weight:700;font-size:14px;line-height:1}
+.sc .pm button:hover{border-color:var(--lav-ink);color:var(--lav-ink)}
+.rst{margin-left:auto;font-size:12px;color:var(--ink2);background:transparent;border:1px solid var(--line2);border-radius:var(--pill);padding:6px 12px;cursor:pointer}
+.rst:hover{color:var(--ink);background:var(--card)}
+
+/* hero */
+.hero{padding:36px 0 22px;text-align:center}
+.kicker{display:inline-flex;gap:8px;align-items:center;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--lav-ink);background:var(--lav);border:1px solid var(--lav-line);padding:6px 14px;border-radius:var(--pill);margin-bottom:16px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,10vw,68px);line-height:1;letter-spacing:-.04em}
+.hero h1 .a{color:var(--peach-ink)}.hero h1 .b{color:var(--lav-ink)}.hero h1 .c{color:var(--mint-ink)}.hero h1 .d{color:var(--pink-ink)}.hero h1 .e{color:var(--sky-ink)}
+.hero h1 small{display:block;font-size:.34em;letter-spacing:-.01em;color:var(--ink);margin-top:10px}
+.hero p{color:var(--ink2);font-size:16px;max-width:500px;margin:14px auto 0;text-wrap:balance}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;box-shadow:var(--shadow);margin-bottom:16px;min-width:0}
+.step{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--lav-ink)}
+.h2{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;line-height:1.2;margin-top:4px;text-wrap:balance}
+.lead{color:var(--ink2);font-size:15px;margin-top:6px;max-width:60ch}
+.lbl{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.row{margin-bottom:22px}.row:last-of-type{margin-bottom:20px}
+.grp{margin-top:16px}
+
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--soft);border:1px solid var(--line);border-radius:var(--pill);padding:4px;gap:3px}
+.seg button{font-weight:600;font-size:14px;cursor:pointer;border:none;background:transparent;color:var(--ink2);padding:8px 16px;border-radius:var(--pill);transition:.15s}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.14)}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.pfield{display:flex;align-items:center;gap:8px;background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:8px 10px;min-width:0}
+.pfield input{flex:1;min-width:0;background:transparent;border:none;color:var(--ink);font-family:var(--body);font-size:16px;font-weight:600;outline:none}
+.pfield .x{border:none;background:none;color:var(--muted);cursor:pointer;font-size:16px;line-height:1;padding:2px 4px}
+.pfield .x:hover{color:var(--pink-ink)}
+.addp{border:1px dashed var(--line2);background:transparent;border-radius:var(--r-md);padding:8px 10px;color:var(--ink2);font-weight:600;font-size:14px;cursor:pointer}
+.addp:hover{border-color:var(--lav-ink);color:var(--lav-ink)}
+
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{font-weight:600;font-size:14px;cursor:pointer;background:var(--card);color:var(--ink2);border:1px solid var(--line2);padding:7px 13px;border-radius:var(--pill);transition:.12s;user-select:none}
+.chip:hover{border-color:var(--muted)}
+.chip .n{font-size:11px;opacity:.65;margin-left:4px}
+.chip.on{background:var(--lav);border-color:var(--lav-line);color:var(--lav-ink)}
+.chip.time.on{background:var(--butter);border-color:var(--butter-line);color:var(--butter-ink)}
+.selcount{font-size:13px;color:var(--ink2);margin-top:10px}
+
+.btn{font-family:var(--display);font-weight:700;font-size:15px;cursor:pointer;border-radius:var(--pill);padding:14px 26px;transition:.15s;border:1px solid transparent;letter-spacing:-.01em}
+.btn-main{background:var(--ink);color:var(--on-ink)}
+.btn-main:hover{background:var(--ink-hover)}
+.btn-soft{background:var(--lav);color:var(--lav-ink);border-color:var(--lav-line)}
+.btn-soft:hover{border-color:var(--lav-ink)}
+.btn-block{display:block;width:100%}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn-row.c{justify-content:center}
+.note{background:var(--butter);border:1px solid var(--butter-line);padding:12px 16px;border-radius:var(--r-md);font-size:14px;color:var(--ink);margin-top:16px}
+.note b{color:var(--butter-ink)}
+.note p+p{margin-top:6px}
+.mini-link{background:none;border:none;color:var(--lav-ink);font-weight:600;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;margin-top:12px;display:block}
+
+/* verb chips (progress) */
+.vstrip{display:flex;flex-wrap:wrap;gap:6px}
+.vchip{font-weight:600;font-size:13.5px;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--line2);padding:6px 11px;border-radius:var(--pill);display:inline-flex;align-items:center;gap:5px}
+.vchip:hover{border-color:var(--lav-ink)}
+.vchip.k{background:var(--mint);border-color:var(--mint-line);color:var(--mint-ink)}
+.vchip.k::before{content:"✓";font-weight:800}
+.vchip.n{background:var(--peach);border-color:var(--peach-line);color:var(--peach-ink)}
+.vchip.n::before{content:"↺";font-weight:800}
+.vchip.cur{box-shadow:0 0 0 2px var(--lav-ink)}
+.prog{display:flex;align-items:center;gap:12px;margin-top:14px}
+.prog .track{flex:1}
+.pbar{height:100%;background:linear-gradient(90deg,var(--mint-line),var(--mint-ink));border-radius:var(--pill);transition:width .4s}
+.prog .pt{font-weight:700;font-size:13px;color:var(--mint-ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* toggles */
+.toggle{display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:600;font-size:14px;color:var(--ink2);user-select:none}
+.toggle .sw{width:42px;height:24px;border-radius:var(--pill);background:var(--line2);position:relative;transition:.15s;flex-shrink:0}
+.toggle .sw::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--knob);box-shadow:0 1px 3px rgba(0,0,0,.2);transition:.15s}
+.toggle.on .sw{background:var(--mint-ink)}
+.toggle.on .sw::after{left:21px}
+.toggle small{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+.tglist{display:flex;flex-direction:column;gap:12px}
+
+/* role banner */
+.banner{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--mint);border:1px solid var(--mint-line);border-radius:var(--r-md);padding:12px 16px;margin-bottom:16px}
+.banner .now{font-family:var(--display);font-weight:800;font-size:16px;color:var(--mint-ink)}
+.banner .sub{font-size:13px;color:var(--ink2)}
+.banner .rnd{margin-left:auto;font-weight:700;font-size:12px;color:var(--mint-ink);letter-spacing:.04em;text-transform:uppercase;opacity:.85}
+.intro{text-align:center;padding:24px 10px}
+.intro .who{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,40px);letter-spacing:-.02em;line-height:1.15}
+.intro .who .nm{color:var(--lav-ink)}
+.intro .role{color:var(--ink2);font-size:15px;margin-top:8px}
+.intro .others{margin-top:6px;color:var(--muted);font-size:14px}
+
+/* timer + no-timer dots */
+.timer{margin-bottom:16px}
+.track{height:12px;background:var(--soft);border-radius:var(--pill);overflow:hidden;border:1px solid var(--line)}
+.bar{height:100%;width:100%;background:linear-gradient(90deg,var(--lav-line),var(--sky-line));border-radius:var(--pill);transition:width 1s linear}
+.bar.low{background:linear-gradient(90deg,var(--pink-line),var(--peach-line))}
+.clock{font-family:var(--display);font-weight:800;font-size:32px;text-align:center;margin-top:8px;font-variant-numeric:tabular-nums}
+.clock.low{color:var(--pink-ink)}
+.pz{font-family:var(--body);font-size:13px;font-weight:700;color:var(--butter-ink);background:var(--butter);border:1px solid var(--butter-line);border-radius:var(--pill);padding:3px 10px;vertical-align:middle;margin-left:8px}
+.dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-bottom:16px;font-weight:700;font-size:13px;color:var(--ink2)}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--soft);border:1px solid var(--line2)}
+.dots i.g{background:var(--mint-ink);border-color:var(--mint-ink)}
+.dots i.s{background:var(--peach-line);border-color:var(--peach-ink)}
+
+/* play card */
+.play{border-radius:var(--r-lg);padding:34px 22px 24px;text-align:center;min-height:210px;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid var(--lav-line);background:var(--lav);transition:background .25s,border-color .25s}
+.play .cat{font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.play .word{font-family:var(--display);font-weight:800;font-size:clamp(34px,9vw,56px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);word-break:break-word;text-wrap:balance}
+.ru{margin-top:16px;font-size:16px;font-weight:600;color:var(--ink2);background:var(--glass);border-radius:var(--pill);padding:7px 16px;transition:opacity .2s;max-width:100%}
+.ru.off{opacity:0;pointer-events:none}
+.left{display:block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);opacity:.75}
+.play.hidden .word,.play.hidden .ru{filter:blur(14px);user-select:none}
+.play.hidden ~ .clues,.play.hidden ~ .taboo{filter:blur(10px);user-select:none}
+.taboo{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin-top:12px}
+.taboo b{font-family:var(--display);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink-ink);margin-right:2px}
+.taboo span{font-size:13px;font-weight:700;padding:3px 10px;border-radius:var(--pill);border:1px dashed var(--pink-line);color:var(--pink-ink);background:var(--pink);text-decoration:line-through}
+.tools{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.tbtn{font-weight:600;font-size:13px;color:var(--ink2);background:var(--card);border:1px solid var(--line2);border-radius:var(--pill);padding:7px 14px;cursor:pointer}
+.tbtn:hover{border-color:var(--lav-ink);color:var(--lav-ink)}
+.tbtn.vcard{background:var(--butter);border-color:var(--butter-line);color:var(--butter-ink);font-weight:700}
+.tbtn.vcard:hover{border-color:var(--butter-ink)}
+
+.clues{margin-top:12px;background:var(--card);border:1px dashed var(--butter-line);border-radius:var(--r-md);padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.clues .ch b{font-family:var(--display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--butter-ink)}
+.cl{display:flex;align-items:center;gap:10px}
+.cl .t{flex:1;min-width:0;font-size:17px;font-weight:600;line-height:1.35}
+.cl .n{font-family:var(--display);font-weight:800;font-size:12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--butter);color:var(--butter-ink);flex-shrink:0}
+.gap{display:inline-block;min-width:2.2em;border-bottom:2.5px solid var(--butter-ink);color:transparent;line-height:1;margin:0 1px}
+.spk{border:1px solid var(--line2);background:var(--soft);border-radius:var(--pill);width:32px;height:32px;display:inline-grid;place-items:center;cursor:pointer;flex-shrink:0;font-size:14px;vertical-align:middle}
+.spk:hover{border-color:var(--lav-ink)}
+
+.actions{display:flex;gap:12px;margin-top:16px}
+.act{flex:1;font-family:var(--display);font-weight:700;font-size:18px;cursor:pointer;border-radius:var(--r-md);padding:18px;transition:.12s;border:1px solid}
+.act:active{transform:scale(.98)}
+.act-yes{background:var(--mint);color:var(--mint-ink);border-color:var(--mint-line)}
+.act-yes:hover{border-color:var(--mint-ink)}
+.act-skip{background:var(--peach);color:var(--peach-ink);border-color:var(--peach-line)}
+.act-skip:hover{border-color:var(--peach-ink)}
+.counters{display:flex;justify-content:center;gap:22px;margin-top:14px;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.counters .g{color:var(--mint-ink)}.counters .s{color:var(--peach-ink)}.counters .st{color:var(--butter-ink)}
+.keys{text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
+
+/* learning stop */
+.reveal{border-radius:var(--r-lg);padding:26px 20px 22px;text-align:center;border:1px solid var(--mint-line);background:var(--mint)}
+.rv-ok{display:inline-block;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mint-ink);background:var(--glass);border-radius:var(--pill);padding:4px 12px}
+.rv-word{font-family:var(--display);font-weight:800;font-size:clamp(30px,7.5vw,46px);line-height:1.1;letter-spacing:-.02em;margin-top:10px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.rv-ru{font-weight:700;font-size:17px;margin-top:6px}
+.rv-def{color:var(--ink2);font-size:15px;margin-top:2px}
+.rv-story{background:var(--glass);border-radius:var(--r-md);padding:10px 14px;font-size:15.5px;text-align:left;margin-top:14px}
+.rv-story .lab{display:block;font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:2px}
+.task{margin-top:14px;background:var(--butter);border:1px solid var(--butter-line);border-radius:var(--r-md);padding:14px 16px}
+.task-h{font-weight:700;font-size:17px;line-height:1.35}
+.task-h b{color:var(--butter-ink)}
+.task .ruu{margin-top:2px}
+.idea{margin-top:10px}
+.idea summary{cursor:pointer;font-weight:700;font-size:14px;color:var(--butter-ink);list-style:none}
+.idea summary::-webkit-details-marker{display:none}
+.idea summary::before{content:"💡 "}
+.idea .il{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.idea .il div{display:flex;align-items:center;gap:8px;justify-content:space-between;background:var(--glass);border-radius:var(--r-sm);padding:8px 10px;font-weight:600}
+.stars{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.star{font-weight:700;font-size:14px;cursor:pointer;border-radius:var(--pill);border:1px solid var(--butter-line);background:var(--card);color:var(--ink);padding:9px 14px}
+.star:hover{border-color:var(--butter-ink)}
+.star.on{background:var(--butter-ink);border-color:var(--butter-ink);color:var(--on-ink)}
+
+/* results */
+.big{font-family:var(--display);font-weight:800;font-size:64px;color:var(--lav-ink);line-height:1;text-align:center}
+.bigsub{color:var(--ink2);text-align:center;margin:6px 0 10px}
+.wl-h{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.wl{display:flex;gap:6px;flex-wrap:wrap}
+.wl span,.wl button{font-family:inherit;font-size:14px;font-weight:600;padding:5px 12px;border-radius:var(--pill);border:1px solid}
+.wl button{cursor:pointer}
+.wl.g button{background:var(--mint);border-color:var(--mint-line);color:var(--mint-ink)}
+.wl.s button{background:var(--peach);border-color:var(--peach-line);color:var(--peach-ink)}
+.wl.st span{background:var(--butter);border-color:var(--butter-line);color:var(--butter-ink)}
+.wl button:hover{border-color:currentColor}
+.wl small{opacity:.75;margin-left:5px;font-size:12px;font-weight:500}
+.wl .none{border:none;background:none;color:var(--muted)}
+.wl-tip{font-size:12.5px;color:var(--muted);margin-top:10px}
+.winner{font-family:var(--display);font-weight:800;font-size:24px;text-align:center;color:var(--lav-ink)}
+.stand{display:flex;align-items:center;gap:12px;background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 16px;margin-top:8px}
+.stand .m{font-size:22px}.stand .sn{font-weight:700;font-size:16px;flex:1;min-width:0}.stand .ss{font-family:var(--display);font-weight:800;font-size:20px;color:var(--lav-ink);font-variant-numeric:tabular-nums}
+
+/* learn: flashcard */
+.lhead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.lhead .h2{margin-top:0}
+#lstrip{margin-top:14px}
+.fc-front{border-radius:var(--r-lg);padding:22px 20px 26px;text-align:center;border:1px solid}
+.fc-meta{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.fc-meta .ix{color:var(--ink2);font-variant-numeric:tabular-nums}
+.fc-verb{font-family:var(--display);font-weight:800;font-size:clamp(40px,10vw,64px);line-height:1.05;letter-spacing:-.03em;margin-top:18px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;text-wrap:balance}
+.fc-ctx{font-size:17px;line-height:1.5;max-width:46ch;margin:14px auto 0;color:var(--ink)}
+.fc-ctx b{background:var(--glass);border-radius:6px;padding:0 4px}
+.fc-q{font-size:13.5px;color:var(--ink2);margin-top:12px;font-weight:600}
+.fcard .btn-block{margin-top:14px}
+.fc-acts{display:flex;gap:10px;margin-top:16px;align-items:stretch}
+.nbtn{width:56px;flex-shrink:0;border-radius:var(--r-md);border:1px solid var(--line2);background:var(--soft);font-family:var(--display);font-weight:800;font-size:20px;cursor:pointer;color:var(--ink2)}
+.nbtn:hover{border-color:var(--lav-ink);color:var(--lav-ink)}
+
+/* verb card body (learn + drawer) */
+.vb{display:flex;flex-direction:column;gap:0;margin-top:16px}
+.vsec{border-top:1px solid var(--line);padding:14px 0}
+.vsec:first-child{border-top:none;padding-top:4px}
+.vsec:last-child{padding-bottom:0}
+.vlbl{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.mean-en{font-size:18px;font-weight:700;line-height:1.35}
+.mean-ru{font-size:16px;font-weight:600;color:var(--ink2);margin-top:4px}
+.forms{font-size:13px;color:var(--muted);margin-top:8px;font-weight:600}
+.ml{list-style:none;display:flex;flex-direction:column;gap:8px;counter-reset:m}
+.ml li{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:10px;background:var(--soft);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px}
+.ml li::before{counter-increment:m;content:counter(m);font-family:var(--display);font-weight:800;font-size:12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--lav);color:var(--lav-ink);grid-row:span 3}
+.ml-lab{font-size:13px;font-weight:700;color:var(--ink2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tagx{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--mint);color:var(--mint-ink);border:1px solid var(--mint-line);border-radius:var(--pill);padding:1px 8px}
+.ml-ex{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:16.5px;font-weight:600;margin-top:2px}
+.ruu{font-size:13.5px;color:var(--ink2)}
+.trapx p{margin-top:4px;font-size:16px}
+.trapx .x{color:var(--pink-ink);text-decoration:line-through;text-decoration-thickness:2px}
+.trapx .x::before{content:"✗ ";text-decoration:none;display:inline-block}
+.trapx .y{color:var(--mint-ink);font-weight:700}
+.trapx .y::before{content:"✓ "}
+.coll{display:flex;flex-wrap:wrap;gap:6px}
+.coll span{display:inline-flex;flex-direction:column;background:var(--soft);border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 10px;min-width:0}
+.coll b{font-size:14.5px}
+.coll small{font-size:12.5px;color:var(--ink2)}
+.vsec .clues{margin-top:0}
+.vsec .taboo{justify-content:flex-start}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:var(--scrim);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:80;background:var(--bg);border-left:1px solid var(--line);box-shadow:-10px 0 40px rgba(0,0,0,.18);transform:translateX(105%);transition:transform .25s ease;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-right:env(safe-area-inset-right,0px);visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.dhead{padding:14px 16px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);background:var(--card)}
+.dtitle{font-family:var(--display);font-weight:800;font-size:16px}
+.dtitle span{color:var(--butter-ink)}
+.dclose{border:1px solid var(--line2);background:var(--soft);border-radius:var(--pill);padding:6px 14px;font-weight:700;font-size:13px;cursor:pointer;color:var(--ink2)}
+.dbody{flex:1;overflow-y:auto;padding:16px;-webkit-overflow-scrolling:touch}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px}
+.dverb{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.1;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.dsrc{font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+.dctx{font-size:15px;background:var(--soft);border-radius:var(--r-md);padding:10px 12px;margin-top:10px}
+.dctx b{color:var(--lav-ink)}
+
+footer{text-align:center;margin-top:36px;color:var(--muted);font-size:13px}
+footer a,.note a{color:var(--lav-ink);font-weight:700;text-underline-offset:3px}
+#app>.card:first-child{margin-top:20px}
+@media(max-width:520px){.card{padding:18px}.play{padding:28px 14px 20px}.act{font-size:16px;padding:16px 10px}.hero{padding:26px 0 18px}.nbtn{width:46px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar" id="topbar"><div class="in"><button class="brand" id="brand" type="button" aria-label="Home">NEURO<span>·</span>FLUENT</button>
+  <nav class="seg nav" id="nav" aria-label="Mode"><button type="button" data-v="learn">📖 Learn</button><button type="button" data-v="play">🗣️ Play</button></nav></div></header>
+<div class="scorebar" id="scorebar" hidden><div class="in" id="scoreIn"></div></div>
+<main class="wrap" id="app"></main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <div class="dhead"><div class="dtitle" id="dTitle">📖 <span>Verb card</span></div><button class="dclose" id="dClose" type="button">Close ✕</button></div>
+  <div class="dbody" id="dBody"></div>
+</aside>
+
+<script>
+/* ===== DATA: 10 verbs from "Caught on the Kiss Cam" + 10 from "Left Behind" ===== */
+const PV=[{"src": "kiss", "v": "show up", "ru": "появиться; прийти, заявиться", "ctx": "…a camera looked for happy couples, and their faces <b>showed up<\/b> on a giant screen.", "forms": "show up · showed up · shown up · showing up", "means": [["appear (on a screen, in results)", "Their faces showed up on the screen.", "Их лица появились на экране."], ["arrive (often late or unexpected)", "He showed up at 11 p.m. without calling.", "Он заявился в 11 вечера без звонка."], ["come to an event", "Only five people showed up to the meeting.", "На встречу пришли всего пять человек."]], "trap": ["He didn't come up to the meeting.", "He didn't show up to the meeting.", "come up = подойти; всплыть (о теме)."], "coll": [["show up late", "прийти поздно"], ["show up on time", "прийти вовремя"], ["show up uninvited", "заявиться без приглашения"]], "clues": ["To arrive, often late or when nobody expects you.", "I waited for an hour, but he never ___ ___."], "taboo": ["show", "showed", "up"], "def": "to appear; to arrive (often when people don't expect it)"}, {"src": "kiss", "v": "freak out", "ru": "запаниковать, психануть, офигеть", "ctx": "But when they saw their faces, they <b>freaked out<\/b>.", "forms": "freak out · freaked out · freaking out", "means": [["panic", "When they saw their faces, they freaked out.", "Увидев свои лица, они запаниковали."], ["get very angry", "My boss freaked out when he saw the bill.", "Босс взбесился, когда увидел счёт."], ["get crazy happy", "The fans freaked out when the band came on stage.", "Фанаты сошли с ума, когда группа вышла на сцену."]], "trap": ["It freaks out me.", "It freaks me out.", "Местоимение — в середину."], "coll": [["totally freak out", "полностью потерять голову"], ["freak out about money", "паниковать из-за денег"], ["don't freak out, but…", "только не паникуй, но…"]], "clues": ["To suddenly panic: very scared or very angry.", "Don't ___ ___, but I crashed your car."], "taboo": ["freak", "out"], "def": "to suddenly become very scared, angry or excited"}, {"src": "kiss", "v": "blow up", "ru": "«залететь», стать вирусным", "ctx": "A fan filmed the moment and posted it on TikTok. The video <b>blew up<\/b>.", "forms": "blow up · blew up · blown up · blowing up", "means": [["become viral", "The video blew up on TikTok.", "Видео залетело в TikTok."], ["get lots of messages", "My phone is blowing up! 200 messages!", "Телефон разрывается! 200 сообщений!"], ["explode / make explode", "The car blew up. They blew up the bridge.", "Машина взорвалась. Они взорвали мост."]], "trap": ["The video blowed up.", "The video blew up.", "blow — blew — blown."], "coll": [["blow up on TikTok", "залететь в TikTok"], ["blow up overnight", "взлететь за одну ночь"], ["blow up at someone", "наорать на кого-то"]], "clues": ["A video or a post suddenly gets millions of views.", "My cat video ___ ___ on TikTok: 5 million views!"], "taboo": ["blow", "blew", "up"], "def": "(a video or post) to suddenly become very popular"}, {"src": "kiss", "v": "find out", "ru": "узнать, выяснить", "ctx": "Very soon, people <b>found out<\/b> who the couple were.", "forms": "find out · found out · finding out", "means": [["learn a fact", "People found out who the couple were.", "Люди узнали, кто эта пара."], ["get information on purpose", "Can you find out when the train leaves?", "Можешь выяснить, когда поезд?"], ["find someone out: discover their lie", "He lied for years, but his wife found him out.", "Он врал годами, но жена его раскусила."]], "trap": ["I knew about it yesterday.", "I found out about it yesterday.", "know = состояние, find out = момент."], "coll": [["find out the truth", "узнать правду"], ["find out about an affair", "узнать об измене"], ["find out who / why", "выяснить, кто / почему"]], "clues": ["To learn a fact or a secret that you didn't know before.", "How did your wife ___ ___ about the tattoo?"], "taboo": ["find", "found", "out"], "def": "to learn a fact that you didn't know before"}, {"src": "kiss", "v": "cheat on", "ru": "изменять (партнёру)", "ctx": "The internet decided: they were <b>cheating on<\/b> their partners.", "forms": "cheat on · cheated on · cheating on", "means": [["be unfaithful", "He cheated on his wife.", "Он изменял жене."], ["cheat at a game: break the rules", "He always cheats at cards.", "Он всегда жульничает в карты."], ["cheat on a test (US)", "She cheated on the exam.", "Она списала на экзамене."]], "trap": ["He cheated his wife.", "He cheated on his wife.", "cheat someone = обмануть его (например, на деньги)."], "coll": [["cheat on a partner", "изменять партнёру"], ["caught cheating", "пойман на измене / списывании"], ["cheat on a test", "списывать на тесте"]], "clues": ["Your partner secretly has another girlfriend or boyfriend.", "He ___ ___ his wife with her best friend."], "taboo": ["cheat", "on"], "def": "to be unfaithful to your husband, wife or partner"}, {"src": "kiss", "v": "look into", "ru": "разобраться, расследовать", "ctx": "The company's board <b>looked into<\/b> the situation.", "forms": "look into · looked into · looking into", "means": [["investigate", "The board looked into the situation.", "Совет директоров разобрался в ситуации."], ["check a problem (at work)", "Thanks for the report. I'll look into it.", "Спасибо за сообщение. Я разберусь."], ["consider an option", "We're looking into moving to Georgia.", "Мы рассматриваем переезд в Грузию."]], "trap": ["The board looked after the problem.", "The board looked into the problem.", "look after = заботиться (о детях)."], "coll": [["look into a problem / complaint", "разобраться в проблеме / жалобе"], ["look into the matter", "рассмотреть вопрос"], ["the police are looking into it", "полиция проверяет"]], "clues": ["To check a problem carefully, like a detective.", "Thanks for the complaint. We'll ___ ___ it."], "taboo": ["look", "into"], "def": "to investigate; to check the facts"}, {"src": "kiss", "v": "step down", "ru": "уйти с поста, в отставку", "ctx": "A few days later, Byron <b>stepped down<\/b> as CEO.", "forms": "step down · stepped down · stepping down", "means": [["leave a top position", "Byron stepped down as CEO.", "Байрон ушёл с поста гендиректора."], ["literally: step to a lower place", "Please step down from the stage.", "Пожалуйста, сойдите со сцены."], ["let someone else lead", "The coach stepped down to give a younger man a chance.", "Тренер ушёл, чтобы дать шанс молодому."]], "trap": ["The CEO stepped up.", "The CEO stepped down.", "step up = взять на себя больше ответственности. Противоположность!"], "coll": [["step down as CEO", "уйти с поста CEO"], ["step down from the board", "выйти из совета директоров"], ["step down after a scandal", "уйти после скандала"]], "clues": ["A boss or a politician leaves the top job, often after a scandal.", "After the scandal, the CEO ___ ___."], "taboo": ["step", "down"], "def": "to leave an important job or position"}, {"src": "kiss", "v": "get away with", "ru": "выйти сухим из воды; сойти с рук", "ctx": "On the biggest screen in Boston, you can't <b>get away with<\/b> anything.", "forms": "get away with · got away with · got <i>(UK)<\/i> / gotten <i>(US)<\/i> away with · getting away with", "means": [["not be punished", "He cheated and got away with it.", "Он изменял, и ему это сошло с рук."], ["get only a small punishment", "He got away with a small fine.", "Он отделался небольшим штрафом."], ["get away with murder (idiom)", "Her kids get away with murder.", "Её детям всё сходит с рук."]], "trap": ["It got away with him.", "He got away with it.", "Подлежащее — человек."], "coll": [["get away with it", "выйти сухим из воды"], ["get away with murder", "всё сходит с рук"], ["get away with cheating", "изменить безнаказанно"]], "clues": ["You do something bad, but nobody punishes you.", "He never pays for parking. How does he ___ ___ ___ it?"], "taboo": ["get", "got", "away", "with"], "def": "to do something bad and not get punished"}, {"src": "kiss", "v": "split up", "ru": "расстаться, разойтись", "ctx": "…a spokesperson for Cabot's husband said that the couple had <b>split up<\/b> “several weeks before the Coldplay concert”.", "forms": "split up · split up · split up · splitting up <i>(как cut / put)<\/i>", "means": [["end a relationship", "They split up after ten years.", "Они расстались после десяти лет."], ["split up with someone", "She split up with her boyfriend.", "Она рассталась с парнем."], ["divide into groups", "Let's split up into two teams.", "Давайте разделимся на две команды."]], "trap": ["They splitted up.", "They split up.", "split — split — split."], "coll": [["split up with a boyfriend", "расстаться с парнем"], ["split up after 10 years", "разойтись после 10 лет"], ["split up into groups", "разделиться на группы"]], "clues": ["A couple stops being a couple. The relationship is over.", "They were together for ten years, but last year they ___ ___."], "taboo": ["split", "up"], "def": "to end a relationship or a marriage"}, {"src": "kiss", "v": "move on", "ru": "жить дальше, двигаться дальше", "ctx": "And how do you <b>move on<\/b> after a mistake that the whole world saw?", "forms": "move on · moved on · moving on", "means": [["accept the past and continue", "After the breakup, she moved on.", "После расставания она отпустила и живёт дальше."], ["go to the next topic", "Let's move on to the next question.", "Перейдём к следующему вопросу."], ["change job or place", "After five years, I decided to move on.", "Через пять лет я решил двигаться дальше."]], "trap": ["Move forward from him.", "Move on from him.", "Так естественнее."], "coll": [["move on from a breakup", "пережить расставание"], ["move on with your life", "жить дальше"], ["it's time to move on", "пора двигаться дальше"]], "clues": ["Forget the bad past and start a new life.", "Stop talking about your ex! It's time to ___ ___."], "taboo": ["move", "on"], "def": "to stop thinking about a bad experience and start a new stage of life"}, {"src": "mount", "v": "set off", "ru": "отправиться (в путь)", "ctx": "Thomas P. and his girlfriend Kerstin G. <b>set off<\/b> to climb the Grossglockner.", "forms": "set off · set off · set off · setting off <i>(set — set — set)<\/i>", "means": [["start a journey", "They set off at 6:45 in the morning.", "Они вышли в 6:45 утра."], ["make an alarm ring", "The smoke set off the fire alarm.", "Из-за дыма сработала пожарная сигнализация."], ["cause something to start", "The video set off a big argument online.", "Видео вызвало большой спор в сети."]], "trap": ["We set off to Batumi.", "We set off for Batumi.", "Куда = for."], "coll": [["set off early / at dawn", "выйти рано / на рассвете"], ["set off on a trip", "отправиться в поездку"], ["set off for the mountains", "отправиться в горы"]], "clues": ["To start a trip: you leave home early in the morning.", "We ___ ___ at 5 a.m. to see the sunrise."], "taboo": ["set", "off"], "def": "to start a journey"}, {"src": "mount", "v": "turn back", "ru": "повернуть назад", "ctx": "In the evening, other climbers <b>turned back<\/b>…", "forms": "turn back · turned back · turning back", "means": [["return, give up the goal", "Other climbers turned back.", "Другие альпинисты повернули назад."], ["make someone return", "The police turned back the cars at the border.", "Полиция развернула машины на границе."], ["there's no turning back", "We've sold the flat. There's no turning back now.", "Мы продали квартиру. Пути назад нет."]], "trap": ["We turned and went home.", "We turned back and went home.", ""], "coll": [["decide to turn back", "решить повернуть назад"], ["turn back before it's too late", "повернуть, пока не поздно"], ["no turning back", "пути назад нет"]], "clues": ["You stop and return the same way before you reach the top.", "The storm was too strong, so we ___ ___ and went home."], "taboo": ["turn", "back"], "def": "to return the way you came, before you reach your goal"}, {"src": "mount", "v": "go on", "ru": "продолжать (идти, делать)", "ctx": "…but Thomas and Kerstin <b>went on<\/b>.", "forms": "go on · went on · gone on · going on", "means": [["continue (walking, doing)", "Other climbers turned back, but they went on.", "Другие повернули назад, а они пошли дальше."], ["happen", "What's going on?", "Что происходит?"], ["go on + -ing", "She went on talking.", "Она продолжала говорить."]], "trap": ["What is going?", "What's going on?", ""], "coll": [["go on climbing / walking", "продолжать подъём / идти"], ["go on with the trip", "продолжить поездку"], ["what's going on?", "что происходит?"]], "clues": ["To continue. Don't stop!", "It started to rain, but we ___ ___ walking."], "taboo": ["go", "went", "on"], "def": "to continue"}, {"src": "mount", "v": "end up", "ru": "оказаться (в итоге), очутиться", "ctx": "By 8 p.m. they had <b>ended up<\/b> on the hardest part of the ridge, in the dark.", "forms": "end up · ended up · ending up", "means": [["be somewhere in the end", "They ended up on the hardest part of the ridge, in the dark.", "Они оказались на самом сложном участке, в темноте."], ["end up + -ing", "We ended up sleeping in the car.", "В итоге мы спали в машине."], ["end up as", "He ended up as a manager.", "В итоге он стал менеджером."]], "trap": ["We ended up to sleep in the car.", "We ended up sleeping in the car.", "end up + -ing."], "coll": [["end up in hospital / in jail", "оказаться в больнице / в тюрьме"], ["end up alone", "остаться в итоге одному"], ["end up paying more", "в итоге заплатить больше"]], "clues": ["The place you reach finally, but you didn't plan it.", "We wanted to go to Tbilisi, but we ___ ___ in Kutaisi."], "taboo": ["end", "up"], "def": "to be in a place or situation in the end, often without planning it"}, {"src": "mount", "v": "pick up", "ru": "взять трубку (и ещё много значений)", "ctx": "…mountain police called Thomas several times, but he didn't <b>pick up<\/b>.", "forms": "pick up · picked up · picking up", "means": [["answer the phone", "Police called many times, but he didn't pick up.", "Полиция звонила много раз, но он не взял трубку."], ["collect someone", "Can you pick me up at 7?", "Заберёшь меня в 7?"], ["lift", "Pick up your clothes!", "Подними свою одежду!"]], "trap": ["He didn't take the phone.", "He didn't pick up.", ""], "coll": [["pick up the phone", "взять трубку"], ["not picking up", "не берёт трубку"], ["pick someone up from the airport", "забрать из аэропорта"]], "clues": ["To answer the phone when it rings.", "I called you five times! Why didn't you ___ ___?"], "taboo": ["pick", "up"], "def": "to answer the phone"}, {"src": "mount", "v": "get through", "ru": "дозвониться", "ctx": "…then put his phone on silent, so nobody could <b>get through<\/b> to him.", "forms": "get through · got through · got <i>(UK)<\/i> / gotten <i>(US)<\/i> through · getting through", "means": [["reach by phone", "Nobody could get through to him.", "Никто не мог до него дозвониться."], ["survive a hard time", "How did you get through the winter?", "Как ты пережил зиму?"], ["make someone understand", "I just can't get through to my son.", "До сына просто не достучаться."]], "trap": ["I couldn't call to her.", "I couldn't get through to her.", "«Дозвониться» не = call."], "coll": [["get through to someone", "дозвониться до кого-то"], ["can't get through", "не могу дозвониться"], ["get through a hard time", "пережить трудное время"]], "clues": ["You call and call… and finally you reach the person.", "The bank's line is always busy. I can't ___ ___ to them."], "taboo": ["get", "got", "through"], "def": "to succeed in reaching someone on the phone"}, {"src": "mount", "v": "leave behind", "ru": "оставить (позади), бросить", "ctx": "At about 2 a.m., he <b>left<\/b> her <b>behind<\/b> and climbed down to get help.", "forms": "leave behind · left behind · leaving behind", "means": [["not take someone with you", "He left her behind and climbed down to get help.", "Он оставил её и спустился за помощью."], ["forget something", "I left my phone behind in the taxi.", "Я забыл телефон в такси."], ["leave the past behind", "She wants to leave the past behind.", "Она хочет оставить прошлое позади."]], "trap": ["He left behind her.", "He left her behind.", "Местоимение — в середину."], "coll": [["leave someone behind", "оставить кого-то"], ["leave the past behind", "оставить прошлое"], ["get left behind", "отстать"]], "clues": ["You go away, but someone or something stays there without you.", "Oh no! I ___ my passport ___ at the hotel!"], "taboo": ["leave", "left", "behind"], "def": "to go away without someone or something"}, {"src": "mount", "v": "look for", "ru": "искать", "ctx": "In the morning, rescuers went up to <b>look for<\/b> her.", "forms": "look for · looked for · looking for", "means": [["try to find", "Thousands of people were looking for Gabby.", "Тысячи людей искали Габби."], ["want (job, flat, partner)", "I'm looking for a new job.", "Я ищу новую работу."], ["in a shop", "Can I help you? — Thanks, I'm just looking.", "Вам помочь? — Спасибо, я просто смотрю."]], "trap": ["I'm finding my keys.", "I'm looking for my keys.", "find = найти, не «искать»."], "coll": [["look for a job / a flat", "искать работу / квартиру"], ["look for help", "искать помощи"], ["look for a missing person", "искать пропавшего"]], "clues": ["To try to find something that you don't have.", "Excuse me, I'm ___ ___ the train station."], "taboo": ["look", "for"], "def": "to try to find someone or something"}, {"src": "mount", "v": "turn out", "ru": "оказаться, выясниться (что…)", "ctx": "It <b>turned out<\/b> that Kerstin was climbing in soft snowboard boots…", "forms": "turn out · turned out · turning out", "means": [["it turned out that…", "It turned out that she was climbing in snowboard boots.", "Оказалось, что она шла в сноубордических ботинках."], ["turn out to be", "The tourist turned out to be a police officer.", "Турист оказался полицейским."], ["end, result", "How did the trip turn out?", "Ну и как прошла поездка?"]], "trap": ["It was turned out that…", "It turned out that…", "Без пассива."], "coll": [["it turned out that", "оказалось, что"], ["turn out to be true / fake", "оказаться правдой / фейком"], ["turn out fine", "закончиться хорошо"]], "clues": ["Finally we learn the truth, and it's a surprise.", "We thought he was a tourist, but he ___ ___ to be a police officer."], "taboo": ["turn", "out"], "def": "to become known in the end (about the truth)"}, {"src": "mount", "v": "come forward", "ru": "выступить, откликнуться, дать показания", "ctx": "Then Kerstin's parents <b>came forward<\/b> with a letter…", "forms": "come forward · came forward · come forward · coming forward", "means": [["give information", "A YouTube couple came forward with a video.", "Пара ютуберов обратилась с видео."], ["witnesses", "Police asked witnesses to come forward.", "Полиция попросила свидетелей откликнуться."], ["offer to help", "Many volunteers came forward.", "Вызвалось много волонтёров."]], "trap": ["The truth came forward.", "The truth came out.", "Правда «всплыла» = came out. Come forward — про людей."], "coll": [["come forward with information", "обратиться с информацией"], ["witnesses came forward", "свидетели откликнулись"], ["come forward publicly", "выступить публично"]], "clues": ["A person goes to the police and says: I saw it! I have information.", "After the robbery, three witnesses ___ ___ with information."], "taboo": ["come", "came", "forward"], "def": "to give information or help to the police or the public"}];
+const SRC={kiss:{label:'💋 Kiss cam',name:'Caught on the Kiss Cam',col:'pink'},mount:{label:'⛰ Left behind',name:'Left Behind',col:'sky'}};
+const SRCS=['kiss','mount'];
+const TURN_WORDS=5;
+
+/* ===== SETTINGS (saved in this browser) ===== */
+const LS='nf_alias_pv20_v1';
+let S={players:['Kolya','Rustam'],scores:[0,0],secs:0,srcs:['kiss','mount'],hint:true,clues:true,stop:true,known:{}};
+try{const j=JSON.parse(localStorage.getItem(LS)||'null');if(j&&typeof j==='object')S=Object.assign(S,j);}catch(e){}
+if(!Array.isArray(S.players)||S.players.length<2)S.players=['Kolya','Rustam'];
+if(!Array.isArray(S.scores)||S.scores.length!==S.players.length)S.scores=S.players.map(()=>0);
+S.srcs=(Array.isArray(S.srcs)?S.srcs:[]).filter(k=>SRC[k]);if(!S.srcs.length)S.srcs=SRCS.slice();
+if(![0,60,90,120].includes(S.secs))S.secs=0;
+if(!S.known||typeof S.known!=='object')S.known={};
+['hint','clues','stop'].forEach(k=>{if(typeof S[k]!=='boolean')S[k]=true;});
+function save(){try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}}
+
+/* ===== HELPERS ===== */
+const $=id=>document.getElementById(id);
+const app=$('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const N=()=>S.players.length;
+const nm=i=>(S.players[((i%N())+N())%N()]||'').trim()||('Player '+(i+1));
+const PCOL=['var(--lav-line)','var(--mint-line)','var(--peach-line)','var(--sky-line)','var(--pink-line)','var(--butter-line)'];
+const shortRu=p=>p.ru.split(';')[0];
+const spk=t=>`<button class="spk" type="button" data-say="${esc(t)}" aria-label="Listen">🔊</button>`;
+const gapify=t=>esc(t).replace(/___/g,'<span class="gap" aria-label="blank">___</span>');
+const knownN=()=>PV.filter(p=>S.known[p.v]===1).length;
+const vcls=p=>S.known[p.v]===1?'k':S.known[p.v]===-1?'n':'';
+let voice=null;
+function pickVoice(){try{const v=speechSynthesis.getVoices();voice=v.find(x=>/en[-_]US/i.test(x.lang)&&/natural|google|samantha|aria|jenny/i.test(x.name))||v.find(x=>/en[-_]US/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null;}catch(e){}}
+try{pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}
+function speak(text){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(text).replace(/_{3}(\s_{3})*/g,'blank'));u.lang='en-US';if(voice)u.voice=voice;u.rate=.92;speechSynthesis.speak(u);}catch(e){}}
+
+/* ===== STATE ===== */
+let view='home',lastPhase='intro',gameOn=false;
+let dIdx=0,pass=1,turn=0,got=[],skipped=[],stars=[],queue=[],current=null,hidden=false;
+let timer=null,left=0,revealing=false;const pauses=new Set();
+let lf='all',li=0,lOpen=false;
+const inGame=v=>['intro','play','end','stand'].includes(v);
+function pool(){return PV.filter(p=>S.srcs.includes(p.src));}
+function refill(){queue=shuffle(pool());}
+function guesserIdx(){return S.players.map((_,i)=>i).filter(i=>i!==dIdx);}
+function guessersStr(){return guesserIdx().map(nm).join(' & ');}
+
+/* ===== SCOREBOARD ===== */
+function renderScores(){
+  const bar=$('scorebar'),inn=$('scoreIn');
+  if(!inGame(view)){bar.hidden=true;return;}
+  inn.innerHTML=S.players.map((p,i)=>`<div class="sc${i===dIdx&&view!=='stand'?' active':''}"><span class="nm"><span class="dot" style="background:${PCOL[i%PCOL.length]}"></span>${esc(nm(i))}</span><span class="val">${S.scores[i]}</span><span class="pm"><button type="button" data-i="${i}" data-d="-1" aria-label="Minus one point for ${esc(nm(i))}">−</button><button type="button" data-i="${i}" data-d="1" aria-label="Plus one point for ${esc(nm(i))}">+</button></span></div>`).join('')+`<button class="rst" type="button" id="rst">↺ Reset scores</button>`;
+  inn.querySelectorAll('.pm button').forEach(b=>b.onclick=()=>addScore(+b.dataset.i,+b.dataset.d));
+  $('rst').onclick=()=>{S.scores=S.players.map(()=>0);save();renderScores();};
+  bar.hidden=false;
+}
+function addScore(i,n){S.scores[i]=Math.max(0,(S.scores[i]||0)+n);save();renderScores();}
+
+/* ===== NAV ===== */
+function go(v,keepScroll){if(inGame(view)&&view!=='play')lastPhase=view;view=v;render(keepScroll);}
+function renderNav(){
+  $('nav').querySelectorAll('button').forEach(b=>{const isL=b.dataset.v==='learn';b.classList.toggle('on',isL?view==='learn':view!=='learn');b.disabled=view==='play';b.title=view==='play'?'Finish the turn first (⏹ End turn)':'';});
+  $('brand').disabled=view==='play';
+}
+$('nav').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(view==='play')return;if(b.dataset.v==='learn'){if(view!=='learn')go('learn');}else if(view==='learn'||view==='home'){go(gameOn?lastPhase:'home');}else go('home');});
+$('brand').onclick=()=>{if(view!=='play')go('home');};
+function setTb(){document.documentElement.style.setProperty('--tb',$('topbar').offsetHeight+'px');}
+addEventListener('resize',setTb);
+
+/* ===== RENDER ===== */
+function render(keepScroll){
+  stopTimer();revealing=false;pauses.clear();
+  app.innerHTML=({home:homeHTML,learn:learnHTML,intro:introHTML,play:playHTML,end:endHTML,stand:standHTML}[view])();
+  (wire[view]||(()=>{}))();
+  renderScores();renderNav();setTb();
+  if(!keepScroll)window.scrollTo(0,0);
+}
+const tog=(id,on,label,sub)=>`<div class="toggle${on?' on':''}" id="${id}" role="switch" aria-checked="${on}" tabindex="0"><span class="sw"></span><span>${label}${sub?`<small>${sub}</small>`:''}</span></div>`;
+
+function homeHTML(){
+  const k=knownN(),tot=PV.length,n=pool().length;
+  return `<div class="hero"><div class="kicker">Learning mode · 20 phrasal verbs</div>
+    <h1><span class="a">A</span><span class="b">l</span><span class="c">i</span><span class="d">a</span><span class="e">s</span><small>Kiss cam + Left behind</small></h1>
+    <p>Describe the phrasal verb in English, but never say its words. After each guess, the guessers make their own sentence with it.</p></div>
+
+  <section class="card" aria-labelledby="h-learn"><div class="step">Step 1</div><h2 class="h2" id="h-learn">Learn the 20 verbs</h2>
+    <p class="lead">One card per verb: the story sentence, the meaning, Russian, examples you can listen to, and the trap for Russian speakers. Mark the ones you know.</p>
+    <div class="prog"><div class="track"><div class="pbar" style="width:${Math.round(k/tot*100)}%"></div></div><span class="pt">✓ ${k} of ${tot} known</span></div>
+    ${SRCS.map(s=>`<div class="grp"><div class="lbl">${SRC[s].label} · ${esc(SRC[s].name)}</div><div class="vstrip">${PV.filter(p=>p.src===s).map(p=>`<button type="button" class="vchip ${vcls(p)}" data-go="${esc(p.v)}">${esc(p.v)}</button>`).join('')}</div></div>`).join('')}
+    <div class="btn-row"><button class="btn btn-main" type="button" id="toLearn">📖 Study the cards ▶</button></div></section>
+
+  <section class="card" aria-labelledby="h-play"><div class="step">Step 2</div><h2 class="h2" id="h-play">Play Alias</h2>
+    <p class="lead" style="margin-bottom:20px">One screen. The describer reads the verb; the others guess out loud.</p>
+    <div class="row"><div class="lbl">1 · Players</div>
+      <div class="pgrid" id="pgrid">${S.players.map((p,i)=>`<div class="pfield"><span class="dot" style="background:${PCOL[i%PCOL.length]}"></span><input id="pl${i}" value="${esc(p)}" data-i="${i}" maxlength="14" aria-label="Player ${i+1} name">${N()>2?`<button type="button" class="x" data-x="${i}" aria-label="Remove ${esc(nm(i))}">✕</button>`:''}</div>`).join('')}${N()<6?'<button type="button" class="addp" id="addp">+ Add player</button>':''}</div></div>
+    <div class="row"><div class="lbl">2 · Which verbs</div>
+      <div class="chips" id="srcChips">${SRCS.map(s=>`<button type="button" class="chip${S.srcs.includes(s)?' on':''}" data-c="${s}">${SRC[s].label}<span class="n">10</span></button>`).join('')}</div>
+      <div class="selcount" id="selCount">${n} verbs in the deck</div></div>
+    <div class="row"><div class="lbl">3 · Turn length</div><div class="chips" id="timeChips">${[[0,`No timer · ${TURN_WORDS} verbs`],[60,'60s'],[90,'90s'],[120,'120s']].map(([s,t])=>`<button type="button" class="chip time${s===S.secs?' on':''}" data-s="${s}">${t}</button>`).join('')}</div></div>
+    <div class="row"><div class="lbl">4 · Help</div><div class="tglist">
+      ${tog('stopTog',S.stop,'Learning stop after each guess','Shows the meaning and asks the guessers for their own sentence. The timer pauses.')}
+      ${tog('hintTog',S.hint,'Russian hint under the verb')}
+      ${tog('cluesTog',S.clues,'2 easy clues under the verb')}</div></div>
+    <button class="btn btn-main btn-block" type="button" id="go">Start: ${esc(nm(0))} describes first ▶</button>
+    ${gameOn?'<button type="button" class="mini-link" id="resume">↩ Back to the game in progress</button>':''}
+    <div class="note"><p><b>How it works.</b> The describer explains the verb in English and never says its words (they're crossed out in pink). ✓ = guessed, ⏭ = skip. Each guessed verb = 1 point for the describer.</p>
+      <p><b>Learning stop.</b> After each guess, the guessers say their own sentence with the verb. A good sentence = ⭐ +1 point for that guesser.</p>
+      <p><b>On a video call?</b> Hide the word with 🙈 before you share your screen, or let the describer open this page on their own phone.</p>
+      <p><b>Everyone on their own device?</b> Open the <a href="/">main Alias game</a>, choose 🌐 Online, tap “none” under Categories, then tick 💋 Kiss cam verbs and ⛰ Left behind verbs.</p></div></section>
+  <footer>Neuro-Fluent · Alias learning mode · 10 verbs from “Caught on the Kiss Cam” + 10 from “Left Behind”<br><a href="/">Full Alias game (1,000+ words, online codes) →</a></footer>`;
+}
+
+/* ----- learn ----- */
+function lPool(){return lf==='all'?PV:PV.filter(p=>p.src===lf);}
+function learnHTML(){
+  return `<section class="card" aria-labelledby="h-l"><div class="lhead"><h2 class="h2" id="h-l">📖 Learn the verbs</h2>
+    <div class="seg" id="lfSeg">${[['all','All 20'],['kiss',SRC.kiss.label],['mount',SRC.mount.label]].map(([k,t])=>`<button type="button" data-f="${k}" class="${lf===k?'on':''}">${t}</button>`).join('')}</div></div>
+    <div class="prog" id="lprog"></div><div class="vstrip" id="lstrip"></div></section>
+  <div id="fc"></div>
+  <div class="btn-row c"><button class="btn btn-main" type="button" id="toPlay">🗣️ Ready? Play Alias ▶</button></div>`;
+}
+function renderLearn(){
+  const list=lPool();if(li>=list.length||li<0)li=0;
+  const k=knownN();
+  $('lprog').innerHTML=`<div class="track"><div class="pbar" style="width:${Math.round(k/PV.length*100)}%"></div></div><span class="pt">✓ ${k} of ${PV.length} known</span>`;
+  $('lstrip').innerHTML=list.map((p,i)=>`<button type="button" class="vchip ${vcls(p)}${i===li?' cur':''}" data-i="${i}" aria-current="${i===li}">${esc(p.v)}</button>`).join('');
+  $('lstrip').querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{li=+b.dataset.i;lOpen=false;renderLearn();});
+  const p=list[li],c=SRC[p.src].col;
+  $('fc').innerHTML=`<section class="card fcard" aria-label="Verb ${li+1} of ${list.length}">
+    <div class="fc-front" style="background:var(--${c});border-color:var(--${c}-line)">
+      <div class="fc-meta"><span style="color:var(--${c}-ink)">${SRC[p.src].label}</span><span class="ix">${li+1} / ${list.length}</span></div>
+      <div class="fc-verb">${esc(p.v)} ${spk(p.v)}</div>
+      <p class="fc-ctx">${p.ctx}</p>
+      ${lOpen?'':'<p class="fc-q">What does it mean? Guess first, then open the card.</p>'}
+    </div>
+    ${lOpen?`<div class="vb">${bodyHTML(p)}</div>`:'<button class="btn btn-soft btn-block" type="button" id="fcOpen">Show the meaning ▾</button>'}
+    <div class="fc-acts"><button class="nbtn" type="button" id="fcPrev" aria-label="Previous verb">←</button>
+      <button class="act act-skip" type="button" id="fcNo">↺ Not yet</button><button class="act act-yes" type="button" id="fcYes">✓ I know it</button>
+      <button class="nbtn" type="button" id="fcNext" aria-label="Next verb">→</button></div>
+    <div class="keys">Keyboard: Space = open the card · ← → = previous / next</div></section>`;
+  const step=d=>{li=(li+d+list.length)%list.length;lOpen=false;renderLearn();};
+  if($('fcOpen'))$('fcOpen').onclick=()=>{lOpen=true;renderLearn();};
+  $('fcPrev').onclick=()=>step(-1);$('fcNext').onclick=()=>step(1);
+  $('fcNo').onclick=()=>{S.known[p.v]=-1;save();step(1);};
+  $('fcYes').onclick=()=>{S.known[p.v]=1;save();step(1);};
+}
+
+/* ----- verb card body (learn + drawer) ----- */
+function cluesHTML(p,head){
+  return `<div class="ch"><b>${head||'💡 Easy clues · read them out'}</b></div>`+p.clues.map((t,i)=>`<div class="cl"><span class="n">${i+1}</span><span class="t">${gapify(t)}</span>${spk(t)}</div>`).join('');
+}
+const tabooHTML=p=>`<b>🚫 Don't say</b>`+p.taboo.map(w=>`<span>${esc(w)}</span>`).join('');
+function bodyHTML(p){
+  const t=p.trap;
+  return `<div class="vsec"><div class="vlbl">Meaning</div><div class="mean-en">${esc(p.def)}</div><div class="mean-ru">🇷🇺 ${esc(p.ru)}</div><div class="forms">${p.forms}</div></div>
+  <div class="vsec"><div class="vlbl">Meanings + examples</div><ol class="ml">${p.means.map((m,i)=>`<li><div class="ml-lab">${esc(m[0])}${i===0?'<span class="tagx">in the story</span>':''}</div><div class="ml-ex"><span>${esc(m[1])}</span>${spk(m[1])}</div><div class="ruu">${esc(m[2])}</div></li>`).join('')}</ol></div>
+  <div class="vsec trapx"><div class="vlbl">Trap for Russian speakers</div><p><span class="x">${esc(t[0])}</span></p><p><span class="y">${esc(t[1])}</span></p>${t[2]?`<p class="ruu">${esc(t[2])}</p>`:''}</div>
+  <div class="vsec"><div class="vlbl">Say it with</div><div class="coll">${p.coll.map(c=>`<span><b>${esc(c[0])}</b><small>${esc(c[1])}</small></span>`).join('')}</div></div>
+  <div class="vsec"><div class="vlbl">Explain it in Alias</div><div class="clues">${cluesHTML(p,'💡 Clues you can use')}</div><div class="taboo">${tabooHTML(p)}</div></div>`;
+}
+
+/* ----- game screens ----- */
+function introHTML(){
+  const g=guesserIdx();
+  return `<div class="card"><div class="banner"><span class="now">🎙 ${esc(nm(dIdx))} describes</span><span class="sub">${esc(guessersStr())} ${g.length>1?'guess':'guesses'}</span><span class="rnd">round ${pass} · turn ${turn+1}</span></div>
+    <div class="intro"><div class="who"><span class="nm">${esc(nm(dIdx))}</span>, you're up!</div>
+    <div class="role">Describe each phrasal verb in English. Don't say its words!</div>
+    <div class="others">${S.secs?`${S.secs} seconds`:`${TURN_WORDS} verbs, no timer`}${S.stop?' · learning stop after each guess':''}</div></div>
+    <div class="btn-row c"><button class="btn btn-main" type="button" id="startTurn">Start ▶</button><button class="btn btn-soft" type="button" id="back">⚙ Settings</button></div></div>`;
+}
+function playHTML(){
+  const top=S.secs?`<div class="timer"><div class="track"><div class="bar" id="bar"></div></div><div class="clock" id="clock">${fmt(S.secs)}</div></div>`
+    :`<div class="dots" id="dots" aria-label="Verbs this turn"></div>`;
+  return `<div class="card"><div class="banner"><span class="now">🎙 ${esc(nm(dIdx))}</span><span class="sub">describing</span><span class="rnd">round ${pass}</span></div>
+    ${top}<div id="stage"></div>
+    <div class="counters"><span class="g">✓ <b id="gc">0</b></span><span class="st">⭐ <b id="stc">0</b></span><span class="s">⏭ <b id="scnt">0</b></span></div>
+    <div class="keys" id="keys"></div></div>`;
+}
+function wordHTML(p){
+  const c=SRC[p.src].col;
+  return `<div class="play${hidden?' hidden':''}" id="playCard" style="background:var(--${c});border-color:var(--${c}-line)">
+      <div class="cat" style="color:var(--${c}-ink)">${SRC[p.src].label}</div>
+      <div class="word">${esc(p.v)}</div>
+      <div class="ru${S.hint?'':' off'}" id="ru">🇷🇺 ${esc(p.ru)}</div>
+      <span class="left">${queue.length} left in the deck</span></div>
+    <div class="taboo">${tabooHTML(p)}</div>
+    <div class="clues" id="clues"${S.clues?'':' hidden'}>${cluesHTML(p)}</div>
+    <div class="tools"><button class="tbtn vcard" type="button" id="cardBtn">📖 Verb card</button><button class="tbtn" type="button" id="peek">${hidden?'👁 Show word':'🙈 Hide word'}</button><button class="tbtn" type="button" id="hintBtn">${S.hint?'Hide Russian':'🇷🇺 Show Russian'}</button><button class="tbtn" type="button" id="cluesBtn">${S.clues?'Hide clues':'💡 Show clues'}</button><button class="tbtn" type="button" id="endEarly">⏹ End turn</button></div>
+    <div class="actions"><button class="act act-skip" type="button" id="skip">⏭ Skip</button><button class="act act-yes" type="button" id="yes">✓ Got it</button></div>`;
+}
+function revealHTML(p){
+  const ideas=p.means.slice(1).map(m=>`<div><span>${esc(m[1])}</span>${spk(m[1])}</div>`).join('');
+  const g=guesserIdx();
+  return `<div class="reveal" aria-live="polite"><span class="rv-ok">✓ Guessed!</span>
+      <div class="rv-word">${esc(p.v)} ${spk(p.v)}</div>
+      <div class="rv-ru">🇷🇺 ${esc(p.ru)}</div><div class="rv-def">${esc(p.def)}</div>
+      <div class="rv-story"><span class="lab">In the story · ${esc(SRC[p.src].name)}</span>${p.ctx}</div></div>
+    <div class="task"><div class="task-h">🗣 ${esc(guessersStr())}: say your own sentence with <b>${esc(p.v)}</b>.</div>
+      <div class="ruu">Своё предложение: о себе, о работе, о друзьях.</div>
+      <details class="idea"><summary>Need an idea?</summary><div class="il">${ideas}</div></details>
+      <div class="stars">${g.map(i=>{const on=stars.some(s=>s.v===p.v&&s.i===i);return `<button type="button" class="star${on?' on':''}" data-st="${i}" aria-pressed="${on}">⭐ Good sentence · +1 ${esc(nm(i))}</button>`;}).join('')}</div></div>
+    <div class="actions"><button class="act act-yes" type="button" id="nextW">Next verb ▶</button></div>`;
+}
+function endHTML(){
+  const next=(dIdx+1)%N();
+  const none='<span class="none">—</span>';
+  const gl=got.length?got.map((w,i)=>`<button type="button" data-g="${i}">${esc(w.v)}<small>${esc(shortRu(w))}</small></button>`).join(''):none;
+  const sl=skipped.length?skipped.map((w,i)=>`<button type="button" data-s="${i}">${esc(w.v)}<small>${esc(shortRu(w))}</small></button>`).join(''):none;
+  const st=S.players.map((p,i)=>{const n=stars.filter(s=>s.i===i).length;return n?`<span>⭐ ${esc(nm(i))} +${n}</span>`:'';}).join('');
+  return `<div class="card"><div class="big">${got.length}</div><div class="bigsub">verbs guessed · +${got.length} for ${esc(nm(dIdx))}</div>
+    <div class="wl-h">✓ Guessed</div><div class="wl g" id="gList">${gl}</div>
+    <div class="wl-h">⏭ Skipped</div><div class="wl s" id="sList">${sl}</div>
+    ${st?`<div class="wl-h">⭐ Good sentences</div><div class="wl st">${st}</div>`:''}
+    <div class="wl-tip">Tap any verb to open its card. Skipped verbs come back later in the game.</div>
+    <div class="btn-row"><button class="btn btn-main" type="button" id="next">${next===0?'Next round':'Next'}: ${esc(nm(next))} ▶</button><button class="btn btn-soft" type="button" id="stand">🏁 Standings</button></div></div>`;
+}
+function standHTML(){
+  const o=S.players.map((p,i)=>({p:nm(i),s:S.scores[i]})).sort((a,b)=>b.s-a.s);
+  const med=['🥇','🥈','🥉','🎈','🎈','🎈'];
+  const tie=o.length>1&&o[0].s===o[1].s;
+  return `<div class="card"><div class="winner">${tie?'🤝 It\'s a tie!':`🏆 ${esc(o[0].p)} leads!`}</div>
+    ${o.map((x,r)=>`<div class="stand"><span class="m">${med[r]}</span><span class="sn">${esc(x.p)}</span><span class="ss">${x.s}</span></div>`).join('')}
+    <div class="btn-row"><button class="btn btn-main" type="button" id="keep">Keep playing ▶</button><button class="btn btn-soft" type="button" id="again">New game (scores to 0)</button><button class="btn btn-soft" type="button" id="back">⚙ Settings</button></div></div>`;
+}
+
+/* ===== TIMER ===== */
+function fmt(s){return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
+function pauseLabel(){return pauses.has('stop')?'⏸ Learning stop':pauses.has('card')?'⏸ Verb card':'';}
+function tick(){
+  const b=$('bar'),c=$('clock');if(!b)return;
+  b.style.width=(left/S.secs*100)+'%';
+  const pl=pauseLabel();c.innerHTML=fmt(left)+(pl?`<span class="pz">${pl}</span>`:'');
+  const low=left<=10;b.classList.toggle('low',low);c.classList.toggle('low',low);
+}
+function startTimer(){left=S.secs;tick();timer=setInterval(()=>{if(pauses.size)return;left--;if(left<0)left=0;tick();if(left<=0)finishTurn();},1000);}
+function setPause(r,on){if(on)pauses.add(r);else pauses.delete(r);tick();}
+function finishTurn(){stopTimer();closeDrawer();addScore(dIdx,got.length);go('end');}
+
+/* ===== TURN FLOW ===== */
+function updCounters(){
+  if(!$('gc'))return;
+  $('gc').textContent=got.length;$('scnt').textContent=skipped.length;$('stc').textContent=stars.length;
+  const d=$('dots');if(d){
+    d.innerHTML=Array.from({length:TURN_WORDS},(_,i)=>`<i class="${hist[i]||''}"></i>`).join('')+`<span>${Math.min(hist.length,TURN_WORDS)} / ${TURN_WORDS}</span>`;}
+}
+let hist=[];
+function setKeys(){const k=$('keys');if(k)k.textContent=revealing?'Keyboard: Enter or → = next verb':'Keyboard: → or Enter = got it · ← = skip · C = verb card';}
+function showWord(){
+  revealing=false;setPause('stop',false);
+  if(!queue.length)refill();
+  current=queue.shift();
+  $('stage').innerHTML=wordHTML(current);
+  $('yes').onclick=()=>mark(true);$('skip').onclick=()=>mark(false);
+  $('endEarly').onclick=finishTurn;$('cardBtn').onclick=()=>openDrawer(current);
+  $('peek').onclick=()=>{hidden=!hidden;$('playCard').classList.toggle('hidden',hidden);$('peek').textContent=hidden?'👁 Show word':'🙈 Hide word';};
+  $('hintBtn').onclick=()=>{S.hint=!S.hint;save();$('ru').classList.toggle('off',!S.hint);$('hintBtn').textContent=S.hint?'Hide Russian':'🇷🇺 Show Russian';};
+  $('cluesBtn').onclick=()=>{S.clues=!S.clues;save();$('clues').hidden=!S.clues;$('cluesBtn').textContent=S.clues?'Hide clues':'💡 Show clues';};
+  setKeys();
+}
+function mark(ok){
+  if(view!=='play'||revealing||!current||$('drawer').classList.contains('open'))return;
+  if(S.secs&&!timer)return;
+  if(ok)got.push(current);else skipped.push(current);
+  hist.push(ok?'g':'s');updCounters();
+  if(ok&&S.stop){showReveal(current);return;}
+  advance();
+}
+function advance(){if(!S.secs&&hist.length>=TURN_WORDS){finishTurn();return;}showWord();}
+function showReveal(p){
+  revealing=true;setPause('stop',true);
+  $('stage').innerHTML=revealHTML(p);
+  $('stage').querySelectorAll('[data-st]').forEach(b=>b.onclick=()=>{const i=+b.dataset.st,k=stars.findIndex(s=>s.v===p.v&&s.i===i);
+    if(k>=0){stars.splice(k,1);addScore(i,-1);b.classList.remove('on');b.setAttribute('aria-pressed','false');}
+    else{stars.push({v:p.v,i});addScore(i,1);b.classList.add('on');b.setAttribute('aria-pressed','true');}
+    updCounters();});
+  $('nextW').onclick=nextAfterReveal;setKeys();
+}
+function nextAfterReveal(){if(!revealing)return;revealing=false;setPause('stop',false);advance();}
+
+/* ===== WIRING ===== */
+function wireTog(id,key){const el=$(id);const f=()=>{S[key]=!S[key];save();el.classList.toggle('on',S[key]);el.setAttribute('aria-checked',S[key]);};el.onclick=f;el.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();f();}};}
+const wire={
+  home(){
+    $('toLearn').onclick=()=>{lOpen=false;go('learn');};
+    app.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{lf='all';li=PV.findIndex(p=>p.v===b.dataset.go);lOpen=false;go('learn');});
+    const goLbl=()=>{$('go').textContent=`Start: ${nm(0)} describes first ▶`;};
+    $('pgrid').querySelectorAll('input').forEach(inp=>inp.oninput=()=>{S.players[+inp.dataset.i]=inp.value;save();goLbl();});
+    $('pgrid').querySelectorAll('.x').forEach(x=>x.onclick=()=>{const i=+x.dataset.x;S.players.splice(i,1);S.scores.splice(i,1);save();render(true);});
+    const ap=$('addp');if(ap)ap.onclick=()=>{S.players.push('Player '+(N()+1));S.scores.push(0);save();render(true);const f=$('pl'+(N()-1));if(f){f.focus();f.select();}};
+    $('srcChips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{const k=c.dataset.c;let nx=S.srcs.includes(k)?S.srcs.filter(x=>x!==k):S.srcs.concat(k);if(!nx.length)nx=[k===SRCS[0]?SRCS[1]:SRCS[0]];S.srcs=nx;save();
+      $('srcChips').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',S.srcs.includes(x.dataset.c)));$('selCount').textContent=pool().length+' verbs in the deck';});
+    $('timeChips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{S.secs=+c.dataset.s;save();$('timeChips').querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));});
+    wireTog('stopTog','stop');wireTog('hintTog','hint');wireTog('cluesTog','clues');
+    $('go').onclick=()=>{S.players=S.players.map((p,i)=>p.trim()||('Player '+(i+1)));S.scores=S.players.map(()=>0);save();
+      dIdx=0;pass=1;turn=0;got=[];skipped=[];stars=[];refill();gameOn=true;go('intro');};
+    const r=$('resume');if(r)r.onclick=()=>go(lastPhase);
+  },
+  learn(){
+    $('lfSeg').querySelectorAll('button').forEach(b=>b.onclick=()=>{lf=b.dataset.f;li=0;lOpen=false;$('lfSeg').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));renderLearn();});
+    $('toPlay').onclick=()=>go(gameOn?lastPhase:'home');
+    renderLearn();
+  },
+  intro(){
+    $('startTurn').onclick=()=>{got=[];skipped=[];stars=[];hist=[];hidden=false;go('play');};
+    $('back').onclick=()=>go('home');
+  },
+  play(){showWord();updCounters();if(S.secs)startTimer();},
+  end(){
+    $('next').onclick=()=>{dIdx=(dIdx+1)%N();if(dIdx===0)pass++;turn++;go('intro');};
+    $('stand').onclick=()=>go('stand');
+    $('gList').querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>openDrawer(got[+b.dataset.g]));
+    $('sList').querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>openDrawer(skipped[+b.dataset.s]));
+  },
+  stand(){
+    $('keep').onclick=()=>{dIdx=(dIdx+1)%N();if(dIdx===0)pass++;turn++;go('intro');};
+    $('again').onclick=()=>{S.scores=S.players.map(()=>0);save();dIdx=0;pass=1;turn=0;refill();go('intro');};
+    $('back').onclick=()=>go('home');
+  }
+};
+
+/* ===== VERB CARD DRAWER ===== */
+const drawer=$('drawer'),scrim=$('scrim');let lastFocus=null;
+function openDrawer(p){
+  if(!p)return;const c=SRC[p.src].col;
+  $('dBody').innerHTML=`<div class="dcard"><div class="dsrc" style="color:var(--${c}-ink)">${SRC[p.src].label} · ${esc(SRC[p.src].name)}</div>
+    <div class="dverb">${esc(p.v)} ${spk(p.v)}</div><div class="dctx">${p.ctx}</div><div class="vb">${bodyHTML(p)}</div></div>`;
+  $('dBody').scrollTop=0;lastFocus=document.activeElement;
+  drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');scrim.classList.add('open');
+  if(view==='play')setPause('card',true);
+  $('dClose').focus();
+}
+function closeDrawer(){
+  if(!drawer.classList.contains('open'))return;
+  drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');scrim.classList.remove('open');
+  if(view==='play')setPause('card',false);
+  if(lastFocus&&document.contains(lastFocus))try{lastFocus.focus();}catch(e){}
+}
+$('dClose').onclick=closeDrawer;scrim.onclick=closeDrawer;
+
+/* ===== KEYS + SPEECH ===== */
+document.addEventListener('keydown',e=>{
+  if(drawer.classList.contains('open')){if(e.key==='Escape')closeDrawer();return;}
+  const t=e.target;if(t.tagName==='INPUT'||t.tagName==='TEXTAREA'||t.isContentEditable)return;
+  if((e.key==='Enter'||e.key===' ')&&t.closest&&t.closest('button,summary,[role="switch"]'))return;
+  if(view==='play'){
+    if(revealing){if(e.key==='Enter'||e.key==='ArrowRight'){e.preventDefault();nextAfterReveal();}return;}
+    if(e.key==='ArrowRight'||e.key==='Enter'){e.preventDefault();mark(true);}
+    else if(e.key==='ArrowLeft'){e.preventDefault();mark(false);}
+    else if(e.key==='c'||e.key==='C'){e.preventDefault();openDrawer(current);}
+  }else if(view==='learn'){
+    if(e.key==='ArrowRight'){e.preventDefault();$('fcNext').click();}
+    else if(e.key==='ArrowLeft'){e.preventDefault();$('fcPrev').click();}
+    else if(e.key===' '){e.preventDefault();lOpen=!lOpen;renderLearn();}
+  }
+});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-say]');if(b){e.preventDefault();speak(b.dataset.say);}});
+
+render();
+</script>
+</body>
+</html>

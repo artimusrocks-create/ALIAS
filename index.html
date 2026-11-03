@@ -304,10 +304,11 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
 <script src="deck1.js"></script>
 <script src="deck2.js"></script>
 <script src="deck3.js"></script>
+<script src="deck4.js"></script>
 <script src="online.js"></script>
 <script>
 /* ===== DECK (from deck*.js: english=russian=clue|clue) ===== */
-const ORDER=["tech","kitchen","bathroom","cleaning","office","tools","packaging","home","bedroom","food","drinks","clothes","beauty","health","city","transport","shopping","leisure","kids","garden","travel","people","actions"].filter(k=>window.RAW&&RAW[k]);
+const ORDER=["tech","kitchen","bathroom","cleaning","office","tools","packaging","home","bedroom","food","drinks","clothes","beauty","health","city","transport","shopping","leisure","kids","garden","travel","people","actions","pv_kiss","pv_mount"].filter(k=>window.RAW&&RAW[k]);
 const CATS={};ORDER.forEach(k=>{CATS[k]={label:RAW[k][0],w:RAW[k][1].trim().split('\n').map(l=>{const p=l.split('=');return[p[0],p[1],(p[2]||'').split('|').filter(Boolean)];})};});
 const ALL=[];ORDER.forEach(k=>CATS[k].w.forEach(([en,ru,c])=>ALL.push({en,ru,c,cat:k})));
 const BYWORD={};ALL.forEach(w=>{BYWORD[w.en.toLowerCase()]=w;BYWORD[w.ru.toLowerCase()]=BYWORD[w.ru.toLowerCase()]||w;});
@@ -365,7 +366,8 @@ function setupHTML(){
   const total=pool().length;
   return `<div class="hero"><div class="kicker">🇷🇺 Russian hints · ${ALL.length} words · 🛟 Lifeline</div>
     <h1><span class="a">A</span><span class="b">l</span><span class="c">i</span><span class="d">a</span><span class="e">s</span></h1>
-    <p>Describe the word in English — never say it. Stuck? Tap <b>🛟 Lifeline</b> for ready-made clues with Russian translations.</p></div>
+    <p>Describe the word in English — never say it. Stuck? Tap <b>🛟 Lifeline</b> for ready-made clues with Russian translations.</p>
+    <a class="mini-link" href="/phrasal-verbs/" style="display:inline-block">📖 Learning mode: the 20 phrasal verbs from Kiss cam + Left behind →</a></div>
   ${window.ONLINE?ONLINE.joinCardHTML():''}
   <details class="card teacher" id="teacherBox"${new URLSearchParams(location.search).get('code')?'':' open'}><summary>🎓 Teacher · set up a game</summary>
     <div class="row"><div class="lbl">1 · How are you playing?</div>

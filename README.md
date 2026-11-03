@@ -14,9 +14,13 @@ Players open the link (or the site), enter the code and their name, and join. Ea
 This needs the free **Upstash Redis** database connected in Vercel (Storage → Create → Upstash for Redis → connect to this project).
 Players inside a game can use the AI help without the `LIFELINE_CODE`.
 
+## Phrasal verbs learning mode
+Open `/phrasal-verbs/`: only the 20 phrasal verbs from the Kiss cam and Left behind lessons, with study cards and a learning stop after each guess (meaning + the guessers make their own sentence). The same 20 verbs are also two categories in the main game (`deck4.js`), so they work with online game codes.
+
 ## Files
 - `index.html`: the game
-- `deck1.js`, `deck2.js`, `deck3.js`: the words. Format: `english=russian=clue 1|clue 2`
+- `phrasal-verbs/index.html`: the phrasal verbs learning mode
+- `deck1.js`, `deck2.js`, `deck3.js`, `deck4.js`: the words (deck4 = phrasal verbs; new decks go at the end). Format: `english=russian=clue 1|clue 2`
 - `api/help.js`: the AI helper (a Vercel serverless function)
 - `api/room.js`, `lib/store.js`, `online.js`: online game rooms
 
