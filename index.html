@@ -305,10 +305,11 @@ footer{text-align:center;margin-top:40px;color:var(--muted);font-size:13px}
 <script src="deck2.js"></script>
 <script src="deck3.js"></script>
 <script src="deck4.js"></script>
+<script src="deck5.js"></script>
 <script src="online.js"></script>
 <script>
 /* ===== DECK (from deck*.js: english=russian=clue|clue) ===== */
-const ORDER=["tech","kitchen","bathroom","cleaning","office","tools","packaging","home","bedroom","food","drinks","clothes","beauty","health","city","transport","shopping","leisure","kids","garden","travel","people","actions","pv_kiss","pv_mount"].filter(k=>window.RAW&&RAW[k]);
+const ORDER=["tech","kitchen","bathroom","cleaning","office","tools","packaging","home","bedroom","food","drinks","clothes","beauty","health","city","transport","shopping","leisure","kids","garden","travel","people","actions","pv_kiss","pv_mount","essay1","essay2","essay3"].filter(k=>window.RAW&&RAW[k]);
 const CATS={};ORDER.forEach(k=>{CATS[k]={label:RAW[k][0],w:RAW[k][1].trim().split('\n').map(l=>{const p=l.split('=');return[p[0],p[1],(p[2]||'').split('|').filter(Boolean)];})};});
 const ALL=[];ORDER.forEach(k=>CATS[k].w.forEach(([en,ru,c])=>ALL.push({en,ru,c,cat:k})));
 const BYWORD={};ALL.forEach(w=>{BYWORD[w.en.toLowerCase()]=w;BYWORD[w.ru.toLowerCase()]=BYWORD[w.ru.toLowerCase()]||w;});

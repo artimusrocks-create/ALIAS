@@ -20,7 +20,7 @@ Open `/phrasal-verbs/`: only the 20 phrasal verbs from the Kiss cam and Left beh
 ## Files
 - `index.html`: the game
 - `phrasal-verbs/index.html`: the phrasal verbs learning mode
-- `deck1.js`, `deck2.js`, `deck3.js`, `deck4.js`: the words (deck4 = phrasal verbs; new decks go at the end). Format: `english=russian=clue 1|clue 2`
+- `deck1.js`, `deck2.js`, `deck3.js`, `deck4.js`, `deck5.js`: the words (deck4 = phrasal verbs, deck5 = 30 essay linking phrases from Liza's essay lessons; new decks go at the end). Format: `english=russian=clue 1|clue 2`
 - `api/help.js`: the AI helper (a Vercel serverless function)
 - `api/room.js`, `lib/store.js`, `online.js`: online game rooms
 
